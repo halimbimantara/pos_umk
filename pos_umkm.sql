@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2020 at 08:33 AM
+-- Generation Time: May 19, 2020 at 04:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.16
 
@@ -104,12 +104,32 @@ INSERT INTO `data_pelanggan` (`id`, `nama`, `alamat`, `kelurahan`, `kota`, `phon
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `get_produk`
+-- (See below for the actual view)
+--
+CREATE TABLE `get_produk` (
+`kd_produk` varchar(50)
+,`kd_barcode` varchar(100)
+,`nama_produk` varchar(100)
+,`gambar` varchar(255)
+,`harga_promo` double
+,`harga_grosir` double
+,`batas_grosir` int(5)
+,`harga_eceran` double
+,`stok` decimal(32,0)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `get_produk_stok`
 -- (See below for the actual view)
 --
 CREATE TABLE `get_produk_stok` (
 `kd_produk` varchar(50)
+,`kd_barcode` varchar(100)
 ,`nama_produk` varchar(100)
+,`gambar` varchar(255)
 ,`harga_promo` double
 ,`harga_grosir` double
 ,`batas_grosir` int(5)
@@ -273,6 +293,8 @@ CREATE TABLE `master_produk` (
   `eceran` int(5) NOT NULL,
   `harga_eceran` double NOT NULL DEFAULT 0,
   `stok` int(5) NOT NULL DEFAULT 0,
+  `batas_min_stok` int(5) NOT NULL DEFAULT 0,
+  `batas_max_stok` int(5) NOT NULL DEFAULT 0,
   `created_date` date NOT NULL DEFAULT current_timestamp(),
   `create_by` int(5) NOT NULL,
   `modified_by` int(5) DEFAULT NULL,
@@ -283,8 +305,9 @@ CREATE TABLE `master_produk` (
 -- Dumping data for table `master_produk`
 --
 
-INSERT INTO `master_produk` (`kd_produk`, `kd_barcode`, `nama_produk`, `id_kategori`, `promo`, `harga_promo`, `gambar_produk`, `kd_satuan`, `batas_grosir`, `harga_grosir`, `eceran`, `harga_eceran`, `stok`, `created_date`, `create_by`, `modified_by`, `keterangan`) VALUES
-('BRS0001', '13131313131', 'Beras Bramo 25Kg', 1, 0, 0, '-', 1, 10, 55000, 1, 58000, 15, '2020-05-01', 1, 0, 'Beras Kualitas bramo 25kg');
+INSERT INTO `master_produk` (`kd_produk`, `kd_barcode`, `nama_produk`, `id_kategori`, `promo`, `harga_promo`, `gambar_produk`, `kd_satuan`, `batas_grosir`, `harga_grosir`, `eceran`, `harga_eceran`, `stok`, `batas_min_stok`, `batas_max_stok`, `created_date`, `create_by`, `modified_by`, `keterangan`) VALUES
+('BRS0001', '9786020814254', 'Beras Bramo 25Kg', 1, 0, 0, 'photo4.jpg', 1, 10, 55000, 1, 58000, 15, 0, 0, '2020-05-01', 1, 0, 'Beras Kualitas bramo 25kg'),
+('LP00D1', 'M194467', 'Lampu Dobel Rem Belakang', 1, 0, 0, '-', 1, 10, 25000, 1, 27000, 0, 10, 50, '2020-05-14', 1, NULL, NULL);
 
 --
 -- Triggers `master_produk`
@@ -498,7 +521,11 @@ CREATE TABLE `trx_history_harga_jual` (
 INSERT INTO `trx_history_harga_jual` (`id_history_jual`, `kd_produk`, `harga`, `tanggal_modified`, `keterangan`, `modified_by`) VALUES
 (1, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
 (2, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
-(3, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0);
+(3, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
+(4, 'BRS0001', 58000, '2020-05-07 00:00:00', NULL, 0),
+(5, 'BRS0001', 58000, '2020-05-07 00:00:00', NULL, 0),
+(6, 'BRS0001', 58000, '2020-05-14 00:00:00', NULL, 0),
+(7, 'LP00D1', 27000, '2020-05-17 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -518,6 +545,7 @@ CREATE TABLE `trx_pembelian` (
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) DEFAULT NULL,
   `supplier` int(5) DEFAULT NULL COMMENT 'id supplier',
+  `keterangan` text NOT NULL,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -525,9 +553,9 @@ CREATE TABLE `trx_pembelian` (
 -- Dumping data for table `trx_pembelian`
 --
 
-INSERT INTO `trx_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `stok`, `total`, `diskon`, `kd_satuan`, `supplier`, `created_date`) VALUES
-(1, 'BL0001', 'BRS0001', 'Beras Bramo', 58000, 10, 10, 580000, 0, NULL, 1, '2020-04-25'),
-(2, 'BL0002', 'BRS0001', NULL, 58000, 5, 5, 290000, 0, NULL, NULL, '2020-04-25');
+INSERT INTO `trx_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `stok`, `total`, `diskon`, `kd_satuan`, `supplier`, `keterangan`, `created_date`) VALUES
+(1, 'BL0001', 'BRS0001', 'Beras Bramo', 58000, 10, 10, 580000, 0, NULL, 1, '', '2020-04-25'),
+(2, 'BL0002', 'BRS0001', NULL, 58000, 5, 5, 290000, 0, NULL, NULL, '', '2020-04-25');
 
 -- --------------------------------------------------------
 
@@ -546,8 +574,26 @@ CREATE TABLE `trx_pembelian_temp` (
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) DEFAULT NULL,
   `supplier` int(5) DEFAULT NULL COMMENT 'id supplier',
+  `keterangan` text DEFAULT NULL,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `trx_pembelian_temp`
+--
+
+INSERT INTO `trx_pembelian_temp` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `supplier`, `keterangan`, `created_date`) VALUES
+(1, 'BL200514113356', 'LP00D1', 'Lampu Dobel Rem Belakang', 20000, 20, 400000, 0, NULL, NULL, NULL, '0000-00-00'),
+(2, 'BL200514113356', 'LP00D1', 'Lampu Dobel Rem Belakang', 20000, 20, 400000, 0, NULL, NULL, NULL, '0000-00-00'),
+(3, 'BL200514113632', 'LP00D1', 'Lampu Dobel Rem Belakang', 30000, 20, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
+(4, 'BL200514113756', 'LP00D1', 'Lampu Dobel Rem Belakang', 40000, 210, 8400000, 0, NULL, NULL, NULL, '0000-00-00'),
+(5, 'BL200514113833', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
+(6, 'BL200514114104', 'LP00D1', 'Lampu Dobel Rem Belakang', 24000, -8, -192000, 0, NULL, NULL, NULL, '0000-00-00'),
+(7, 'BL200514114511', 'BRS0001', 'Beras Bramo 25Kg', 60000, 20, 1200000, 0, NULL, NULL, NULL, '0000-00-00'),
+(8, 'BL200515102623', 'LP00D1', 'Lampu Dobel Rem Belakang', 90000, 10, 900000, 0, NULL, NULL, NULL, '0000-00-00'),
+(9, 'BL200518113438', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
+(10, 'BL200518113438', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
+(11, 'BL200519060904', 'BRS0001', 'Beras Bramo 25Kg', 60000, 2, 120000, 0, NULL, NULL, NULL, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -556,7 +602,7 @@ CREATE TABLE `trx_pembelian_temp` (
 --
 
 CREATE TABLE `trx_penjualan` (
-  `id_penjualan` int(12) NOT NULL DEFAULT 0,
+  `id_penjualan` int(12) NOT NULL,
   `kd_trx_penjualan` varchar(50) NOT NULL,
   `kd_produk` varchar(50) NOT NULL,
   `kd_trx_pembelian` varchar(25) NOT NULL,
@@ -568,6 +614,35 @@ CREATE TABLE `trx_penjualan` (
   `kd_satuan` int(11) NOT NULL,
   `created_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trx_penjualan_tmp`
+--
+
+CREATE TABLE `trx_penjualan_tmp` (
+  `id_penjualan` int(12) NOT NULL,
+  `kd_trx_penjualan` varchar(50) NOT NULL,
+  `kd_produk` varchar(50) NOT NULL,
+  `kd_trx_pembelian` varchar(25) NOT NULL,
+  `nama_barang` varchar(255) NOT NULL,
+  `harga` double NOT NULL,
+  `qty` int(10) NOT NULL,
+  `total` double NOT NULL DEFAULT 0,
+  `diskon` double NOT NULL DEFAULT 0,
+  `kd_satuan` int(11) NOT NULL DEFAULT 0,
+  `created_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `trx_penjualan_tmp`
+--
+
+INSERT INTO `trx_penjualan_tmp` (`id_penjualan`, `kd_trx_penjualan`, `kd_produk`, `kd_trx_pembelian`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `created_date`) VALUES
+(1, 'JL200519065635', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 2, 0, 0, 0, '2020-05-19'),
+(2, 'JL200519065804', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 3, 0, 0, 0, '2020-05-19'),
+(3, 'JL200519065837', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 6, 0, 0, 0, '2020-05-19');
 
 -- --------------------------------------------------------
 
@@ -619,11 +694,20 @@ CREATE TABLE `users_groups` (
 -- --------------------------------------------------------
 
 --
+-- Structure for view `get_produk`
+--
+DROP TABLE IF EXISTS `get_produk`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk`  AS  select `a`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on(`b`.`kd_produk` = `a`.`kd_produk`)) group by `a`.`kd_produk` ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `get_produk_stok`
 --
 DROP TABLE IF EXISTS `get_produk_stok`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk_stok`  AS  select `a`.`kd_produk` AS `kd_produk`,`b`.`nama_produk` AS `nama_produk`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`trx_pembelian` `a` join `master_produk` `b` on(`b`.`kd_produk` = `a`.`kd_produk`)) group by `a`.`kd_produk` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk_stok`  AS  select `b`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on(`b`.`kd_produk` = `a`.`kd_produk`)) group by `a`.`kd_produk` ;
 
 --
 -- Indexes for dumped tables
@@ -744,6 +828,12 @@ ALTER TABLE `trx_penjualan`
   ADD PRIMARY KEY (`id_penjualan`);
 
 --
+-- Indexes for table `trx_penjualan_tmp`
+--
+ALTER TABLE `trx_penjualan_tmp`
+  ADD PRIMARY KEY (`id_penjualan`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -854,7 +944,7 @@ ALTER TABLE `tb_kemasan`
 -- AUTO_INCREMENT for table `trx_history_harga_jual`
 --
 ALTER TABLE `trx_history_harga_jual`
-  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `trx_pembelian`
@@ -866,7 +956,19 @@ ALTER TABLE `trx_pembelian`
 -- AUTO_INCREMENT for table `trx_pembelian_temp`
 --
 ALTER TABLE `trx_pembelian_temp`
-  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `trx_penjualan`
+--
+ALTER TABLE `trx_penjualan`
+  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `trx_penjualan_tmp`
+--
+ALTER TABLE `trx_penjualan_tmp`
+  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
