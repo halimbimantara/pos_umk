@@ -1,0 +1,57 @@
+CRITICAL - 2020-04-28 15:15:58 --> Call to undefined function formateDateToPattern()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-04-28 15:16:12 --> Call to a member function formateDateToPattern() on null
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-04-28 15:16:22 --> Function name must be a string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-04-28 15:17:21 --> DateTime::__construct() expects parameter 2 to be DateTimeZone, string given
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(52): DateTime->__construct('2020-04-25', 'd-m-Y')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-04-28 15:17:29 --> DateTime::__construct() expects parameter 2 to be DateTimeZone, string given
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(52): DateTime->__construct('2020-04-25', 'd-m-Y')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-04-28 15:17:45 --> DateTime::__construct() expects parameter 2 to be DateTimeZone, string given
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(52): DateTime->__construct('2020-04-25', 'd-m-Y')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(13): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -1,0 +1,12 @@
+CRITICAL - 2020-05-02 11:16:39 --> Unknown column 'kd_barcode' in 'where clause'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(70): App\Models\Pos->getDataProdukBySearch('BRS0001')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

@@ -1,0 +1,599 @@
+CRITICAL - 2020-05-01 06:45:15 --> Undefined variable: getNotaPembelian
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Applications/X...', 238, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(26): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:15:34 --> Invalid argument supplied for foreach()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(198): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', '/Applications/X...', 198, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:15:57 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 08:17:08 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 08:18:31 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 199, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:19:08 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 199, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:19:49 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 199, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:19:54 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 199, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:20:22 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(201): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 201, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:20:31 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-01 08:20:50 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(201): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 201, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:23:30 --> Trying to get property 'kd_produk' of non-object
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(201): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/X...', 201, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:23:56 --> Trying to get property 'kd_produk' of non-object
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:24:24 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(201): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 201, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:25:04 --> Illegal string offset 'nama_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:25:54 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:26:13 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:27:06 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:27:11 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:28:15 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 200, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:29:41 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(199): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 199, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:30:21 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 204, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 08:32:16 --> Illegal string offset 'kd_produk'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/pembelian_view.php(203): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/Applications/X...', 203, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/pembelian...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(33): view('admin/pembelian...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 09:20:19 --> Undefined property: stdClass::$stok
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(82): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/X...', 82, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-01 13:12:34 --> Undefined property: stdClass::$stok
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(82): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/X...', 82, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-01 13:38:31 --> Call to undefined method stdClass::paginate()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 13:48:17 --> Call to undefined method stdClass::paginate()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:00:26 --> Call to a member function getRow() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:00:58 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:01:57 --> Class 'row' not found
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-05-01 14:03:29 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:10:23 --> Call to undefined method stdClass::paginate()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:10:49 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:18:24 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:27:49 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:27:50 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:28:03 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(23): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:28:50 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(23): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:29:31 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(23): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:30:25 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(23): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:30:34 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(23): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:30:45 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(21): App\Models\Pos->getProduk(10)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-01 14:31:28 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:37:33 --> Class 'App\Models\Produk' not found
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:38:24 --> Class 'App\Models\Produk' not found
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:38:58 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:39:17 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:41:32 --> syntax error, unexpected '}', expecting ';'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/X...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(19): spl_autoload_call('App\\Models\\Prod...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 14:41:54 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:43:02 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:43:32 --> Invalid file: {0}
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk_vi...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/produk_vi...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/produk_vi...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 14:43:52 --> Undefined index: kd_trx_pembelian
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/product_view.php(143): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Applications/X...', 143, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 14:44:44 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:45:03 --> Call to a member function getResult() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:46:02 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:46:16 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:46:26 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::paginate()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:48:08 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::paginate()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:48:25 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:56:46 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 14:56:46 --> Call to a member function paginate() on array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 15:01:16 --> syntax error, unexpected '}', expecting ';' or '{'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/X...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(19): spl_autoload_call('App\\Models\\Prod...')
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 15:01:32 --> Call to a member function paginate() on null
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-01 15:01:47 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:02:12 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:02:40 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:03:11 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:04:12 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:05:09 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:06:28 --> Cannot use object of type stdClass as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-05-01 15:06:55 --> Undefined variable: nota_pembelian
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Views/admin/product_view.php(167): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Applications/X...', 167, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(24): view('admin/product_v...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 20:36:25 --> Undefined property: stdClass::$stok
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(82): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/X...', 82, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-01 20:36:38 --> Undefined property: stdClass::$stok
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(82): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/X...', 82, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-01 20:38:16 --> Undefined property: stdClass::$stok
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(82): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/Applications/X...', 82, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProduk('BRS0001')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,50 @@
+CRITICAL - 2020-05-07 20:44:39 --> Unknown column 'harga * qty' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT *, `harg...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `harg...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `harg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *, `harg...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pembelian_model->getTempPembelian('BL0002')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getTempTable('BL0002')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-07 20:44:49 --> Unknown column 'harga*qty' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT *, `harg...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `harg...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `harg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *, `harg...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pembelian_model->getTempPembelian('BL0002')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getTempTable('BL0002')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-07 21:09:56 --> Unknown column 'harga*qty' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT *, `harg...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `harg...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `harg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *, `harg...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pembelian_model->getTempPembelian('BL0002')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getTempTable('BL0002')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-07 21:11:35 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as subtotal)
+FROM `trx_pembelian_temp`
+WHERE `kd_trx_pembelian` = 'BL0002'' at line 1
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT *, (harg...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, (harg...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, (harg...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *, (harg...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(67): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pembelian_model->getTempPembelian('BL0002')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getTempTable('BL0002')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
