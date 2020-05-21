@@ -215,12 +215,20 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Potongan</label>
 							<div class="col-md-9">
-								<input name="diskon" id="diskon" class="form-control" type="number">
+								<input name="diskon" min=0 oninput="validity.valid||(value='');" id="diskon" class="form-control" type="number">
 								<span class="help-block"></span>
 							</div>
 						</div>
 
 						<div class="form-group">
+							<label class="control-label col-md-3">Suplier</label>
+							<div class="col-md-9">
+								<!--  -->
+								<select autocomplete="off" id="id_suplier" name="id_suplier" required="true" class="form-control select2" data-placeholder="Cari Suplier...">
+								</select>
+							</div>
+						</div>
+						<div class="form-group" style="margin-top: 10px">
 							<label class="control-label col-md-3">Keterangan</label>
 							<div class="col-md-9">
 								<textarea name="address" placeholder="Address" class="form-control"></textarea>
@@ -261,7 +269,8 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="btnSave" onclick="savebarang()" class="btn btn-primary">Selesai</button>
+				<button type="button" id="btnSave" onclick="savebarang()" class="btn btn-primary">Tambah</button>
+				<button type="button" hidden id="btnSelesai" onclick="selesai()" class="btn btn-primary">Selesai</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 			</div>
 		</div><!-- /.modal-content -->
@@ -370,10 +379,32 @@
 	var save_method; //for save method string
 	var nota_pembelian;
 	var selesai_pembelian;
+
 	$(document).ready(function() {
 		$("#id_barang").select2({
 			ajax: {
 				url: "<?= base_url("pembelian/getProdukSelect") ?>",
+				type: "post",
+				dataType: 'json',
+				delay: 250,
+				data: function(params) {
+					return {
+						searchTerm: params.term // search term
+					};
+				},
+				processResults: function(response) {
+					return {
+						results: response
+					};
+				},
+				cache: true
+			}
+		});
+	});
+	$(document).ready(function() {
+		$("#id_suplier").select2({
+			ajax: {
+				url: "<?= base_url("pembelian/getsuplier") ?>",
 				type: "post",
 				dataType: 'json',
 				delay: 250,
@@ -461,12 +492,10 @@
 				$('#response_ajax').load(data);
 				var json = JSON.parse(data);
 				if (json.success) {
-					alert("Berhasil Menambahkan");
-
+					reloadTable(nota_pembelian);
 				} else {
 					alert("Gagal Menambahkan");
 				}
-				reloadTable(nota_pembelian);
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				$('#response_ajax').load(errorThrown);
@@ -500,18 +529,17 @@
 		if (confirm('Apakah anda yakin untuk menghapusnya?')) {
 			// ajax delete data to database
 			$.ajax({
-				url: "<?php echo site_url('pembelian/tempDelete') ?>/" + id,
+				url: "<?php echo site_url('pembelian/tempDelete') ?>/"+id,
 				type: "GET",
 				success: function(data) {
 					if (data.success) {
-						alert("Berhasil Menghapus");
+						reload_table();
 					} else {
 						alert("Gagal Menghapus");
 					}
-					reload_table();
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
-					alert('Error deleting data '+errorThrown);
+					alert('Error deleting data ' + errorThrown);
 				}
 			});
 

@@ -34,6 +34,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/pembelian', 'Pembelian::index');
 $routes->get('/pembelian/gettemptable/(:segment)', 'Pembelian::getTempTable/$1');
 $routes->match(['get', 'post'],'/pembelian/addtemp', 'Pembelian::addBeliTemp');
+$routes->match(['get', 'post'],'/pembelian/getsuplier', 'Pembelian::getSuplier');
 $routes->match(['get', 'post'],'/pos/addproduktemp', 'Pos::addProdukTemp');
 $routes->get('/produk', 'Produk::index');
 $routes->group('auth', ['namespace' => 'IonAuth\Controllers'], function ($routes) {

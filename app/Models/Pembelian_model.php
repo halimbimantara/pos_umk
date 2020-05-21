@@ -88,7 +88,7 @@ class Pembelian_model extends Model
     {
         $builder = $this->db->table('trx_pembelian_temp');
         $builder->where('id_pembelian', $idtrx);
-        $result=$builder->delete();
+        $result = $builder->delete();
         return $result;
     }
 

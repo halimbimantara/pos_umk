@@ -9,8 +9,11 @@ class Pos extends BaseController
 {
 	public function index()
 	{
+		$modelPos = new Pos_model();
 		$data = array();
-		$data = array('nota_penjualan' => $this->getNotaPenjualan());
+		$data = array(
+			'nota_penjualan' => $this->getNotaPenjualan()
+		);
 		return view('kasir/kasir_view', $data);
 	}
 
@@ -23,7 +26,7 @@ class Pos extends BaseController
 	}
 	public function addproduktemp()
 	{
-		
+
 		$data = array(
 			'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
 			'kd_produk'  => $this->request->getVar('kd_produk'),

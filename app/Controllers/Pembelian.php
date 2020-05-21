@@ -25,7 +25,8 @@ class Pembelian extends BaseController
 			'nota_pembelian' => $this->getNotaPembelian(),
 			'm_pembelian' => $model->paginate(10),
 			'pager' => $model->pager,
-			'produk' => $mpos->getListProduk()
+			'produk' => $mpos->getListProduk(),
+			'data_suplier' => $model->getListSuplier()
 		];
 		// mantab();
 		// print_r($umkm->getNotaPembelian());
@@ -75,8 +76,10 @@ class Pembelian extends BaseController
 			'harga'  => $this->request->getVar('harga_beli'),
 			'qty'  => $this->request->getVar('qty'),
 			'nama_barang'  => $this->request->getVar('nama_produk'),
+			'supplier'  => $this->request->getVar('id_suplier'),
 			'total'  => doubleval($this->request->getVar('harga_beli')) * doubleval($this->request->getVar('qty')),
-			'diskon'  => $this->request->getVar('diskon')
+			'diskon'  => $this->request->getVar('diskon'),
+			'created_date'  => date('Y-m-d')
 		);
 		
 		$r_insert = $model->addDataPembelianTemp($data);
@@ -98,6 +101,19 @@ class Pembelian extends BaseController
 
 		foreach ($dataProduk as $row) {
 			$data[] = array("id" => $row['kd_produk'], "text" => $row['nama_produk']);
+		}
+		echo json_encode($data);
+	}
+
+	public function getSuplier()
+	{
+		$searchby = $this->request->getVar('searchTerm');
+		$data = array();
+		$model = new Pos_model();
+		$dataSplr = $model->getListSuplier($searchby)->getResult('array');
+
+		foreach ($dataSplr as $row) {
+			$data[] = array("id" => $row['id_suplier'], "text" => $row['nama_suplier']);
 		}
 		echo json_encode($data);
 	}
@@ -158,7 +174,7 @@ class Pembelian extends BaseController
 				'<td>' . $no . '</td>' .
 				'<td>' . $rows->kd_trx_pembelian . '</td>' .
 				'<td>' . $rows->nama_barang . '</td>' .
-				'<td>' . $rows->harga . '</td>' .
+				'<td>' . number_format($rows->harga, 0, '', '.'). '</td>' .
 				'<td>' . $rows->qty . '</td>' .
 				'<td>' . $rows->diskon . '</td>' .
 				'<td>' . number_format($rows->total, 0, '', '.') . '</td>' .

@@ -85,6 +85,14 @@ class Pos_model extends Model
         return $total;
     }
 
+    function getListSuplier($nama){
+        $builder = $this->db->table('data_suplier');
+        $builder->select('*');
+        $builder->Like('nama_suplier',$nama);
+        $result = $builder->get();
+        return $result;
+    }
+
 
     function updateTablePenjualantmp($id_penjualan,$qty){
 

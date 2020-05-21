@@ -1,0 +1,263 @@
+CRITICAL - 2020-05-21 07:50:11 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(97): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:21:35 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:21:38 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:21:39 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:21:43 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:21:45 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:23:17 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:23:18 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:23:19 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:24:48 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:24:50 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:26:12 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:26:13 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:26:14 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:26:33 --> Cannot use object of type mysqli as array
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-21 08:26:52 --> Invalid argument supplied for foreach()
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', '/Applications/X...', 113, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-05-21 08:31:43 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(111): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:32:01 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(111): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:34:37 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(111): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:35:24 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(98): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:35:33 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(98): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:35:50 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(111): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:39:39 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(99): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:40:22 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(99): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:40:42 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:40:46 --> Unknown column 'suplier' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(64): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(84): App\Models\Pembelian_model->addDataPembelianTemp(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->addBeliTemp()
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-21 08:41:14 --> Unknown column 'suplier' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(64): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(84): App\Models\Pembelian_model->addDataPembelianTemp(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->addBeliTemp()
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-21 08:41:53 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(99): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:42:24 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:43:19 --> DELETE command denied to user 'root'@'localhost' for table 'trx_pembelian_temp'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('DELETE FROM `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2798): CodeIgniter\Database\BaseConnection->query('DELETE FROM `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(91): CodeIgniter\Database\BaseBuilder->delete()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(199): App\Models\Pembelian_model->delTempPembelian('1')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->tempDelete('1')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-21 08:46:18 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 53
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(53): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(99): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 08:46:31 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 91
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(91): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(112): App\Models\Pos_model->getListSuplier(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-21 10:39:23 --> DELETE command denied to user 'root'@'localhost' for table 'trx_pembelian_temp'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('DELETE FROM `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2798): CodeIgniter\Database\BaseConnection->query('DELETE FROM `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(91): CodeIgniter\Database\BaseBuilder->delete()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(199): App\Models\Pembelian_model->delTempPembelian('2')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->tempDelete('2')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-05-21 10:39:37 --> DELETE command denied to user 'root'@'localhost' for table 'trx_pembelian_temp'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('DELETE FROM `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2798): CodeIgniter\Database\BaseConnection->query('DELETE FROM `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pembelian_model.php(91): CodeIgniter\Database\BaseBuilder->delete()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(199): App\Models\Pembelian_model->delTempPembelian('2')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->tempDelete('2')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
