@@ -8,9 +8,11 @@ use App\Models\Pos_model;
 class Pembelian extends BaseController
 {
 	protected $request;
+
 	function __construct()
 	{
 		$request = \Config\Services::request();
+		$this->model_pembelian = new Pembelian_model();
 	}
 
 	public function index()
@@ -19,17 +21,24 @@ class Pembelian extends BaseController
 		$mpos = new Pos_model();
 		helper('TimeHelper');
 		helper('Umkm');
-
+		$paginate = 10;
 		// $model = new Pembelian_model();
 		$data = [
 			'nota_pembelian' => $this->getNotaPembelian(),
-			'm_pembelian' => $model->paginate(10),
+			'm_pembelian' => $model->join('data_suplier', 'data_suplier.id_suplier = master_pembelian.id_suplier', 'left')->paginate($paginate, 'pembelian'),
 			'pager' => $model->pager,
 			'produk' => $mpos->getListProduk(),
 			'data_suplier' => $model->getListSuplier()
 		];
-		// mantab();
-		// print_r($umkm->getNotaPembelian());
+
+		// generate number untuk tetap bertambah meskipun pindah halaman paginate
+		$nomor = $this->request->getGet('page_product');
+		// define $nomor = 1 jika tidak ada get page_product
+		if ($nomor == null) {
+			$nomor = 1;
+		}
+		$data['nomor'] = ($nomor - 1) * $paginate;
+
 		return view('admin/pembelian_view', $data);
 	}
 
@@ -65,8 +74,29 @@ class Pembelian extends BaseController
 
 	public function selesai_pembelian()
 	{
-		$kd_trx = $this->request->getVar('kd_trx');
+		$model = new Pembelian_model();
+		$kd_trx     = $this->request->getPost('kd_trx');
+		$keterangan = $this->request->getPost('keterangan');
+		$userId = 21; //user
+		$idSuplier = $this->request->getPost('id_suplier');
+		$result = $model->selesaipembelian($kd_trx, $idSuplier, $userId, $keterangan);
+		// var_dump($result);
+		if ($result) {
+			$response['success'] = true;
+		} else {
+			$response['success'] = false;
+		}
+		echo json_encode($response);
 	}
+
+	public function getcekdb()
+	{
+		$model= new Pembelian_model();
+		$result = $model->testSelect();
+		var_dump($result);
+		echo date('Y-m-d H:i:s');
+	}
+
 	public function addBeliTemp()
 	{
 		$model = new Pembelian_model();
@@ -76,12 +106,11 @@ class Pembelian extends BaseController
 			'harga'  => $this->request->getVar('harga_beli'),
 			'qty'  => $this->request->getVar('qty'),
 			'nama_barang'  => $this->request->getVar('nama_produk'),
-			'supplier'  => $this->request->getVar('id_suplier'),
 			'total'  => doubleval($this->request->getVar('harga_beli')) * doubleval($this->request->getVar('qty')),
 			'diskon'  => $this->request->getVar('diskon'),
 			'created_date'  => date('Y-m-d')
 		);
-		
+
 		$r_insert = $model->addDataPembelianTemp($data);
 		$response = array();
 		if ($r_insert != NULL) {
@@ -134,8 +163,8 @@ class Pembelian extends BaseController
 		if ($hbeliterakhir != NULL) {
 			$hbeli = $hbeliterakhir->harga;
 		}
-		
-		$stok =$dataProduk->stok == NULL ? 0 : $dataProduk->stok;
+
+		$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
 
 		// var_dump($hbeliterakhir);
 		// echo $hbeliterakhir == NULL ?'ok':'ik';
@@ -156,12 +185,27 @@ class Pembelian extends BaseController
 		<div class="form-group">
 		<label class="control-label col-md-3">Sisa Stok</label>
 		<div class="col-md-2">
-			<input name="stok" disabled id="stok" class="form-control" value="'.$stok.'" type="number">
+			<input name="stok" disabled id="stok" class="form-control" value="' . $stok . '" type="number">
 			<span class="help-block"></span>
 		</div>
 	</div>';
 	}
 
+	public function getCekRow($kd_trxbeli)
+	{
+		// untuk cek ada berapa row base in kd trx
+		$mbeli = new Pembelian_model();
+		$r_temp = $mbeli->getCountTempPembelian($kd_trxbeli);
+		$response = array();
+		if ($r_temp != NULL) {
+			$response['success'] = true;
+			$response['total_row'] = $r_temp->getRow()->total_row;
+		} else {
+			$response['success'] = false;
+			$response['total_row'] = $r_temp->getRow()->total_row;
+		}
+		echo json_encode($response);
+	}
 	public function getTempTable($kd_trxbeli)
 	{
 		$mbeli = new Pembelian_model();
@@ -174,7 +218,7 @@ class Pembelian extends BaseController
 				'<td>' . $no . '</td>' .
 				'<td>' . $rows->kd_trx_pembelian . '</td>' .
 				'<td>' . $rows->nama_barang . '</td>' .
-				'<td>' . number_format($rows->harga, 0, '', '.'). '</td>' .
+				'<td>' . number_format($rows->harga, 0, '', '.') . '</td>' .
 				'<td>' . $rows->qty . '</td>' .
 				'<td>' . $rows->diskon . '</td>' .
 				'<td>' . number_format($rows->total, 0, '', '.') . '</td>' .

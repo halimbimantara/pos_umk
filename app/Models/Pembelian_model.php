@@ -14,7 +14,6 @@ class Pembelian_model extends Model
     {
         parent::__construct();
         $db      = \Config\Database::connect();
-        // $this->tmdb = new Tmdb(); // declare Tmdb as a new object
     }
 
     // protected $allowedFields = ['name', 'email'];
@@ -25,6 +24,7 @@ class Pembelian_model extends Model
 
     function getDetailTrxPembelian($nota_pembelian = null)
     {
+
     }
 
     function getLastNotaPembelian()
@@ -75,6 +75,16 @@ class Pembelian_model extends Model
         return $query;
     }
 
+    function getCountTempPembelian($kd_trxbeli = null)
+    {
+        $builder = $this->db->table('trx_pembelian_temp');
+        $builder->select('count(*) total_row');
+        $builder->where('kd_trx_pembelian', $kd_trxbeli);
+        // $builder->orderby('id_pembelian','DESC');
+        $query = $builder->get();
+        return $query;
+    }
+
     function getTotalPembelian($kd_trxbeli = null)
     {
         $builder = $this->db->table('trx_pembelian_temp');
@@ -91,11 +101,27 @@ class Pembelian_model extends Model
         $result = $builder->delete();
         return $result;
     }
-
-    function selesaipembelian($kd_trxbeli){
-        $total = $this->getTempPembelian($kd_trxbeli);
-        $builder = $this->db->table('trx_pembelian_temp');
-        $query = $builder->select('*,qt');
-
+    
+    function selesaipembelian($kd_trxbeli,$id_suplier,$create_by,$keterangan){
+        $total = $this->getTotalPembelian($kd_trxbeli)->getRow('total');
+        $_query="INSERT INTO master_pembelian (kd_trx_pembelian,total_pembelian,created_date,created_by,keterangan,id_suplier) VALUES ('".$kd_trxbeli."',".$total.",'".date('Y-m-d H:i:s')."','".$create_by."','".$keterangan."','".$id_suplier."')";
+        $this->db->query($_query);
+        return $this->db->query("INSERT INTO trx_pembelian (kd_trx_pembelian, kd_produk, nama_barang, harga, qty,stok, total, diskon, keterangan, created_date)  SELECT kd_trx_pembelian, kd_produk, nama_barang, harga, qty, qty stok, total, diskon, keterangan, created_date FROM trx_pembelian_temp WHERE kd_trx_pembelian='.$kd_trxbeli.'");
     }
+
+    function truncatetmp(){
+       return $this->db->query("TRUNCATE trx_pembelian_temp");
+    }
+
+    function testSelect(){
+        return $this->db->query("SELECT * FROm trx_pembelian_temp");
+     }
+
+   
+    // function tes(){
+    //     return $this->table('products')
+    //                     ->join('categories', 'categories.category_id = products.category_id')
+    //                     ->get()
+    //                     ->getResultArray();
+    // }
 }

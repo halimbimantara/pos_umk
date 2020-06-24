@@ -66,8 +66,9 @@
 							</th> -->
 										<th style="width:3px">No</th>
 										<th style="width:100px">No Nota</th>
-										<th>Total Nota</th>
-										<th>Tanggal</th>
+										<th>Nama Suplier</th>
+										<th style="width:100px">Total Nota</th>
+										<th style="width:100px">Tanggal</th>
 										<th style="width:100px">
 											<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
 											Action
@@ -77,31 +78,29 @@
 								</thead>
 
 								<tbody>
-									<?php if ($m_pembelian) : ?>
+									<?php
+									if ($m_pembelian) : ?>
 										<?php
-										$no = 1;
 										foreach ($m_pembelian as $mbeli) : ?>
 											<tr>
-												<td><?php echo $no; ?></td>
+												<td><?php echo ++$nomor; ?></td>
 												<td><?php echo $mbeli['kd_trx_pembelian']; ?></td>
-												<td><?php echo $mbeli['total_pembelian']; ?></td>
+												<td><?php echo $mbeli['nama_suplier'] . "</br>" . $mbeli['keterangan']; ?></td>
+												<td><?php echo number_format($mbeli['total_pembelian'], 0, '', '.'); ?></td>
 												<td><?php echo date("d-m-Y", strtotime($mbeli['created_date'])); ?></td>
 												<td>
 													<div class="hidden-md hidden-lg">
 														<div class="inline pos-rel">
-															<button type="button" class="btn-xs	 btn-block btn-outline-primary small"> <i class="fa fa-edit"></i>Edit</button>
+															<button type="button" onclick="detailnotabeli('<?php echo $mbeli['kd_trx_pembelian'] ?>')" class="btn-xs	  btn-outline-success small"> <i class="fa fa-eye"></i></button>
+															<button type="button" class="btn-xs	  btn-outline-primary small"> <i class="fa fa-edit"></i></button>
+															<button type="button" class="btn-xs	  btn-outline-danger small"> <i class="fa fa-trash"></i></button>
+
 														</div>
 													</div>
-													<p></p>
-													<div class="hidden-md hidden-lg">
-														<div class="inline pos-rel">
-															<button type="button" class="btn-xs	 btn-block btn-outline-danger small"> <i class="fa fa-trash"></i> Hapus</button>
-														</div>
-													</div>
+
 												</td>
 											</tr>
 										<?php
-											$no++;
 										endforeach; ?>
 									<?php endif; ?>
 								</tbody>
@@ -112,7 +111,7 @@
 										<?php if ($pager) : ?>
 											<?php $pagi_path = 'pos_beta/public/pembelian'; ?>
 											<?php $pager->setPath($pagi_path); ?>
-											<?= $pager->links() ?>
+											<?php echo $pager->links('pembelian', 'bootstrap_pagination') ?>
 										<?php endif ?>
 									</div>
 								</div>
@@ -236,6 +235,9 @@
 							</div>
 						</div>
 
+
+				<button type="button" id="btnSave" onclick="savebarang()" class="btn btn-primary">Tambah</button>
+
 						<table id="table-pembelian-temp" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							<thead>
 								<tr>
@@ -269,8 +271,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="btnSave" onclick="savebarang()" class="btn btn-primary">Tambah</button>
-				<button type="button" hidden id="btnSelesai" onclick="selesai()" class="btn btn-primary">Selesai</button>
+				<button type="button" id="btnSelesai" disabled onclick="selesai()" class="btn btn-warning">Selesai</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 			</div>
 		</div><!-- /.modal-content -->
@@ -305,6 +306,36 @@
 		</div>
 	</div>
 </div>
+
+<!-- Detail Nota -->
+<div class="modal fade " id="modal_detailnota" role="dialog">
+	<div class="modal-dialog modal">
+		<div class="modal-content">
+			<div class="modal-header bg-secondary">
+				<h4 class="modal-title">Detail transaksi nota pembelian</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body form">
+				<div class="form-body">
+					<div class="form-group">
+						<label class="control-label col-md-3">Kode Transaksi</label>
+						<div class="col-md-9">
+							<input name="kode_trxbeli" id="kode_trxbeli" class="form-control" type="text">
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btn_cetak" onclick="save_newproduk()" class="btn btn-primary"><i class="fas fa-print"></i> Cetak</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- End Bootstrap modal -->
 <div class="modal fade " id="modal_addproduk" role="dialog">
 	<div class="modal-dialog">
@@ -401,6 +432,7 @@
 			}
 		});
 	});
+
 	$(document).ready(function() {
 		$("#id_suplier").select2({
 			ajax: {
@@ -438,6 +470,37 @@
 		}
 	});
 
+
+	function cektotalrow(){
+		nota_pembelian = $("#nota_pembelian").val();
+		$.ajax({
+			url: "<?= base_url("pembelian/cektotalrow") ?>"+"/"+nota_pembelian,
+			type: "GET",
+			success: function(data) {
+				var json = JSON.parse(data);
+				if (json.success) {
+					console.log(json.total_row);
+					$('#btnSelesai').removeAttr('disabled', true);
+				} else {
+					alert("Gagal Menambahkan");
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				$('#response_ajax').load(errorThrown);
+				alert('Error adding / update data');
+				$('#btnSave').text('save'); //change button text
+				$('#btnSave').attr('disabled', false); //set button enable 
+				$('#btn_addProduk').attr('disabled', false); //set 
+			}
+		});
+	}
+
+
+	function detailnotabeli(str){
+		$('#modal_detailnota').modal('show'); // 
+		$('#modal_detailnota .modal-title').text('Detail transaksi nota pembelian '+str);
+	}
+
 	function add_person() {
 		nota_pembelian = $("#nota_pembelian").val();
 		save_method = 'add';
@@ -464,6 +527,7 @@
 
 	function reloadTable(str) {
 		$("#table-content").load("<?= base_url('pembelian/getTempTable') ?>/" + str);
+		cektotalrow();
 	}
 
 
@@ -486,7 +550,7 @@
 			type: "POST",
 			data: form_data,
 			success: function(data) {
-				$('#btnSave').text('save'); //change button text
+				$('#btnSave').text('tambah'); //change button text
 				$('#btnSave').attr('disabled', false); //set button enable 
 				$('#btn_addProduk').attr('disabled', false); //set 
 				$('#response_ajax').load(data);
@@ -508,7 +572,36 @@
 	}
 
 	function selesai() {
+		var url = "<?php echo site_url('pembelian/selesai_pembelian') ?>";
+		// close dialog dan print
+		var form_data
+		$.ajax({
+			url: url,
+			type: "POST",
+			data: {
+				kd_trx: nota_pembelian,
+				keterangan:"-",
+				id_suplier : $("#id_suplier").val()
 
+			},
+			success: function(data) {
+				$('#btnSave').text('tambah'); //change button text
+				$('#btnSave').attr('disabled', false); //set button enable 
+				$('#btn_addProduk').attr('disabled', false); //set 
+				var json = JSON.parse(data);
+				if (json.success) {
+					location.reload();
+				} else {
+					alert("Gagal Menambahkan");
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				$('#response_ajax').load(errorThrown);
+				$('#btnSave').text('save'); //change button text
+				$('#btnSave').attr('disabled', false); //set button enable 
+				$('#btn_addProduk').attr('disabled', false); //set 
+			}
+		});
 	}
 
 	function showBarang(str) {
@@ -529,11 +622,12 @@
 		if (confirm('Apakah anda yakin untuk menghapusnya?')) {
 			// ajax delete data to database
 			$.ajax({
-				url: "<?php echo site_url('pembelian/tempDelete') ?>/"+id,
+				url: "<?php echo site_url('pembelian/tempDelete') ?>/" + id,
 				type: "GET",
 				success: function(data) {
-					if (data.success) {
-						reload_table();
+					var json = JSON.parse(data);
+					if (json.success) {
+						reloadTable(nota_pembelian);
 					} else {
 						alert("Gagal Menghapus");
 					}
@@ -542,7 +636,6 @@
 					alert('Error deleting data ' + errorThrown);
 				}
 			});
-
 		}
 	}
 

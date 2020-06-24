@@ -45,76 +45,74 @@
 						</div>
 						<!-- content -->
 						<div class="col-12">
-						<table id="simple-table" class="table  table-bordered table-hover">
-					<thead>
-						<tr>
-							<!-- <th class="center">
+							<table id="simple-table" class="table  table-bordered table-hover">
+								<thead>
+									<tr>
+										<!-- <th class="center">
 								<label class="pos-rel">
 									<input type="checkbox" class="ace" />
 									<span class="lbl"></span>
 								</label>
 							</th> -->
-							<th style="width:3px">No</th>
-							<th style="width:3px">Kode Produk</th>
-							<th>Nama Produk</th>
-							<th style="width:3px">Harga Eceran</th>
-							<th style="width:3px">Harga Grosir</th>
-							<th style="width:3px">Minimum Grosir</th>
-							<th width="10%">Tanggal Buat</th>
-							<th>Keterangan</th>
-							<th style="width:100px">
-								<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-								Action
-							</th>
-							<!-- <th class="hidden-480">Status</th> -->
-						</tr>
-					</thead>
+										<th style="width:3px">No</th>
+										<th style="width:3px">Kode Produk</th>
+										<th>Nama Produk</th>
+										<th style="width:3px">Harga Eceran</th>
+										<th style="width:3px">Harga Grosir</th>
+										<th style="width:3px">Minimum Grosir</th>
+										<th width="10%">Tanggal Buat</th>
+										<th>Keterangan</th>
+										<th style="width:100px">
+											<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+											Action
+										</th>
+										<!-- <th class="hidden-480">Status</th> -->
+									</tr>
+								</thead>
 
-					<tbody>
-						<?php if ($produk) : ?>
-							<?php
-							$no = 1;
-							foreach ($produk as $mbeli) : ?>
-								<tr>
-									<td><?php echo $no; ?></td>
-									<td><?php echo $mbeli->kd_produk; ?></td>
-									<td><?php echo $mbeli->nama_produk; ?></td>
-									<td><?php echo $mbeli->harga_eceran; ?></td>
-									<td><?php echo $mbeli->harga_grosir; ?></td>
-									<td><?php echo $mbeli->batas_grosir; ?></td>
-									<td><?php echo date("d-m-Y", strtotime($mbeli->created_date)); ?></td>
-									<td><?php echo $mbeli->keterangan; ?></td>
-									<td>
+								<tbody>
+									<?php if ($produk) : ?>
+										<?php
+										$no = 1;
+										foreach ($produk as $mbeli) : ?>
+											<tr>
+												<td><?php echo $no; ?></td>
+												<td><?php echo $mbeli->kd_produk; ?></td>
+												<td><?php echo $mbeli->nama_produk; ?></td>
+												<td><?php echo number_format($mbeli->harga_eceran, 0, '', '.'); ?></td>
+												<td><?php echo  number_format($mbeli->harga_grosir, 0, '', '.'); ?></td>
+												<td><?php echo $mbeli->batas_grosir; ?></td>
+												<td><?php echo date("d-m-Y", strtotime($mbeli->created_date)); ?></td>
+												<td><?php echo $mbeli->keterangan; ?></td>
+												<td>
 													<div class="hidden-md hidden-lg">
 														<div class="inline pos-rel">
-															<button type="button" class="btn-xs	 btn-block btn-outline-primary small"> <i class="fa fa-edit"></i>Edit</button>
-														</div>
-													</div>
-													<p></p>
-													<div class="hidden-md hidden-lg">
-														<div class="inline pos-rel">
-															<button type="button" class="btn-xs	 btn-block btn-outline-danger small"> <i class="fa fa-trash"></i> Hapus</button>
+
+															<button type="button" class="btn-xs	  btn-outline-success small"> <i class="fa fa-eye"></i></button>
+															<button type="button" class="btn-xs	  btn-outline-primary small"> <i class="fa fa-edit"></i></button>
+															<button type="button" class="btn-xs	  btn-outline-danger small"> <i class="fa fa-trash"></i></button>
+
 														</div>
 													</div>
 												</td>
-								</tr>
-							<?php
-								$no++;
-							endforeach; ?>
-						<?php endif; ?>
-					</tbody>
-				</table>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="row">
-							<?php if ($pager) : ?>
-								<?php $pagi_path = 'pos_beta/produk'; ?>
-								<?php $pager->setPath($pagi_path); ?>
-								<?= $pager->links() ?>
-							<?php endif ?>
-						</div>
-					</div>
-				</div>
+											</tr>
+										<?php
+											$no++;
+										endforeach; ?>
+									<?php endif; ?>
+								</tbody>
+							</table>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<?php if ($pager) : ?>
+											<?php $pagi_path = 'pos_beta/produk'; ?>
+											<?php $pager->setPath($pagi_path); ?>
+											<?= $pager->links() ?>
+										<?php endif ?>
+									</div>
+								</div>
+							</div>
 						</div><!-- /.span -->
 					</div>
 					<!-- /.card-body -->
@@ -135,7 +133,7 @@
 <div class="modal fade " id="modal_addproduk" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
-		<div class="modal-header bg-secondary">
+			<div class="modal-header bg-secondary">
 				<h4 class="modal-title">Tambah produk baru</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>

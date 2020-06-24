@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 19, 2020 at 04:52 AM
+-- Generation Time: Jun 24, 2020 at 08:53 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.16
 
@@ -100,6 +100,26 @@ INSERT INTO `data_pelanggan` (`id`, `nama`, `alamat`, `kelurahan`, `kota`, `phon
 (5, 'Firnanda Siaman', 'Appel 1', 'Pontang', 'Surabaya', '08165485555'),
 (6, 'Adinda Siapa', 'Pisang 2', 'Jati Lawas', 'Surabaya', '08165485555'),
 (7, 'Nona Gombel', 'Gombel 9', 'Dantrasan', 'Surabaya', '08165487666');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_suplier`
+--
+
+CREATE TABLE `data_suplier` (
+  `id_suplier` int(5) NOT NULL,
+  `nama_suplier` varchar(100) NOT NULL,
+  `alamat` text NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_suplier`
+--
+
+INSERT INTO `data_suplier` (`id_suplier`, `nama_suplier`, `alamat`, `keterangan`) VALUES
+(1, 'PT Abadi Jaya Telur', 'Jl A Yani No 90 Sindang Laya', 'suplier makanan');
 
 -- --------------------------------------------------------
 
@@ -239,18 +259,19 @@ CREATE TABLE `master_pembelian` (
   `id_pembelian` int(12) NOT NULL,
   `kd_trx_pembelian` varchar(50) NOT NULL,
   `total_pembelian` double NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp(),
+  `created_date` datetime NOT NULL,
   `created_by` int(11) NOT NULL COMMENT 'user yang menambah',
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `id_suplier` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `master_pembelian`
 --
 
-INSERT INTO `master_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `total_pembelian`, `created_date`, `created_by`, `keterangan`) VALUES
-(1, 'BL0001', 580000, '2020-04-25', 1, ''),
-(2, 'BL0002', 290000, '2020-04-25', 1, '');
+INSERT INTO `master_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `total_pembelian`, `created_date`, `created_by`, `keterangan`, `id_suplier`) VALUES
+(1, 'BL200622201132', 600000, '2020-06-22 20:12:08', 21, '-', 1),
+(2, 'BL200622201208', 800000, '2020-06-22 20:12:41', 21, '-', 1);
 
 -- --------------------------------------------------------
 
@@ -544,8 +565,7 @@ CREATE TABLE `trx_pembelian` (
   `total` double NOT NULL DEFAULT 0,
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) DEFAULT NULL,
-  `supplier` int(5) DEFAULT NULL COMMENT 'id supplier',
-  `keterangan` text NOT NULL,
+  `keterangan` text DEFAULT NULL,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -553,9 +573,11 @@ CREATE TABLE `trx_pembelian` (
 -- Dumping data for table `trx_pembelian`
 --
 
-INSERT INTO `trx_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `stok`, `total`, `diskon`, `kd_satuan`, `supplier`, `keterangan`, `created_date`) VALUES
-(1, 'BL0001', 'BRS0001', 'Beras Bramo', 58000, 10, 10, 580000, 0, NULL, 1, '', '2020-04-25'),
-(2, 'BL0002', 'BRS0001', NULL, 58000, 5, 5, 290000, 0, NULL, NULL, '', '2020-04-25');
+INSERT INTO `trx_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `stok`, `total`, `diskon`, `kd_satuan`, `keterangan`, `created_date`) VALUES
+(1, 'BL0001', 'BRS0001', 'Beras Bramo', 58000, 10, 10, 580000, 0, NULL, '', '2020-04-25'),
+(2, 'BL0002', 'BRS0001', NULL, 58000, 5, 5, 290000, 0, NULL, '', '2020-04-25'),
+(3, 'BL200522063431', 'LP00D1', 'Lampu Dobel Rem Belakang', 20000, 10, 10, 200000, 0, NULL, NULL, '2020-05-22'),
+(4, 'BL200622170732', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 10, 600000, 0, NULL, NULL, '2020-06-22');
 
 -- --------------------------------------------------------
 
@@ -573,7 +595,6 @@ CREATE TABLE `trx_pembelian_temp` (
   `total` double NOT NULL DEFAULT 0,
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) DEFAULT NULL,
-  `supplier` int(5) DEFAULT NULL COMMENT 'id supplier',
   `keterangan` text DEFAULT NULL,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -582,18 +603,16 @@ CREATE TABLE `trx_pembelian_temp` (
 -- Dumping data for table `trx_pembelian_temp`
 --
 
-INSERT INTO `trx_pembelian_temp` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `supplier`, `keterangan`, `created_date`) VALUES
-(1, 'BL200514113356', 'LP00D1', 'Lampu Dobel Rem Belakang', 20000, 20, 400000, 0, NULL, NULL, NULL, '0000-00-00'),
-(2, 'BL200514113356', 'LP00D1', 'Lampu Dobel Rem Belakang', 20000, 20, 400000, 0, NULL, NULL, NULL, '0000-00-00'),
-(3, 'BL200514113632', 'LP00D1', 'Lampu Dobel Rem Belakang', 30000, 20, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
-(4, 'BL200514113756', 'LP00D1', 'Lampu Dobel Rem Belakang', 40000, 210, 8400000, 0, NULL, NULL, NULL, '0000-00-00'),
-(5, 'BL200514113833', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
-(6, 'BL200514114104', 'LP00D1', 'Lampu Dobel Rem Belakang', 24000, -8, -192000, 0, NULL, NULL, NULL, '0000-00-00'),
-(7, 'BL200514114511', 'BRS0001', 'Beras Bramo 25Kg', 60000, 20, 1200000, 0, NULL, NULL, NULL, '0000-00-00'),
-(8, 'BL200515102623', 'LP00D1', 'Lampu Dobel Rem Belakang', 90000, 10, 900000, 0, NULL, NULL, NULL, '0000-00-00'),
-(9, 'BL200518113438', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
-(10, 'BL200518113438', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, NULL, '0000-00-00'),
-(11, 'BL200519060904', 'BRS0001', 'Beras Bramo 25Kg', 60000, 2, 120000, 0, NULL, NULL, NULL, '0000-00-00');
+INSERT INTO `trx_pembelian_temp` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `keterangan`, `created_date`) VALUES
+(1, 'BL200622170732', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(2, 'BL200622170954', 'BRS0001', 'Beras Bramo 25Kg', 70000, 10, 700000, 0, NULL, NULL, '2020-06-22'),
+(3, 'BL200622193859', 'BRS0001', 'Beras Bramo 25Kg', 70000, 20, 1400000, 0, NULL, NULL, '2020-06-22'),
+(4, 'BL200622194941', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(5, 'BL200622195310', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(6, 'BL200622195437', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(7, 'BL200622200733', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(8, 'BL200622201132', 'BRS0001', 'Beras Bramo 25Kg', 60000, 10, 600000, 0, NULL, NULL, '2020-06-22'),
+(9, 'BL200622201208', 'LP00D1', 'Lampu Dobel Rem Belakang', 40000, 20, 800000, 0, NULL, NULL, '2020-06-22');
 
 -- --------------------------------------------------------
 
@@ -640,9 +659,7 @@ CREATE TABLE `trx_penjualan_tmp` (
 --
 
 INSERT INTO `trx_penjualan_tmp` (`id_penjualan`, `kd_trx_penjualan`, `kd_produk`, `kd_trx_pembelian`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `created_date`) VALUES
-(1, 'JL200519065635', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 2, 0, 0, 0, '2020-05-19'),
-(2, 'JL200519065804', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 3, 0, 0, 0, '2020-05-19'),
-(3, 'JL200519065837', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 6, 0, 0, 0, '2020-05-19');
+(1, 'JL200623124351', 'BRS0001', '', 'Beras Bramo 25Kg', 58000, 10, 0, 0, 0, '2020-06-23');
 
 -- --------------------------------------------------------
 
@@ -730,6 +747,12 @@ ALTER TABLE `data_pegawai`
 --
 ALTER TABLE `data_pelanggan`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_suplier`
+--
+ALTER TABLE `data_suplier`
+  ADD PRIMARY KEY (`id_suplier`);
 
 --
 -- Indexes for table `groups`
@@ -875,6 +898,12 @@ ALTER TABLE `data_pelanggan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `data_suplier`
+--
+ALTER TABLE `data_suplier`
+  MODIFY `id_suplier` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -950,13 +979,13 @@ ALTER TABLE `trx_history_harga_jual`
 -- AUTO_INCREMENT for table `trx_pembelian`
 --
 ALTER TABLE `trx_pembelian`
-  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `trx_pembelian_temp`
 --
 ALTER TABLE `trx_pembelian_temp`
-  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `trx_penjualan`
@@ -968,7 +997,7 @@ ALTER TABLE `trx_penjualan`
 -- AUTO_INCREMENT for table `trx_penjualan_tmp`
 --
 ALTER TABLE `trx_penjualan_tmp`
-  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
