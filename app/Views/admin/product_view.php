@@ -198,8 +198,8 @@
 </div>
 <!-- End Bootstrap modal -->
 
-<?= $this->endSection() ?>
-<? $this->section('jscript') ?>
+<?= $this->endSection(); ?>
+<? $this->section('jscript'); ?>
 
 <script src="<?= base_url("resources/assets/js/jquery-ui.custom.min.js") ?>"></script>
 <script src="<?= base_url("resources/assets/js/jquery.ui.touch-punch.min.js") ?>"></script>
@@ -279,4 +279,4 @@
 		}
 	}
 </script>
-<?= $this->endSection() ?>
+<?= $this->endSection(); ?>
