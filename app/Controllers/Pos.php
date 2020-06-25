@@ -134,10 +134,16 @@ class Pos extends BaseController
 				</div>
 				<div class="col-md-6">
 				<label class="control-label col-md-3">Qty</label>
-					<input min=0 oninput="validity.valid||(value="");" name="qty" ' . $disableqty . ' id="stok" class="form-control" type="number">
+					<input min=0 oninput="validity.valid||(value="");" name="qty" ' . $disableqty . ' id="qty" onchange="subTotal(this.value)" 
+					onkeyup="subTotal(this.value)"  class="form-control" type="number">
 					<span class="help-block"></span>
 				</div>
 			</div>
+			<div class="col-md-6">
+                            <label class="control-label col-md-5">Sub Total</label>
+                            <input name="subtotal" disabled id="stok" class="form-control">
+                            <span class="help-block"></span>
+                        </div>
 		</div>
 
 		<input type="hidden" name="kd_produk" id="kd_produk" value="' . $dataProduk->kd_produk . '"/>
