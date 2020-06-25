@@ -141,7 +141,7 @@ class Pos extends BaseController
 			</div>
 			<div class="col-md-6">
                             <label class="control-label col-md-5">Sub Total</label>
-                            <input name="subtotal" disabled id="stok" class="form-control">
+                            <input name="subtotal" disabled id="subtotal" class="form-control">
                             <span class="help-block"></span>
                         </div>
 		</div>

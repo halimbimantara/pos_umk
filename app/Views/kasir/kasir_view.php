@@ -299,38 +299,38 @@
 
         var max = parseInt($('#stok_item').val()); //stok tersediaS
 
-        if (_qty <= max) {
-            $('#sub_total').val(convertToRupiah(harga * _qty));
-        } else if (_qty > max) {
-            if (_qty >= gr_qty) {
-                $('#qty').val(max);
-                $('#sub_total').val(convertToRupiah(h_grosir * max));
-                $('#harga_barang').val(convertToRupiah(h_grosir));
-                console.log("Grosir Max");
+        // if (_qty <= max) {
+        //     $('#sub_total').val(convertToRupiah(harga * _qty));
+        // } else if (_qty > max) {
+        //     if (_qty >= gr_qty) {
+        //         $('#qty').val(max);
+        //         $('#sub_total').val(convertToRupiah(h_grosir * max));
+        //         $('#harga_barang').val(convertToRupiah(h_grosir));
+        //         console.log("Grosir Max");
 
-            } else if (gr_qty > _qty) {
-                $('#qty').val(max);
-                $('#sub_total').val(convertToRupiah(harga * max));
-                console.log("Harga Normal max");
-            }
-        }
+        //     } else if (gr_qty > _qty) {
+        //         $('#qty').val(max);
+        //         $('#sub_total').val(convertToRupiah(harga * max));
+        //         console.log("Harga Normal max");
+        //     }
+        // }
 
-        if (_qty <= max && _qty >= gr_qty) {
-            var temp_qty = _qty;
-            if (temp_qty <= gr_qty && temp_qty <= gr_qty1) {
-                $('#harga_barang').val(convertToRupiah(h_grosir));
-                $('#sub_total').val(convertToRupiah(h_grosir * _qty));
-                console.log("Grosir Paket 1");
-            } else if (temp_qty == gr_qty1) {
-                console.log("Grosir Paket 2");
-                $('#harga_barang').val(convertToRupiah(h_grosir1));
-                $('#sub_total').val(convertToRupiah(h_grosir1 * _qty));
-            }
-        } else {
-            $('#harga_barang').val(convertToRupiah(harga_ori));
-            $('#sub_total').val(convertToRupiah(harga * _qty));
-            console.log("Normal");
-        }
+        // if (_qty <= max && _qty >= gr_qty) {
+        //     var temp_qty = _qty;
+        //     if (temp_qty <= gr_qty && temp_qty <= gr_qty1) {
+        //         $('#harga_barang').val(convertToRupiah(h_grosir));
+        //         $('#sub_total').val(convertToRupiah(h_grosir * _qty));
+        //         console.log("Grosir Paket 1");
+        //     } else if (temp_qty == gr_qty1) {
+        //         console.log("Grosir Paket 2");
+        //         $('#harga_barang').val(convertToRupiah(h_grosir1));
+        //         $('#sub_total').val(convertToRupiah(h_grosir1 * _qty));
+        //     }
+        // } else {
+        //     $('#harga_barang').val(convertToRupiah(harga_ori));
+        //     $('#sub_total').val(convertToRupiah(harga * _qty));
+        //     console.log("Normal");
+        // }
     }
 </script>
 <?= $this->endSection() ?>
