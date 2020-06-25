@@ -140,27 +140,27 @@
 				</button>
 			</div>
 			<div class="modal-body form">
-				<form action="#" id="form" class="form-horizontal">
+				<form action="#" id="form_addprod" class="form-horizontal">
 					<input type="hidden" value="" name="id" />
 					<div class="form-body">
 						<div class="form-group">
 							<label class="control-label col-md-3">Kode Barcode</label>
 							<div class="col-md-9">
-								<input name="add_kodeproduk_barcode" id="add_kodeproduk_barcode" class="form-control" type="text">
+								<input name="kd_barcode" id="kd_barcode" class="form-control" type="text">
 								<span class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3">Kode Produk</label>
 							<div class="col-md-9">
-								<input name="add_kodeproduk" id="add_kodeproduk" class="form-control" type="text">
+								<input name="kd_produk" id="kd_produk" class="form-control" type="text">
 								<span class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3">Nama Produk</label>
 							<div class="col-md-9">
-								<input name="add_produk" id="add_produk" class="form-control" type="text">
+								<input name="nama_produk" id="nama_produk" class="form-control" type="text">
 								<span class="help-block"></span>
 							</div>
 						</div>
@@ -174,14 +174,28 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Harga Grosir</label>
 							<div class="col-md-9">
-								<input name="add_harga_grosir" id="add_harga_grosir" class="form-control" type="number">
+								<input name="harga_grosir" id="harga_grosir" class="form-control" type="number">
 								<span class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3">Minimal Qty Grosir</label>
 							<div class="col-md-9">
-								<input name="add_qtymin_grosir" id="add_qtymin_grosir" class="form-control" type="number">
+								<input name="batas_grosir" id="batas_grosir" class="form-control" type="number">
+								<span class="help-block"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-3">Notif minimal stok</label>
+							<div class="col-md-9">
+								<input name="b_min_stok" id="b_min_stok" class="form-control" type="number">
+								<span class="help-block"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-3">Notif Maksimal stok</label>
+							<div class="col-md-9">
+								<input name="b_max_stok" id="b_max_stok" class="form-control" type="number">
 								<span class="help-block"></span>
 							</div>
 						</div>
@@ -226,6 +240,48 @@
 		$('.help-block').empty(); // clear error string
 		$('#modal_form').modal('show'); // show bootstrap modal
 		$('.modal-title').text('Transaksi Pembelian'); // Set Title to Bootstrap modal title
+	}
+
+	function save_newproduk() {
+		$('#btnSave').text('saving...'); //change button text
+		$('#btnSave').attr('disabled', true); //set button disable 
+		// $('#btn_addProduk').attr('disabled', true); 
+		// ajax adding data to databasection url
+		var form_data = $('#form_addprod').serialize(); //Encode form elements for submission
+		// ajax adding data to database
+		var url;
+		save_method = 'add';
+		if (save_method == 'add') {
+			url = "<?php echo site_url('produk/addProduk') ?>";
+		} else {
+			url = "<?php echo site_url('produk/editProduk') ?>";
+		}
+		$.ajax({
+			url: url,
+			type: "POST",
+			data: form_data,
+			success: function(data) {
+				$('#btnSave').text('tambah'); //change button text
+				$('#btnSave').attr('disabled', false); //set button enable 
+				// $('#btn_addProduk').attr('disabled', false); //set 
+				// $('#response_ajax').load(data);
+				var json = JSON.parse(data);
+				if (json.success) {
+					$('#modal_addproduk').modal('hide');
+					// reloadTable(nota_pembelian);
+					//reload
+				} else {
+					alert("Gagal Menambahkan");
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				$('#response_ajax').load(errorThrown);
+				alert('Error adding / update data');
+				$('#btnSave').text('save'); //change button text
+				$('#btnSave').attr('disabled', false); //set button enable 
+				$('#btn_addProduk').attr('disabled', false); //set 
+			}
+		});
 	}
 
 	function add_produk() {

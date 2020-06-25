@@ -15,10 +15,10 @@ class Produk_model extends Model
         $db      = \Config\Database::connect();
     }
 
-    // function getProduk(){
-    //     $builder = $this->db->table('master_produk');
-    //     $builder->select('*');
-    //     $query = $builder->get()->getResult(); 
-    //     return $query;
-    // }
+    function addProduk($data = null)
+    {
+        $builder = $this->db->table('master_produk');
+        $result = $builder->insert($data);
+        return $result;
+    }
 }

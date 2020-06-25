@@ -104,3 +104,22 @@ CRITICAL - 2020-06-25 22:37:08 --> View themes, no current section.
 #6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2020-06-25 22:59:08 --> syntax error, unexpected 'ic' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST)
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('produk/addProdu...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('produk/addProdu...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-25 22:59:30 --> Column 'kd_barcode' cannot be null
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `ma...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ma...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ma...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ma...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Produk_model.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Produk.php(43): App\Models\Produk_model->addProduk(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
