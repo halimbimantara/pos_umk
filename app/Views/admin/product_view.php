@@ -212,7 +212,7 @@
 </div>
 <!-- End Bootstrap modal -->
 
-<?= $this->endSection(); ?>
+<!-- <?= $this->endSection(); ?> -->
 <? $this->section('jscript'); ?>
 
 <script src="<?= base_url("resources/assets/js/jquery-ui.custom.min.js") ?>"></script>
