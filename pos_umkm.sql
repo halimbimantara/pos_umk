@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 24, 2020 at 08:53 AM
+-- Generation Time: Jun 27, 2020 at 10:48 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.16
 
@@ -252,6 +252,26 @@ INSERT INTO `master_delivery` (`id_delivery`, `nama`, `tarif`, `jarak`, `create_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `master_margin`
+--
+
+CREATE TABLE `master_margin` (
+  `id` int(10) NOT NULL,
+  `margin` double NOT NULL DEFAULT 0,
+  `create_date` timestamp NULL DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `master_margin`
+--
+
+INSERT INTO `master_margin` (`id`, `margin`, `create_date`, `create_by`) VALUES
+(1, 10, '2020-06-25 22:54:25', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `master_pembelian`
 --
 
@@ -327,6 +347,7 @@ CREATE TABLE `master_produk` (
 --
 
 INSERT INTO `master_produk` (`kd_produk`, `kd_barcode`, `nama_produk`, `id_kategori`, `promo`, `harga_promo`, `gambar_produk`, `kd_satuan`, `batas_grosir`, `harga_grosir`, `eceran`, `harga_eceran`, `stok`, `batas_min_stok`, `batas_max_stok`, `created_date`, `create_by`, `modified_by`, `keterangan`) VALUES
+('AQ00012', '09121092012', 'Aqua Gelas Dus', 1, 0, 0, '', 2, 10, 24000, 0, 0, 0, 5, 20, '2020-06-25', 0, NULL, NULL),
 ('BRS0001', '9786020814254', 'Beras Bramo 25Kg', 1, 0, 0, 'photo4.jpg', 1, 10, 55000, 1, 58000, 15, 0, 0, '2020-05-01', 1, 0, 'Beras Kualitas bramo 25kg'),
 ('LP00D1', 'M194467', 'Lampu Dobel Rem Belakang', 1, 0, 0, '-', 1, 10, 25000, 1, 27000, 0, 10, 50, '2020-05-14', 1, NULL, NULL);
 
@@ -779,6 +800,12 @@ ALTER TABLE `master_delivery`
   ADD PRIMARY KEY (`id_delivery`);
 
 --
+-- Indexes for table `master_margin`
+--
+ALTER TABLE `master_margin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `master_pembelian`
 --
 ALTER TABLE `master_pembelian`
@@ -926,6 +953,12 @@ ALTER TABLE `login_attempts`
 --
 ALTER TABLE `master_delivery`
   MODIFY `id_delivery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `master_margin`
+--
+ALTER TABLE `master_margin`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `master_pembelian`
