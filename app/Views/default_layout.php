@@ -213,7 +213,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="../gallery.html" class="nav-link">
+							<a href="<?php echo base_url("stok"); ?>" class="nav-link">
 								<i class="nav-icon fas fa-cart-arrow-down"></i>
 								<p>
 									Informasi Stok

@@ -92,6 +92,8 @@ class Pos extends BaseController
 		$mbeli = new Pembelian_model();
 		$dataProduk = $model->getDataProdukBySearch($searchby)->getRow();
 		$hbeliterakhir = $mbeli->getHargaBeliTerakhir($searchby)->getRow();
+		$margin = $model->getmargin()->getRow()->margin;
+
 
 		$hbeli = 0;
 		$stok = 0;
@@ -99,6 +101,7 @@ class Pos extends BaseController
 			$hbeli = $hbeliterakhir->harga;
 		}
 
+		$hjual = $hbeli + ($hbeli * ($margin / 100));
 		$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
 		$disableqty = $stok == 0 ? "disabled" : "";
 		// var_dump($hbeliterakhir);
@@ -113,7 +116,7 @@ class Pos extends BaseController
 			<div class="row" style="padding: 10px;">
 				<label class="control-label col-md-3">Eceran</label>
 				<div class="col-md-3">
-					<input name="heceran" disabled id="heceran" class="form-control" value="' . $dataProduk->harga_eceran . '" type="number">
+					<input name="heceran" disabled id="heceran" class="form-control" value="' . $hjual . '" type="number">
 					<span class="help-block"></span>
 				</div>
 

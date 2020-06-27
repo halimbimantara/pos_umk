@@ -31,7 +31,19 @@ class Pos_model extends Model
         return $query;
     }
 
-    
+    /**
+     * Get Margin
+     */
+
+     function getmargin(){
+        $builder = $this->db->table('master_margin');
+        $builder->select('*');
+        $builder->orderBy('create_date','DESC');
+        $builder->limit(1);
+        $query = $builder->get();
+        return $query;
+     }
+
     /**
      * Search produk 
      * return nama,stok,harga eceran ,harga grosir
