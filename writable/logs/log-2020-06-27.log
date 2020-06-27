@@ -1,0 +1,30 @@
+CRITICAL - 2020-06-27 14:39:32 --> View themes, no current section.
+#0 C:\xampp\htdocs\pos_umk\app\Views\admin\product_view.php(338): CodeIgniter\View\View->endSection()
+#1 C:\xampp\htdocs\pos_umk\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos_umk\system\Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#3 C:\xampp\htdocs\pos_umk\app\Controllers\Produk.php(24): view('admin/product_v...', Array)
+#4 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pos_umk\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-06-27 14:40:20 --> View themes, no current section.
+#0 C:\xampp\htdocs\pos_umk\app\Views\admin\product_view.php(338): CodeIgniter\View\View->endSection()
+#1 C:\xampp\htdocs\pos_umk\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos_umk\system\Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#3 C:\xampp\htdocs\pos_umk\app\Controllers\Produk.php(24): view('admin/product_v...', Array)
+#4 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pos_umk\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-06-27 14:40:22 --> View themes, no current section.
+#0 C:\xampp\htdocs\pos_umk\app\Views\admin\product_view.php(338): CodeIgniter\View\View->endSection()
+#1 C:\xampp\htdocs\pos_umk\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos_umk\system\Common.php(1071): CodeIgniter\View\View->render('admin/product_v...', Array, true)
+#3 C:\xampp\htdocs\pos_umk\app\Controllers\Produk.php(24): view('admin/product_v...', Array)
+#4 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(910): App\Controllers\Produk->index()
+#5 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\xampp\htdocs\pos_umk\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pos_umk\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
