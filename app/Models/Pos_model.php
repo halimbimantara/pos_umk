@@ -91,7 +91,7 @@ class Pos_model extends Model
     function getTotalPenjualan($kd_trx = null)
     {
         $builder = $this->db->table('trx_penjualan_tmp');
-        $builder->selectSum('total', FALSE);
+        $builder->selectSum('sub_total');
         $builder->where('kd_trx_penjualan', $kd_trx);
         $total = $builder->get();
         return $total;
@@ -111,7 +111,8 @@ class Pos_model extends Model
     }
 
     function delTablePenjualantmp($id_penjualan){
-
+        $_query="TRUNCATE `trx_penjualan_tmp`";
+        $this->db->query($_query);
     }
 }
 /**

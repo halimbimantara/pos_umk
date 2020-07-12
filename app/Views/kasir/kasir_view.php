@@ -88,10 +88,11 @@
                     <div class="col-12 col-sm-6 col-md-5">
                         <div class="info-box mb-3">
                             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Total</span>
-                                <span class="info-box-number">0</span>
+                            <div id="total_belanja">
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Total</span>
+                                    <span class="info-box-number">0</span>
+                                </div>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -133,9 +134,25 @@
                         </div>
                         <div id="response_ajax"></div>
                         <!-- /.card-body -->
-                        
+                        <div class="form-group">
+                            <div class="row" style="padding: 10px;">
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Bayar</label>
+                                    <input name="bayar" id="bayar" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Kembalian</label>
+                                    <input name="kembalian" disabled id="kembalian" class="form-control">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="card-footer">
                             <button id="btn_addtmp" type="submit" onclick="addbarangtemp()" class="btn btn-primary">Tambahkan</button>
+                            <button id="btn_selesai" hidden type="submit" onclick="" class="btn btn-success">Selesai</button>
+
                         </div>
                         <!-- <div class="card-footer text-center">
                     <a href="javascript::">View All Users</a>
@@ -154,10 +171,6 @@
 <?= $this->endSection() ?>
 <?= $this->section('jscript') ?>
 <script type="text/javascript">
-    // document.addEventListener("contextmenu", function(e) {
-    //     e.preventDefault();
-    // }, false);
-
     $(function() {
         //Initialize Select2 Elements
         $('.select2').select2()
@@ -225,6 +238,10 @@
         }
     }
 
+    function onkembalian(str){
+
+    }
+
     function addbarangtemp() {
         $('#btn_addtmp').text('loading'); //change button text
         $('#btn_addtmp').attr('disabled', true); //set 
@@ -250,15 +267,14 @@
                 type: "POST",
                 data: form_data,
                 success: function(data) {
-                    $('#btn_addtmp').text('tambah'); //change button text
+                    $('#btn_addtmp').text('Tambah'); //change button text
                     $('#btn_addtmp').attr('disabled', false); //set button enable 
-                    // $('#btn_addProduk').attr('disabled', false); //set 
                     $('#response_ajax').load(data);
                     var json = JSON.parse(data);
-                    // console.log(data);
-                    // alert(data);
                     if (json.success) {
                         reloadTable(nota_penjualan);
+                        reloadTotalBelanja(nota_penjualan);
+                        $('#btn_selesai').attr('hidden', false); //
                     } else {
                         alert("Gagal Menambahkan barang");
                     }
@@ -266,14 +282,15 @@
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert('Error adding / update data');
                     console.log(jqXHR + "-" + errorThrown);
-                    $('#btn_addtmp').text('tambah'); //change button text
+                    $('#btn_addtmp').text('Tambah'); //change button text
                     $('#btn_addtmp').attr('disabled', false); //set 
-                    // $('#btnSave').text('save'); //change button text
-                    // $('#btnSave').attr('disabled', false); //set button enable 
-                    // $('#btn_addProduk').attr('disabled', false); //set 
                 }
             });
         }
+    }
+
+    function reloadTotalBelanja(str){
+        $("#total_belanja").load("<?= base_url('pos/getTotalBelanja') ?>/" + str);
     }
 
     function reloadTable(str) {
@@ -288,49 +305,15 @@
 
         //paket 1
         var h_grosir = $('#heceran').val();
-        var gr_qty = parseInt($('#qty_grosir').val());
+        // var gr_qty = parseInt($('#qty_grosir').val());
 
         //paket 2
         var h_grosir1 = $('#hgrosir').val();
         var gr_qty1 = parseInt($('#qty_grosir1').val());
 
-        var harga = $('#harga_barang').val().replace(".", "").replace(".", "");
-        var harga_ori = $('#harga_ori').val();
+        console.log(parseFloat(h_grosir) * qty);
+        $('#subtotal').val(parseFloat(h_grosir) * qty);
 
-        var max = parseInt($('#stok_item').val()); //stok tersediaS
-
-        // if (_qty <= max) {
-        //     $('#sub_total').val(convertToRupiah(harga * _qty));
-        // } else if (_qty > max) {
-        //     if (_qty >= gr_qty) {
-        //         $('#qty').val(max);
-        //         $('#sub_total').val(convertToRupiah(h_grosir * max));
-        //         $('#harga_barang').val(convertToRupiah(h_grosir));
-        //         console.log("Grosir Max");
-
-        //     } else if (gr_qty > _qty) {
-        //         $('#qty').val(max);
-        //         $('#sub_total').val(convertToRupiah(harga * max));
-        //         console.log("Harga Normal max");
-        //     }
-        // }
-
-        // if (_qty <= max && _qty >= gr_qty) {
-        //     var temp_qty = _qty;
-        //     if (temp_qty <= gr_qty && temp_qty <= gr_qty1) {
-        //         $('#harga_barang').val(convertToRupiah(h_grosir));
-        //         $('#sub_total').val(convertToRupiah(h_grosir * _qty));
-        //         console.log("Grosir Paket 1");
-        //     } else if (temp_qty == gr_qty1) {
-        //         console.log("Grosir Paket 2");
-        //         $('#harga_barang').val(convertToRupiah(h_grosir1));
-        //         $('#sub_total').val(convertToRupiah(h_grosir1 * _qty));
-        //     }
-        // } else {
-        //     $('#harga_barang').val(convertToRupiah(harga_ori));
-        //     $('#sub_total').val(convertToRupiah(harga * _qty));
-        //     console.log("Normal");
-        // }
     }
 </script>
 <?= $this->endSection() ?>

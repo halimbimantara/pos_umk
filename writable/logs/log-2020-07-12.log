@@ -1,0 +1,528 @@
+CRITICAL - 2020-07-12 09:57:28 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:02:15 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:02:48 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:03:22 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:03:51 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:04:24 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:05:10 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 10:05:52 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:18:00 --> Column 'kd_trx_penjualan' cannot be null
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `tr...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(79): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(42): App\Models\Pos_model->addDataPenjualanTemp(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->addproduktemp()
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:19:03 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:19:06 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:19:12 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712131901')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712131901')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:20:13 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:21:36 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:21:42 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132030')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132030')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:22:08 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132030')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132030')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:22:36 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132030')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132030')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:23:19 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:23:24 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132316')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132316')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:23:30 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:23:35 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132327')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132327')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:23:46 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132327')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132327')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:24:52 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:24:55 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132450')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132450')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:25:25 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:25:32 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132459')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132459')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:25:33 --> Unknown column 'total*' in 'field list'
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/MySQLi/Connection.php(330): mysqli->query('SELECT `total*`...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `total*`...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `total*`...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Database/BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT `total*`...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(61): App\Models\Pos_model->getTotalPenjualan('JL200712132459')
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showTableTemp('JL200712132459')
+#7 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#8 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-07-12 13:26:22 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:26:31 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:31:06 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:33:35 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:34:53 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:34:59 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:35:01 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:35:19 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:37:22 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:38:42 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:39:42 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:39:58 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:41:31 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:42:35 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:43:17 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:43:56 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:46:35 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:48:41 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:49:05 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:53:06 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:53:11 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(64): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/Applications/X...', 64, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->getTotalBelanja('JL200712135303')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-07-12 13:53:46 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(64): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/Applications/X...', 64, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->getTotalBelanja('JL200712135303')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-07-12 13:56:14 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:56:18 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(65): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/Applications/X...', 65, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->getTotalBelanja('JL200712135612')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-07-12 13:56:25 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(65): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/Applications/X...', 65, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->getTotalBelanja('JL200712135612')
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-07-12 13:56:46 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 13:57:30 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:03:09 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:03:12 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:03:13 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:03:27 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:06:49 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:07:38 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-07-12 14:09:54 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::orLike() must be of the type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php on line 65
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Models/Pos_model.php(65): CodeIgniter\Database\BaseBuilder->orLike('nama_produk', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pembelian.php(129): App\Models\Pos_model->getDataProdukSearch(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pembelian->getProdukSelect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
