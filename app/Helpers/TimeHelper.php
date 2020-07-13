@@ -14,6 +14,7 @@ class TimeHelper
     {
         return new DateTime($datetime->format($pattern));
     }
+    
     public function mantab(){
         echo "hoss";
     }

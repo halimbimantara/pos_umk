@@ -61,7 +61,7 @@ class Pos extends BaseController
 		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
 		$totalelanja=$r_total->getRow('sub_total');
 		echo '<div class="info-box-content">
-		<input type="hidden" name="total_belanja" id="total_belanja" value="' . $totalelanja . '"/>
+		<input type="hidden" name="mtotal_belanja" id="mtotal_belanja" value="' . $totalelanja . '"/>
 		<span class="info-box-text">Total</span>
 		<span class="info-box-number">'.number_format($totalelanja, 0, '', '.').'</span>
 		</div>';
@@ -85,7 +85,7 @@ class Pos extends BaseController
 				'<td>' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
 				'<td><div class="hidden-md hidden-lg">
 				<div class="inline pos-rel">
-					<button type="button" class="btn-xs	 btn-block btn-outline-danger small" onclick=delete_tabtemp(' . "'" . $rows->id_penjualan . "'" . ')> <i class="fa fa-trash"></i> Hapus</button>
+					<button type="button" class="btn-xs	 btn-block btn-outline-danger small" onclick=hapus_temp(' . "'" . $rows->id_penjualan . "'" . ')> <i class="fa fa-trash"></i> Hapus</button>
 				</div>
 				</div>
 				</td>' .
@@ -100,9 +100,23 @@ class Pos extends BaseController
 		echo $result . $total;
 	}
 
+	public function hapus_temp(){
+		$model = new Pos_model();
+		$id_tempPenjualan = $this->request->getVar('id_penjualan');
+		$r_delete = $model->delTempKasir($id_tempPenjualan);
+		$response = array();
+		if ($r_delete != NULL) {
+			$response['success'] = true;
+		} else {
+			$response['success'] = false;
+		}
+		echo json_encode($response);
+	}
+
 	public function showproduk($searchby = null)
 	{
 		// $something = $this->request->getVar('foo');
+	
 		$model = new Pos_model();
 		$mbeli = new Pembelian_model();
 		$dataProduk = $model->getDataProdukBySearch($searchby)->getRow();
@@ -167,7 +181,7 @@ class Pos extends BaseController
 		<input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProduk->nama_produk . '"/>
 		<input type="hidden" name="tot_stok" id="tot_stok" value="' . $dataProduk->stok . '"/>
 		<input type="hidden" name="url_image" id="url_image" value="' . $dataProduk->gambar . '"/>
-		<input type="hidden" name="hrg_eceran" id="hrg_eceran" value="' . $dataProduk->harga_eceran . '"/>
+		<input type="hidden" name="hrg_eceran" id="hrg_eceran" value="' . $hjual. '"/>
 		<input type="hidden" name="hrg_grosir" id="hrg_grosir" value="' . $dataProduk->harga_grosir . '"/>
 	';
 	}

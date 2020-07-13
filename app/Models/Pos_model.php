@@ -105,6 +105,11 @@ class Pos_model extends Model
         return $result;
     }
 
+    function delTempKasir($id_jualtemp){
+        $_query="DELETE FROM `trx_penjualan_tmp` WHERE `trx_penjualan_tmp`.`id_penjualan` = ".$id_jualtemp;
+        $result = $this->db->query($_query);
+        return $result;
+    }
 
     function updateTablePenjualantmp($id_penjualan,$qty){
 
