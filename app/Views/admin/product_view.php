@@ -140,6 +140,7 @@
 				</button>
 			</div>
 			<div class="modal-body form">
+			<?= \Config\Services::validation()->listErrors(); ?>
 				<form action="#" id="form_addprod" class="form-horizontal">
 					<input type="hidden" value="" name="id" />
 					<div class="form-body">
@@ -153,14 +154,15 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Kode Produk</label>
 							<div class="col-md-9">
-								<input name="kd_produk" id="kd_produk" class="form-control" type="text">
+								<input name="<?= \Config\Services::validation()->listErrors(); ?>
+" id="kd_produk" class="form-control" type="text">
 								<span class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3">Nama Produk</label>
 							<div class="col-md-9">
-								<input name="nama_produk" id="nama_produk" class="form-control" type="text">
+								<input name="nama_produk" requeired id="nama_produk" class="form-control" type="text">
 								<span class="help-block"></span>
 							</div>
 						</div>
@@ -268,11 +270,10 @@
 				var json = JSON.parse(data);
 				if (json.success) {
 					$('#modal_addproduk').modal('hide');
-					// reloadTable(nota_pembelian);
-					//reload
+					$('#form_addprod')[0].reset();
 					location.reload();
 				} else {
-					alert("Gagal Menambahkan");
+					alert(json.message);
 				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {

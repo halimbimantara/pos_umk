@@ -14,11 +14,11 @@
 
                     <h3 class="profile-username text-center">Andi Riyadi</h3>
 
-                    <p class="text-muted text-center">Jabatan</p>
+                    <!-- <p class="text-muted text-center">Jabatan</p> -->
 
 
 
-                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
                 </div>
                 <!-- /.card-body -->
             </div>

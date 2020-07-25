@@ -12,11 +12,11 @@ class Produk extends BaseController
 	function __construct()
 	{
 		$request = \Config\Services::request();
-    }
+	}
 
-    public function index()
+	public function index()
 	{
-		$mpos= new Produk_model();
+		$mpos = new Produk_model();
 		$data = [
 			'pager' => $mpos->pager,
 			'produk' => $mpos->paginate(10),
@@ -27,6 +27,7 @@ class Produk extends BaseController
 	public function addProduk()
 	{
 		$model = new Produk_model();
+
 		$data = array(
 			'kd_barcode' => $this->request->getVar('kd_barcode'),
 			'kd_produk' => $this->request->getVar('kd_produk'),
@@ -41,12 +42,20 @@ class Produk extends BaseController
 			'created_date'  => date('Y-m-d')
 		);
 
-		$r_insert = $model->addProduk($data);
 		$response = array();
-		if ($r_insert != NULL) {
-			$response['success'] = true;
-		} else {
+		if (!$this->validate([
+			'kd_barcode' => 'required',
+			'kd_produk' => 'required',
+		])) {
 			$response['success'] = false;
+			$response['message'] = "Harap isi data dengan benar";
+		} else {
+			$r_insert = $model->addProduk($data);
+			if ($r_insert != NULL) {
+				$response['success'] = true;
+			} else {
+				$response['success'] = false;
+			}
 		}
 		echo json_encode($response);
 	}
