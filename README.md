@@ -1,5 +1,5 @@
 
-# Aplikasi Kasir Umkm v 1.0.0
+# Aplikasi MobiCashier v 1.0.0
 
 # Fitur
 
