@@ -10,12 +10,15 @@
     </ul>
 
     <h1>History Pekerjaan</h1>
-
-    <h6><b>19 Mei 2020</b></h6>
     <ul>
-    <li>Kasir</li>
+    <li>Kasir dan cetak nota</li>
+    <li>Pembelian & cetak nota </li>
+    <li>Pembelian detail </li>
     <li>List Produk</li>
+    <li>Add Produk</li>
     <li>Pembelian Stok Barang Jualan</li>
+    <li>Setting General</li>
+    <li>Laporan pembelian</li>
     </ul>
 </div>
     

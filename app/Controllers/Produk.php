@@ -43,20 +43,20 @@ class Produk extends BaseController
 		);
 
 		$response = array();
-		if (!$this->validate([
-			'kd_barcode' => 'required',
-			'kd_produk' => 'required',
-		])) {
-			$response['success'] = false;
-			$response['message'] = "Harap isi data dengan benar";
-		} else {
+		// if (!$this->validate([
+		// 	'kd_barcode' => 'required',
+		// 	'kd_produk' => 'required',
+		// ])) {
+		// 	$response['success'] = false;
+		// 	$response['message'] = "Harap isi data dengan benar";
+		// } else {
 			$r_insert = $model->addProduk($data);
 			if ($r_insert != NULL) {
 				$response['success'] = true;
 			} else {
 				$response['success'] = false;
 			}
-		}
+		// }
 		echo json_encode($response);
 	}
 
