@@ -91,7 +91,7 @@
 												<td>
 													<div class="hidden-md hidden-lg">
 														<div class="inline pos-rel">
-															<button type="button" onclick="detailnotabeli('<?php echo $mbeli['kd_trx_pembelian'] ?>')" class="btn-xs	  btn-outline-success small"> <i class="fa fa-eye"></i></button>
+															<a href="pembelian/detailpembelian/<?= $mbeli['kd_trx_pembelian']; ?>" type="button" href= class="btn-xs btn-outline-success small"> <i class="fa fa-eye"></i></a>
 															<button type="button" class="btn-xs	  btn-outline-primary small"> <i class="fa fa-edit"></i></button>
 															<button type="button" class="btn-xs	  btn-outline-danger small"> <i class="fa fa-trash"></i></button>
 
@@ -293,14 +293,14 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Kode Transaksi</label>
 						<div class="col-md-9">
-							<input name="kode_trxbeli" id="kode_trxbeli" class="form-control" type="text">
+							<input name="kd_trxbeli" id="kd_trxbeli" class="form-control" type="text">
 							<span class="help-block"></span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="btn_cetak" onclick="save_newproduk()" class="btn btn-primary"><i class="fas fa-print"></i> Cetak</button>
+				<button type="button" id="btn_cetak" onclick="cetak()" class="btn btn-primary"><i class="fas fa-print"></i> Cetak</button>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 			</div>
 		</div>
@@ -480,7 +480,12 @@
 				var json = JSON.parse(data);
 				if (json.success) {
 					console.log(json.total_row);
-					$('#btnSelesai').removeAttr('disabled', true);
+					if(json.total_row > 0){
+						console.log("ada item");
+						$('#btnSelesai').removeAttr('disabled', true);
+					}else{
+						$('#btnSelesai').attr('disabled', true);
+					}
 				} else {
 					alert("Gagal Menambahkan");
 				}
@@ -530,6 +535,11 @@
 		cektotalrow();
 	}
 
+	function cetak(){
+		var nota_cetak =$('#kd_trxbeli').val();
+		window.location.assign('<?= base_url()?>/pembelian/cetak/'+nota_cetak);
+	}
+
 
 	function savebarang() {
 		$('#btnSave').text('saving...'); //change button text
@@ -556,6 +566,7 @@
 				$('#response_ajax').load(data);
 				var json = JSON.parse(data);
 				if (json.success) {
+					$("#form-pembelian")[0].reset();
 					reloadTable(nota_pembelian);
 				} else {
 					alert("Gagal Menambahkan");
@@ -590,7 +601,9 @@
 				$('#btn_addProduk').attr('disabled', false); //set 
 				var json = JSON.parse(data);
 				if (json.success) {
-					location.reload();
+					//print 
+					$('#form')[0].reset();
+					window.location.assign('<?= base_url()?>/pembelian/cetak/'+nota_pembelian);
 				} else {
 					alert("Gagal Menambahkan");
 				}
@@ -628,6 +641,7 @@
 					var json = JSON.parse(data);
 					if (json.success) {
 						reloadTable(nota_pembelian);
+
 					} else {
 						alert("Gagal Menghapus");
 					}

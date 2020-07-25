@@ -22,9 +22,9 @@ class Pembelian_model extends Model
         return $this->findAll();
     }
 
+
     function getDetailTrxPembelian($nota_pembelian = null)
     {
-
     }
 
     function getLastNotaPembelian()
@@ -85,6 +85,15 @@ class Pembelian_model extends Model
         return $query;
     }
 
+    function getTotalPembelianCetak($kd_trx = null)
+    {
+        $builder = $this->db->table('trx_pembelian');
+        $builder->selectSum('total');
+        $builder->where('kd_trx_pembelian', $kd_trx);
+        $total = $builder->get();
+        return $total;
+    }
+
     function getTotalPembelian($kd_trxbeli = null)
     {
         $builder = $this->db->table('trx_pembelian_temp');
@@ -101,23 +110,68 @@ class Pembelian_model extends Model
         $result = $builder->delete();
         return $result;
     }
-    
-    function selesaipembelian($kd_trxbeli,$id_suplier,$create_by,$keterangan){
+
+    function selesaipembelian($kd_trxbeli, $id_suplier, $create_by, $keterangan)
+    {
         $total = $this->getTotalPembelian($kd_trxbeli)->getRow('total');
-        $_query="INSERT INTO master_pembelian (kd_trx_pembelian,total_pembelian,created_date,created_by,keterangan,id_suplier) VALUES ('".$kd_trxbeli."',".$total.",'".date('Y-m-d H:i:s')."','".$create_by."','".$keterangan."','".$id_suplier."')";
-        $this->db->query($_query);
-        return $this->db->query("INSERT INTO trx_pembelian (kd_trx_pembelian, kd_produk, nama_barang, harga, qty,stok, total, diskon, keterangan, created_date)  SELECT kd_trx_pembelian, kd_produk, nama_barang, harga, qty, qty stok, total, diskon, keterangan, created_date FROM trx_pembelian_temp WHERE kd_trx_pembelian='.$kd_trxbeli.'");
+        $_query = "INSERT INTO master_pembelian (kd_trx_pembelian,total_pembelian,created_date,created_by,keterangan,id_suplier) VALUES ('" . $kd_trxbeli . "'," . $total . ",'" . date('Y-m-d H:i:s') . "','" . $create_by . "','" . $keterangan . "','" . $id_suplier . "')";
+        $result = $this->db->query($_query);
+        return $result;
     }
 
-    function truncatetmp(){
-       return $this->db->query("TRUNCATE trx_pembelian_temp");
+    function addtemptotrx($kd_trxbeli= null)
+    {
+        $_query="INSERT INTO trx_pembelian (kd_trx_pembelian, kd_produk, nama_barang, harga, qty,stok, total, diskon, keterangan, created_date)  SELECT kd_trx_pembelian, kd_produk, nama_barang, harga, qty, qty stok, total, diskon, keterangan, created_date FROM trx_pembelian_temp WHERE kd_trx_pembelian='".$kd_trxbeli."'";
+        $result = $this->db->query($_query);
+        return $result;
+    }
+    function truncatetmp()
+    {
+        return $this->db->query("TRUNCATE trx_pembelian_temp");
     }
 
-    function testSelect(){
+    function testSelect()
+    {
         return $this->db->query("SELECT * FROm trx_pembelian_temp");
-     }
+    }
 
-   
+    /**
+     * cetak pembelian
+     */
+    function cetakPembelian($id_pembelian)
+    {
+        $builder = $this->db->table('trx_pembelian');
+        $builder->select('*');
+        $builder->where('kd_trx_pembelian', $id_pembelian);
+        $query = $builder->get();
+        return $query;
+    }
+
+
+    function getDetailPembelian($kd_trx= null){
+        $query="SELECT a.*,b.*,c.nama_suplier
+        FROM trx_pembelian a
+        LEFT JOIN master_pembelian b on a.kd_trx_pembelian= b.kd_trx_pembelian 
+        LEFT JOIN data_suplier c on b.id_suplier = c.id_suplier
+        WHERE a.kd_trx_pembelian = '".$kd_trx."'";
+        $result =$this->db->query($query);
+        return $result;
+    }
+    /**
+     * cek stok pembelian by kd_produk
+     */
+    function cekStok($kd_produk)
+    {
+        $_query = "SELECT id_pembelian,kd_trx_pembelian,id_pembelian,kd_produk,stok,harga FROM trx_pembelian WHERE kd_produk = ? AND stok !=0";
+        $result = $this->db->query($_query, array($kd_produk));
+        return $result;
+    }
+
+    public function UpdateStokPembelian($id, $stok)
+    {
+        $result = $this->db->query("UPDATE trx_pembelian SET stok='$stok' WHERE id_pembelian='$id'");
+        return $result;
+    }
     // function tes(){
     //     return $this->table('products')
     //                     ->join('categories', 'categories.category_id = products.category_id')

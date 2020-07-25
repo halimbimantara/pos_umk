@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Kasir Admin </title>
+	<title><?=  NAME_APPS ?></title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Font Awesome -->
@@ -14,6 +14,8 @@
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url("resources/dist/css/adminlte.min.css"); ?>">
 	<link rel="stylesheet" href="<?= base_url("resources/plugins/select2/css/select2.min.css") ?>" />
+	<!-- daterange picker -->
+	<link rel="stylesheet" href="<?= base_url("resources/plugins/daterangepicker/daterangepicker.css");?>">
 	<!-- Google Font: Source Sans Pro -->
 	<link href=" https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -45,7 +47,7 @@
 				</a>	
 				</button>
 				<!-- Messages Dropdown Menu -->
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown"> -->
 					<a class="nav-link" data-toggle="dropdown" href="#">
 						<i class="far fa-comments"></i>
 						<span class="badge badge-danger navbar-badge">3</span>
@@ -103,7 +105,7 @@
 					</div>
 				</li>
 				<!-- Notifications Dropdown Menu -->
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link" data-toggle="dropdown" href="#">
 						<i class="far fa-bell"></i>
 						<span class="badge badge-warning navbar-badge">15</span>
@@ -128,12 +130,12 @@
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
 					</div>
-				</li>
-				<li class="nav-item">
+				</li> -->
+				<!-- <li class="nav-item">
 					<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
 						<i class="fas fa-th-large"></i>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 		<!-- /.navbar -->
@@ -143,7 +145,7 @@
 			<!-- Brand Logo -->
 			<a href="../../index3.html" class="brand-link elevation-4">
 				<img src="<?= base_url("resources/dist/img/store.png"); ?>" alt="Umkm" class="brand-image img-circle elevation-3" style="opacity: .8">
-				<span class="brand-text font-weight-light">Umkm</span>
+				<span class="brand-text font-weight-light">MobieCashier</span>
 			</a>
 
 			<!-- Sidebar -->
@@ -174,21 +176,15 @@
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="../../index.html" class="nav-link">
+									<a href="<?php echo base_url("laporan"); ?>" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v1</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="../../index2.html" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v2</p>
+										<p>Pembelian & Penjualan</p>
 									</a>
 								</li>
 								<li class="nav-item">
 									<a href="../../index3.html" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v3</p>
+										<p>Stok</p>
 									</a>
 								</li>
 							</ul>
@@ -224,11 +220,19 @@
 
 						<li class="nav-header">Setting</li>
 						<li class="nav-item">
-							<a href="https://adminlte.io/docs/3.0" class="nav-link">
+							<a href="<?php echo base_url("settings"); ?>" class="nav-link">
 								<i class="nav-icon fas fa-file"></i>
-								<p>Documentation</p>
+								<p>General Setting</p>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a href="<?php echo base_url("profile"); ?>" class="nav-link">
+								<i class="nav-icon fas fa-file"></i>
+								<p>User Setting</p>
+							</a>
+						</li>
+					
+					
 
 					</ul>
 				</nav>
@@ -244,7 +248,7 @@
 		<!-- /.content-wrapper -->
 
 
-		<?= $this->include('admin_footer'); ?>
+		<!--  //$this->include('admin_footer');  -->
 
 		<!-- Control Sidebar -->
 		<aside class="control-sidebar control-sidebar-dark">

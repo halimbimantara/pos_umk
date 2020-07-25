@@ -270,6 +270,7 @@
 					$('#modal_addproduk').modal('hide');
 					// reloadTable(nota_pembelian);
 					//reload
+					location.reload();
 				} else {
 					alert("Gagal Menambahkan");
 				}

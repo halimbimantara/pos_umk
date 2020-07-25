@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Pembelian_model;
 use App\Models\Pos_model;
+use App\Models\Setting_model;
 
 class Pembelian extends BaseController
 {
@@ -18,6 +19,7 @@ class Pembelian extends BaseController
 	public function index()
 	{
 		$model = new Pembelian_model();
+		$model->truncatetmp();
 		$mpos = new Pos_model();
 		helper('TimeHelper');
 		helper('Umkm');
@@ -79,6 +81,7 @@ class Pembelian extends BaseController
 		$keterangan = $this->request->getPost('keterangan');
 		$userId = 21; //user
 		$idSuplier = $this->request->getPost('id_suplier');
+		$model->addtemptotrx($kd_trx);
 		$result = $model->selesaipembelian($kd_trx, $idSuplier, $userId, $keterangan);
 		// var_dump($result);
 		if ($result) {
@@ -134,6 +137,23 @@ class Pembelian extends BaseController
 		echo json_encode($data);
 	}
 
+	// public function cetak($id_trx)
+	// {
+	// 	$mpos = new Pembelian_model();
+	// 	$_totalCetak = $mpos->getTotalPembelian($id_trx);
+	// 	$listItem = $mpos->getTempPembelian($id_trx);
+
+	// 	$data = array();
+	// 	$data['total'] = $_totalCetak->getRow('total');
+	// 	var_dump($listItem);
+	// 	exit;
+	// 	$data['list'] = $listItem;
+	// 	$data['kembalian'] = 0;
+	// 	$data['no_nota'] = $id_trx;
+	// 	$data['tgl'] = date("d-m-Y");
+	// 	return view('kasir/cetak', $data);
+	// }
+
 	public function getSuplier()
 	{
 		$searchby = $this->request->getVar('searchTerm');
@@ -155,7 +175,7 @@ class Pembelian extends BaseController
 		// $something = $this->request->getVar('foo');
 		$model = new Pos_model();
 		$mbeli = new Pembelian_model();
-		$dataProduk = $model->getDataProdukBySearch($searchby)->getRow();
+		$dataProduk = $model->getProdukPembelian($searchby)->getRow();
 		$hbeliterakhir = $mbeli->getHargaBeliTerakhir($searchby)->getRow();
 
 		$hbeli = 0;
@@ -166,7 +186,7 @@ class Pembelian extends BaseController
 
 		$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
 
-		// var_dump($hbeliterakhir);
+		// var_dump($dataProduk);
 		// echo $hbeliterakhir == NULL ?'ok':'ik';
 		// // print_r($something);
 		// exit();
@@ -181,7 +201,7 @@ class Pembelian extends BaseController
 
 		<input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProduk->nama_produk . '"/>
 		<input type="hidden" name="tot_stok" id="tot_stok" value="' . $dataProduk->stok . '"/>
-		<input type="hidden" name="url_image" id="url_image" value="' . $dataProduk->gambar . '"/>
+		<input type="hidden" name="url_image" id="url_image" value="' . $dataProduk->gambar_produk . '"/>
 		<div class="form-group">
 		<label class="control-label col-md-3">Sisa Stok</label>
 		<div class="col-md-2">
@@ -191,6 +211,20 @@ class Pembelian extends BaseController
 	</div>';
 	}
 
+
+	public function detailpembelian($kode_trx){
+		$mbeli = new Pembelian_model();
+		$r_total = $mbeli->getTotalPembelianCetak($kode_trx);
+		$result = $mbeli->getDetailPembelian($kode_trx);
+		$data['m_pembelian']=$result;
+		$data['total']='<tr>' .
+		'<td colspan="6"></td>' .
+		'<td>Total</td>' .
+		'<td>' . number_format($r_total->getRow()->total , 0, '', '.') . '</td>' .
+		'</tr>';;
+		
+		return view('admin/pembelian/detail', $data);
+	}
 	public function getCekRow($kd_trxbeli)
 	{
 		// untuk cek ada berapa row base in kd trx
@@ -251,7 +285,23 @@ class Pembelian extends BaseController
 		echo json_encode($response);
 	}
 
-	public function cetak_notabeli($kdtrx)
+	public function cetak($id_trx)
 	{
+		$mpos = new Pembelian_model();
+		$msetting = new Setting_model();
+		$data = array();
+		$data['data'] = $msetting->getSetting();
+		$_totalCetak = $mpos->getTotalPembelianCetak($id_trx);
+		$listItem = $mpos->cetakPembelian($id_trx);
+
+		$data = array();
+		$data['total'] = $_totalCetak->getRow('total');
+		// var_dump($listItem);
+		// exit;
+		$data['list'] = $listItem;
+		$data['kembalian'] = 0;
+		$data['no_nota'] = $id_trx;
+		$data['tgl'] = date("d-m-Y");
+		return view('admin/pembelian/cetak', $data);
 	}
 }

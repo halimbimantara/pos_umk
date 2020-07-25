@@ -138,7 +138,7 @@
                             <div class="row" style="padding: 10px;">
                                 <div class="col-md-6">
                                     <label class="control-label col-md-5">Bayar</label>
-                                    <input name="bayar" id="bayar" type="number" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)">
+                                    <input name="bayar" disabled id="bayar" type="number" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)">
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="col-md-6">
@@ -151,7 +151,7 @@
 
                         <div class="card-footer">
                             <button id="btn_addtmp" type="submit" onclick="addbarangtemp()" class="btn btn-primary">Tambahkan</button>
-                            <button id="btn_selesai" hidden type="submit" onclick="" class="btn btn-success">Selesai</button>
+                            <button id="btn_selesai" hidden type="submit" onclick="selesaitrx()" class="btn btn-success">Selesai</button>
 
                         </div>
                         <!-- <div class="card-footer text-center">
@@ -184,7 +184,13 @@
     var selesai_penjualan;
 
     $("#btn_addtmp").hide();
+    $('#bayar').attr('disabled', true); //
+
     $(document).ready(function() {
+        $('#qty').on('mouseup keyup', function() {
+            $(this).val(Math.min(1, Math.max($("#stok").val(), $(this).val())));
+            console.log("max");
+        });
         $("#id_barang").select2({
             ajax: {
                 url: "<?= base_url("pembelian/getProdukSelect") ?>",
@@ -230,6 +236,7 @@
             return;
         } else {
             // add to db temp jual
+            $("#form-addtemp")[0].reset();
             $("#detail_item").load("<?= base_url('pos/showproduk') ?>/" + str);
             var img_uri = $("#url_image").val();
             $(".badge-danger").add();
@@ -242,9 +249,9 @@
         var total = $('#mtotal_belanja').val().replace(".", "").replace(".", "");
         //   var temps =$('#total_temps').val();
         //   var bayar = str.replace(".", "").replace(".", "");
-        if(str.empty){
+        if (str.empty) {
             $('#kembalian').val("");
-        }else{
+        } else {
             var kembali = str - total;
             $('#kembalian').val(convertToRupiah(kembali));
         }
@@ -292,7 +299,11 @@
                     if (json.success) {
                         reloadTable(nota_penjualan);
                         reloadTotalBelanja(nota_penjualan);
+
+                        $("#form-addtemp")[0].reset();
                         $('#btn_selesai').attr('hidden', false); //
+                        $('#bayar').attr('disabled', false); //
+
                     } else {
                         alert("Gagal Menambahkan barang");
                     }
@@ -317,6 +328,12 @@
 
     //harga * jumlah
     function subTotal(qty) {
+        var _stok = $('#stok').val();
+        var IntStok = parseInt(_stok);
+        if (qty >= IntStok) {
+            $('#qty').val(_stok);
+            qty = _stok;
+        }
         //qty ambil
         var _qty = parseInt(qty);
         // console.log(qty);
@@ -329,41 +346,69 @@
         var h_grosir1 = $('#hgrosir').val();
         var gr_qty1 = parseInt($('#qty_grosir1').val());
 
-        console.log(parseFloat(h_grosir) * qty);
-        $('#subtotal').val(parseFloat(h_grosir) * qty);
+        console.log(parseFloat(h_grosir) * _qty);
+        $('#subtotal').val(parseFloat(h_grosir) * _qty);
 
     }
 
-    function hapus_temp(str){
-        var url ="pos/hapus_temp";
+    function selesaitrx() {
+        // nota_penjualan
+        var url = "<?= base_url() . "/pos/selesai" ?>";
         $.ajax({
-                url: url,
-                type: "POST",
-                data: {
-                    id_penjualan:str
-                },
-                success: function(data) {
-                    var json = JSON.parse(data);
-                    if (json.success) {
-                        reloadTable(nota_penjualan);
-                        reloadTotalBelanja(nota_penjualan);
-                        //jika total 0 maka btn selesai hilang
-                        var total = $('#mtotal_belanja').val().replace(".", "").replace(".", "");
-                        if(total.empty || total == 0){
-                            $('#btn_selesai').attr('hidden', false); //
-                        }else{
-                            $('#btn_selesai').attr('hidden', true); //
-                        }
-                        //reload kembalian
-                    } else {
-                        alert("Gagal menghapus barang");
-                    }
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Error delete data');
-                    console.log(jqXHR + "-" + errorThrown);
+            url: url,
+            type: "POST",
+            data: {
+                kd_trxpenjualan: nota_penjualan
+            },
+            success: function(data) {
+                var json = JSON.parse(data);
+                if (json.success) {
+                    //reload kembalian
+                    window.location.assign('<?= base_url() ?>/pos/cetak/' + nota_penjualan);
+                } else {
+                    alert("Transaksi Gagal");
                 }
-            });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error submit data');
+                console.log(jqXHR + "-" + errorThrown);
+            }
+        });
+    }
+
+    function hapus_temp(str) {
+        var url = "<?= base_url() . "/pos/hapus_temp" ?>";
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                id_penjualan: str
+            },
+            success: function(data) {
+                var json = JSON.parse(data);
+                if (json.success) {
+                    reloadTable(nota_penjualan);
+                    reloadTotalBelanja(nota_penjualan);
+                    //jika total 0 maka btn selesai hilang
+                    var total = $('#mtotal_belanja').val().replace(".", "").replace(".", "");
+                    if (total.empty || total == 0) {
+                        $('#btn_selesai').attr('hidden', false); //
+                        $('#bayar').removeAttr('disabled');
+                    } else {
+
+                        $('#bayar').attr('disabled', true); //
+                        $('#btn_selesai').attr('hidden', true); //
+                    }
+                    //reload kembalian
+                } else {
+                    alert("Gagal menghapus barang");
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error delete data');
+                console.log(jqXHR + "-" + errorThrown);
+            }
+        });
     }
 
     function convertToRupiah(angka) {

@@ -42,115 +42,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
-          <li class="nav-item">
-            <a href="index3.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
-         
+        
         </ul>
-
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-0 ml-md-3">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
 
       <!-- Right navbar links -->
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
         <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fas fa-comments"></i>
-            <span class="badge badge-danger navbar-badge">3</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Brad Diesel
-                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">Call me whenever you can...</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    John Pierce
-                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">I got your message bro</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Nora Silvester
-                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">The subject goes here</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-          </div>
-        </li>
+      
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-header">15 Notifications</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> 4 new messages
-              <span class="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
-              <span class="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-file mr-2"></i> 3 new reports
-              <span class="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
-        </li>
+     
         <li class="nav-item">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
               class="fas fa-th-large"></i></a>
@@ -178,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					
 					</div>
 					<div class="info">
-						<a href="#" class="d-block">user</a>
+						<a href="<?= base_url("profile")?>" class="d-block">User</a>
 					</div>
 				</div>
 
@@ -187,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 						<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-						<li class="nav-item has-treeview">
+               <li class="nav-item has-treeview">
 							<a href="#" class="nav-link">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
@@ -197,21 +98,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="../../index.html" class="nav-link">
+									<a href="<?php echo base_url("laporan"); ?>" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v1</p>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="../../index2.html" class="nav-link">
-										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v2</p>
+										<p>Pembelian & Penjualan</p>
 									</a>
 								</li>
 								<li class="nav-item">
 									<a href="../../index3.html" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v3</p>
+										<p>Stok</p>
 									</a>
 								</li>
 							</ul>
@@ -246,12 +141,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						
 					
 						<li class="nav-header">Setting</li>
-						<li class="nav-item">
-							<a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <li class="nav-item">
+							<a href="<?php echo base_url("settings"); ?>" class="nav-link">
 								<i class="nav-icon fas fa-file"></i>
-								<p>Documentation</p>
+								<p>General Setting</p>
 							</a>
 						</li>
+            <li class="nav-item">
+							<a href="<?php echo base_url("profile"); ?>" class="nav-link">
+								<i class="nav-icon fas fa-file"></i>
+								<p>User Setting</p>
+							</a>
+						</li>
+					
 						
 					</ul>
 				</nav>
@@ -278,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <?= $this->include('admin_footer'); ?>
+  <!-- <?php //$this->include('admin_footer'); ?> -->
 </div>
 <!-- ./wrapper -->
 

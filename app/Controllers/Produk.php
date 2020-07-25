@@ -34,6 +34,7 @@ class Produk extends BaseController
 			'id_kategori'  => $this->request->getVar('id_kat'),
 			'kd_satuan'  => $this->request->getVar('kd_satuan'),
 			'batas_grosir'  => $this->request->getVar('batas_grosir'),
+			'harga_eceran'  => $this->request->getVar('add_harga'),
 			'harga_grosir'  => $this->request->getVar('harga_grosir'),
 			'batas_min_stok'  => $this->request->getVar('b_min_stok'),
 			'batas_max_stok'  => $this->request->getVar('b_max_stok'),
