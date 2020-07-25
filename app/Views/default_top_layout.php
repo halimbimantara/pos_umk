@@ -21,7 +21,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-collapse layout-top-nav">
+<body class="hold-transition layout-top-nav sidebar-collapse layout-top-nav sidebar-closed text-sm">
 <div class="wrapper">
 
   <!-- Navbar -->

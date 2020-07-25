@@ -155,14 +155,14 @@ class Pos extends BaseController
 		$modelPos = new Pos_model();
 		$_excute = $modelPos->selesaiTrx();
 		$response = array();
-		if($_excute != NULL){
+		if ($_excute != NULL) {
 			// $this->cetak($id_trx_penjualan);
-				$response['success'] = true;
-				echo json_encode($response);
-		}else{
+			$response['success'] = true;
+			echo json_encode($response);
+		} else {
 			//gagal
 			$response['success'] = false;
-				echo json_encode($response);
+			echo json_encode($response);
 		}
 	}
 
@@ -172,9 +172,9 @@ class Pos extends BaseController
 		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
 		$totalelanja = $r_total->getRow('sub_total');
 		echo '<div class="info-box-content">
+		<label class="control-label">Total</label>
 		<input type="hidden" name="mtotal_belanja" id="mtotal_belanja" value="' . $totalelanja . '"/>
-		<span class="info-box-text">Total</span>
-		<span class="info-box-number">' . number_format($totalelanja, 0, '', '.') . '</span>
+		<h3><span style=" color: red;" class="info-box-number">' . number_format($totalelanja, 0, '', '.') . '</span></h3>
 		</div>';
 	}
 
@@ -274,40 +274,47 @@ class Pos extends BaseController
 				<img hidden id="img_produk" src="' . base_url("resources/dist/img/avatar.png") . '" style="width: inherit;height: inherit;" />
 		</div>
 			<div class="row" style="padding: 10px;">
-				<label class="control-label col-md-3">Eceran</label>
-				<div class="col-md-3">
-					<input name="heceran" disabled id="heceran" class="form-control" value="' . $hjual . '" type="number">
-					<span class="help-block"></span>
-				</div>
-
-				<label class="control-label col-md-3">Grosir</label>
-				<div class="col-md-3">
-					<input name="hgrosir" disabled id="hgrosir" class="form-control" value="' . $dataProduk->harga_grosir . '" type="number">
-					<span class="help-block"></span>
-				</div>
-			</div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Eceran</label>
+						<input name="heceran" disabled id="heceran" class="form-control" value="' . $hjual . '" type="number">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Grosir</label>
+						<input name="hgrosir" disabled id="hgrosir" class="form-control" value="' . $dataProduk->harga_grosir . '" type="number">
+                      </div>
+                    </div>
+                  </div>
 		</div>
-
-		<div class="form-group">
 			<div class="row" style="padding: 10px;">
-				<div class="col-md-6">
-				<label class="control-label col-md-5">Sisa Stok</label>
+				<div class="col-sm-6">
+				<label class="control-label">Stok</label>
 					<input name="stok" disabled id="stok" class="form-control" value="' . $stok . '" type="number">
 					<span class="help-block"></span>
 				</div>
-				<div class="col-md-6">
-				<label class="control-label col-md-3">Qty</label>
+				<div class="col-sm-6">
+				<label class="control-label ">Qty</label>
 					<input min=0 oninput="validity.valid||(value="");" name="qty" ' . $disableqty . ' id="qty" onchange="subTotal(this.value)" 
 					onkeyup="subTotal(this.value)"  class="form-control" type="number" max="' . $stok . '">
 					<span class="help-block"></span>
 				</div>
 			</div>
-			<div class="col-md-6">
-                            <label class="control-label col-md-5">Sub Total</label>
-                            <input name="subtotal" disabled id="subtotal" class="form-control">
-                            <span class="help-block"></span>
-						</div>
-						
+		</div>
+		<div class="card card-warning">
+       <div class="card-body">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-6">
+					<label class="control-label">Sub Total</label>
+					<input name="subtotal" disabled id="subtotal" class="form-control">
+				</div>
+			<div class="col-sm-6">
+			<label class="control-label col-sm-6" style="margin-top: 18px;"></label>
+				<button id="btn_addtmp" type="submit" onclick="addbarangtemp()" class="btn btn-primary form-control">Tambah</button>
+			</div>		
+		</div>
 		</div>
 		
 

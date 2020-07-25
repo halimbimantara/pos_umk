@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-8">
                 <!-- USERS LIST -->
                 <div class="card">
                     <div class="card-header">
@@ -23,8 +23,6 @@
                     <div class="card-body p-0">
                         <form role="form">
                             <div class="card-body">
-                                <!-- <div class="row"> -->
-
                                 <div class="form-group">
                                     <label for="idprodukbarcode">Nama Produk / Barcode</label>
                                     <!-- <input type="text" class="form-control" id="idprodukbarcode" placeholder="Masukan nama / letakan kursor"> -->
@@ -36,12 +34,6 @@
                                     <label class="form-check-label" for="exampleCheck1">Tampil Gambar ?</label>
                                 </div>
                             </div>
-
-                            <!-- /.card-body -->
-
-                            <!-- <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div> -->
                         </form>
                         <!--Table -->
                         <table id="table-penjualan-temp" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -84,39 +76,12 @@
             <div class="clearfix hidden-md-up"></div>
 
             <div class="col">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-md-5">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-                            <div id="total_belanja">
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Total</span>
-                                    <span class="info-box-number">0</span>
-                                </div>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-5">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">Kasir Anton</span>
-                                <span class="info-box-number">11001</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                </div>
                 <div class="col-12 col-sm-8 col-md-12">
                     <!-- USERS LIST -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Detail Produk</h3>
+                            <h3 class="card-title"></h3>
                             <div class="card-tools">
                                 <!-- <span class="badge badge-danger">id produk</span> -->
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -125,48 +90,49 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
+
                             <form action="#" id="form-addtemp" class="form-horizontal">
                                 <input type="hidden" id="kd_trxpenjualan" name="kd_trxpenjualan" value="<?= $nota_penjualan ?>" />
                                 <div id="detail_item"></div>
                             </form>
-                            <!--Table -->
-
                         </div>
                         <div id="response_ajax"></div>
                         <!-- /.card-body -->
                         <div class="form-group">
                             <div class="row" style="padding: 10px;">
-                                <div class="col-md-6">
-                                    <label class="control-label col-md-5">Bayar</label>
+                                <div class="col-sm-7">
+                                    <div style="text-size-adjust: 14px;" id="total_belanja"></div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 10px;">
+                                <div class="col-sm-6">
+                                    <label class="control-label">Bayar</label>
                                     <input name="bayar" disabled id="bayar" type="number" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)">
                                     <span class="help-block"></span>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="control-label col-md-5">Kembalian</label>
+                                <div class="col-sm-6">
+                                    <label class="control-label">Kembalian</label>
                                     <input name="kembalian" disabled id="kembalian" class="form-control">
                                     <span class="help-block"></span>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="card-footer">
-                            <button id="btn_addtmp" type="submit" onclick="addbarangtemp()" class="btn btn-primary">Tambahkan</button>
-                            <button id="btn_selesai" hidden type="submit" onclick="selesaitrx()" class="btn btn-success">Selesai</button>
-
+                            <div class="row">
+                                    <button id="btn_selesai" hidden type="submit" onclick="selesaitrx()" class="btn btn-success">Selesai</button>
+                        
+                            </div>
                         </div>
-                        <!-- <div class="card-footer text-center">
-                    <a href="javascript::">View All Users</a>
-                </div> -->
-                        <!-- /.card-footer -->
+                        <!--/.card -->
                     </div>
-                    <!--/.card -->
                 </div>
+
+                <!-- /.col -->
             </div>
 
-            <!-- /.col -->
         </div>
-
-    </div>
 </section>
 <?= $this->endSection() ?>
 <?= $this->section('jscript') ?>
@@ -301,6 +267,7 @@
                         reloadTotalBelanja(nota_penjualan);
 
                         $("#form-addtemp")[0].reset();
+                        $("#detail_item").empty();
                         $('#btn_selesai').attr('hidden', false); //
                         $('#bayar').attr('disabled', false); //
 
@@ -319,6 +286,7 @@
     }
 
     function reloadTotalBelanja(str) {
+        $("#form-addtemp")[0].reset();
         $("#total_belanja").load("<?= base_url('pos/getTotalBelanja') ?>/" + str);
     }
 
