@@ -26,4 +26,37 @@ class Setting_model extends Model
         return $builder->update();
     }
 
+    function showMargin(){
+        $query = "SELECT * FROM master_margin ORDER BY create_date DESC LIMIT 0,1";
+        $result= $this->db->query($query);
+        return $result;
+    }
+
+    /**
+     * @tipe 
+     */
+    function showkemasan($tipe){
+        $builder = $this->db->table('tb_kemasan');
+        $builder->where('tipe', $tipe);
+        return $builder->get();
+    }
+
+
+    function settings_role(){
+        $builder = $this->db->table('role');
+        $builder->select('*');
+        return $builder->get();
+    }
+
+    function settings_menus(){
+        $builder = $this->db->table('role_menu');
+        $builder->select('*');
+        return $builder->get();
+    }
+
+    function settings_katproduk(){
+        $builder = $this->db->table('tb_kategori_produk');
+        $builder->select('*');
+        return $builder->get();
+    }
 }

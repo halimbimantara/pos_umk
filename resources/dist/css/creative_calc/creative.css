@@ -1,0 +1,24 @@
+
+.numberPad {
+  padding-top: 14px;
+}
+
+.btn-calc, .btn-calc:focus {
+  background: transparent;
+  color: #A2A2A2;
+  font-size: 25px;
+  width: 75px;
+  height: 75px;
+  font-weight: 100;
+  border-radius: 100px;
+  outline: none;
+  box-shadow: 0px 0px 0px transparent;
+  border: none;
+}
+
+.btn-calc:hover {
+  background: #FFF;
+  color: #455A64;
+}
+
+

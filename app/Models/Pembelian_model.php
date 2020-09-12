@@ -37,6 +37,7 @@ class Pembelian_model extends Model
         return $query;
     }
 
+   
     function getDataProdukBySearch($search = null)
     {
         $builder = $this->db->table('master_pembelian');

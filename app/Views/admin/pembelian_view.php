@@ -65,7 +65,7 @@
 								</label>
 							</th> -->
 										<th style="width:3px">No</th>
-										<th style="width:100px">No Nota</th>
+										<th style="width:100px">Nota Pembelian</th>
 										<th>Nama Suplier</th>
 										<th style="width:100px">Total Nota</th>
 										<th style="width:100px">Tanggal</th>
@@ -641,7 +641,6 @@
 					var json = JSON.parse(data);
 					if (json.success) {
 						reloadTable(nota_pembelian);
-
 					} else {
 						alert("Gagal Menghapus");
 					}

@@ -13,7 +13,9 @@ class Pos extends BaseController
 		$modelPos = new Pos_model();
 		$data = array();
 		$data = array(
-			'nota_penjualan' => $this->getNotaPenjualan()
+			'nota_penjualan' => $this->getNotaPenjualan(),
+			'item_produk' => $modelPos->getListProduk()->getResult(),
+			'item_kategori' => $modelPos->getKategoriProduk()->getResult(),
 		);
 
 		//empty data sebelumnya
@@ -40,8 +42,10 @@ class Pos extends BaseController
 		// echo "</br>";
 		// $data['qty_2']=10;
 		// var_dump($data);
+
+		$_row = $sql_cek->getRow();
 		// exit;
-		if ($sql_cek != null) {
+		if (isset($_row)) {
 			//cek jumlah stok yang tersedia di row yang pertama
 			$result = $ceking;
 
@@ -120,6 +124,10 @@ class Pos extends BaseController
 			}
 		} else {
 			//echo 0;
+			$response = array();
+			$response['success'] = false;
+			$response['message'] = 'kosong';
+			echo json_encode($response);
 		}
 	}
 
@@ -133,20 +141,95 @@ class Pos extends BaseController
 
 	public function addproduktemp()
 	{
-		$qty       = $this->request->getVar('qty');
+		$modelPos = new Pos_model();
+		$mbeli = new Pembelian_model();
+
+		$isupdate  = $this->request->getVar('update_qty');
+		$Isicon    = $this->request->getVar('is_icon');
 		$kd_produk = $this->request->getVar('kd_produk');
+		$tipe_trx = $this->request->getVar('tipe_search');
+		$margin 	   = $modelPos->getmargin()->getRow()->margin;
 
-		$data = array(
-			'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
-			'kd_produk'  => $kd_produk,
-			'harga'  => $this->request->getVar('hrg_eceran'),
-			'nama_barang'  => $this->request->getVar('nama_produk'),
-			'diskon' => 0,
-			'created_date' => date("Y-m-d"),
-		);
+		if ($tipe_trx == 0) {
+			$qty       = $this->request->getVar('qty');
+			//if from icon
+			$dataProduk    = $modelPos->getDataProdukBySearch($kd_produk)->getRow();
+			$hbeliterakhir = $mbeli->getHargaBeliTerakhir($kd_produk)->getRow();
 
-		//cek dlu
-		$this->cekKolom($kd_produk, $qty, $data);
+			$hbeli = 0;
+			$stok = 0;
+
+			if ($hbeliterakhir != NULL) {
+				$hbeli = $hbeliterakhir->harga;
+			}
+			$hjual = $hbeli + ($hbeli * ($margin / 100));
+			$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
+			// $disableqty = $stok == 0 ? "disabled" : "";
+			$inqty = $stok > 0 ? 1 : 0;
+
+			$margin   = $modelPos->getmargin()->getRow()->margin;
+			$hg_ecer = 0;
+			if ($Isicon != NULL) {
+				if ($Isicon == "yes") {
+					$hg_ecer = $hjual;
+				} else {
+					$hg_ecer = $this->request->getVar('hrg_eceran');
+				}
+			} else {
+				$hg_ecer = $this->request->getVar('hrg_eceran');
+			}
+
+			$data = array(
+				'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
+				'kd_produk'  => $kd_produk,
+				'harga'  => $hg_ecer,
+				'nama_barang'  => $this->request->getVar('nama_produk'),
+				'diskon' => 0,
+				'created_date' => date("Y-m-d"),
+			);
+			if ($isupdate > 0) {
+				//update 
+				$modelPos->deleteproduk($kd_produk);
+				// $this->cekKolom($kd_produk, $qty, $data);
+			} else {
+				//cek dlu
+				// $this->cekKolom($kd_produk, $qty, $data);
+				$r_insert = $modelPos->addDataPenjualanTemp($data);
+				$response = array();
+				$data['qty'] = $qty;
+				$data['kd_trx_pembelian'] = '1000';
+				$data['id_pembelian'] = '1000';
+				$data['sub_total'] = doubleval($data['harga'] * $qty);
+				if ($r_insert != NULL) {
+					$response['success'] = true;
+				} else {
+					$response['success'] = false;
+				}
+				echo json_encode($response);
+			}
+		} else {
+			$qty = 1;
+			$data = array(
+				'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
+				'kd_produk'  => $kd_produk,
+				'harga'  => 0,
+				'nama_barang'  => $this->request->getVar('nama_produk'),
+				'diskon' => 0,
+				'created_date' => date("Y-m-d"),
+			);
+			$r_insert2 = $modelPos->addDataPenjualanTemp($data);
+				$response = array();
+				$data['qty'] = $qty;
+				$data['kd_trx_pembelian'] = '1000';
+				$data['id_pembelian'] = '1000';
+				$data['sub_total'] = 0;
+				if ($r_insert2 != NULL) {
+					$response['success'] = true;
+				} else {
+					$response['success'] = false;
+				}
+				echo json_encode($response);
+		}
 	}
 
 	public function selesai()
@@ -170,33 +253,38 @@ class Pos extends BaseController
 	{
 		$mdata = new Pos_model();
 		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
+		$r_total_item = $mdata->getTotalJenisProduk($kd_trxjual);
+		$r_total_qty = $mdata->getTotalProdukQty($kd_trxjual);
 		$totalelanja = $r_total->getRow('sub_total');
-		echo '<div class="info-box-content">
-		<label class="control-label">Total</label>
-		<input type="hidden" name="mtotal_belanja" id="mtotal_belanja" value="' . $totalelanja . '"/>
-		<h3><span style=" color: red;" class="info-box-number">' . number_format($totalelanja, 0, '', '.') . '</span></h3>
-		</div>';
+		echo '<input placeholder="Total" name="mtotal_belanja" disabled id="mtotal_belanja" value="' . number_format($totalelanja, 0, '', '.') . '" type="text"  class="form-control">
+									<span class="help-block"></span>
+									<label>Jenis Produk</label>
+                                    <h3>' . $r_total_item->getRow('total') . '</h3>
+									</div>
+									<div><label>Total Produk</label>
+									<h3>' . $r_total_qty->getRow('qty') . '</h3>
+									</div>';
 	}
 
 	public function showTableTemp($kd_trxjual)
 	{
 		$mdata = new Pos_model();
-		$r_temp = $mdata->getTablePenjualantmp($kd_trxjual);
+		$r_temp  = $mdata->getTablePenjualantmp($kd_trxjual);
 		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
 		$result = '';
 		$no = 1;
 		$total_temp = number_format($r_total->getRow('sub_total'), 0, '', '.');
 		foreach ($r_temp->getResult() as $rows) {
 			$result .= '<tr>' .
-				'<td>' . $no . '</td>' .
-				'<td>' . $rows->nama_barang . '</td>' .
-				'<td>' . $rows->harga . '</td>' .
-				'<td>' . $rows->qty . '</td>' .
-				'<td>' . $rows->diskon . '</td>' .
-				'<td>' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
+				// '<td>' . $no . '</td>' .
+				'<td>' . substr($rows->nama_barang, 0, 10) . '</td>' .
+				'<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
+				'<td align="right" style="background-color:#bdbdbd" onClick="show_qty()">' . $rows->qty . '</td>' .
+				// '<td>' . $rows->diskon . '</td>' .
+				'<td align="right">' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
 				'<td><div class="hidden-md hidden-lg">
 				<div class="inline pos-rel">
-					<button type="button" class="btn-xs	 btn-block btn-outline-danger small" onclick=hapus_temp(' . "'" . $rows->id_penjualan . "'" . ')> <i class="fa fa-trash"></i> Hapus</button>
+					<a href="#" class="btn-xs small danger" onclick=hapus_temp('  . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
 				</div>
 				</div>
 				</td>' .
@@ -204,9 +292,10 @@ class Pos extends BaseController
 			$no++;
 		}
 		$total = '<tr>' .
-			'<td colspan="5"></td>' .
-			'<td>Total</td>' .
-			'<td>' . $total_temp . '</td>' .
+			'<td colspan="3"></td>' .
+			'<td >Total</td>' .
+			'<td colspan="2" align="right">' . $total_temp . '</td>' .
+			// '<td></td>' .
 			'</tr>';
 		echo $result . $total;
 	}
@@ -236,8 +325,6 @@ class Pos extends BaseController
 		$mpos = new Pos_model();
 		$_totalCetak = $mpos->getTotalPenjualanCetak($id_trx);
 		$listItem = $mpos->cetakPenjualan($id_trx);
-
-		$data = array();
 		$data['total'] = $_totalCetak->getRow('total');
 		// var_dump($listItem);
 		// exit;
@@ -253,24 +340,32 @@ class Pos extends BaseController
 	{
 		$model = new Pos_model();
 		$mbeli = new Pembelian_model();
-		$dataProduk    = $model->getDataProdukBySearch($searchby)->getRow();
-		$hbeliterakhir = $mbeli->getHargaBeliTerakhir($searchby)->getRow();
-		$margin 	   = $model->getmargin()->getRow()->margin;
-
+		$dataProduk      = $model->getDataProdukBySearch($searchby)->getRow();
+		$dataProduk_size = sizeof($model->getDataProdukBySearch($searchby)->getResult('array'));
+		$hbeliterakhir   = $mbeli->getHargaBeliTerakhir($searchby)->getRow();
+		$margin 	     = $model->getmargin()->getRow()->margin;
 
 		$hbeli = 0;
 		$stok = 0;
 
 		if ($hbeliterakhir != NULL) {
 			$hbeli = $hbeliterakhir->harga;
+		} else {
+			$hbeli = 0;
 		}
 		$hjual = $hbeli + ($hbeli * ($margin / 100));
-		$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
+		if ($dataProduk_size > 0) {
+			$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
+		} else {
+			$stok = 0;
+		}
 		$disableqty = $stok == 0 ? "disabled" : "";
-
+		$inqty = $stok > 0 ? 1 : 0;
+		$hgrosir = $dataProduk_size > 0 ? $dataProduk->harga_grosir : 0;
 		echo '
 		<div class="form-group">
 		<div class="col-sm-6">
+
 				<img hidden id="img_produk" src="' . base_url("resources/dist/img/avatar.png") . '" style="width: inherit;height: inherit;" />
 		</div>
 			<div class="row" style="padding: 10px;">
@@ -283,7 +378,7 @@ class Pos extends BaseController
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Grosir</label>
-						<input name="hgrosir" disabled id="hgrosir" class="form-control" value="' . $dataProduk->harga_grosir . '" type="number">
+						<input name="hgrosir" disabled id="hgrosir" class="form-control" value="' . $hgrosir . '" type="number">
                       </div>
                     </div>
                   </div>
@@ -297,7 +392,7 @@ class Pos extends BaseController
 				<div class="col-sm-6">
 				<label class="control-label ">Qty</label>
 					<input min=0 oninput="validity.valid||(value="");" name="qty" ' . $disableqty . ' id="qty" onchange="subTotal(this.value)" 
-					onkeyup="subTotal(this.value)"  class="form-control" type="number" max="' . $stok . '">
+					onkeyup="subTotal(this.value)"  class="form-control" type="number" max="' . $stok . '" value="' . $inqty . '" >
 					<span class="help-block"></span>
 				</div>
 			</div>
@@ -316,14 +411,22 @@ class Pos extends BaseController
 			</div>		
 		</div>
 		</div>
-		
-
+		';
+		if ($dataProduk_size > 0) {
+			echo '
 		<input type="hidden" name="kd_produk" id="kd_produk" value="' . $dataProduk->kd_produk . '"/>
 		<input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProduk->nama_produk . '"/>
 		<input type="hidden" name="tot_stok" id="tot_stok" value="' . $dataProduk->stok . '"/>
 		<input type="hidden" name="url_image" id="url_image" value="' . $dataProduk->gambar . '"/>
 		<input type="hidden" name="hrg_eceran" id="hrg_eceran" value="' . $hjual . '"/>
 		<input type="hidden" name="hrg_grosir" id="hrg_grosir" value="' . $dataProduk->harga_grosir . '"/>
-	';
+		<input type="hidden" name="tipe_search" id="tipe_search" value="0"/>';
+		} else {
+			$dataProdukV2      = $model->getDataProdukSearchByKodeTemp($searchby)->getRow();
+			//cari di kolom tb
+			echo '<input type="hidden" name="kd_produk" id="kd_produk" value="'.$dataProdukV2->kd_produk.'"/>
+		          <input type="hidden" name="nama_produk" id="nama_produk" value="'.$dataProdukV2->nama_produk.'"/>';
+			echo '<input type="hidden" name="tipe_search" id="tipe_search" value="1"/>';
+		}
 	}
 }

@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-dark navbar-gray-dark">
+  <nav class="main-header navbar sidebar-mini layout-navbar-fixed navbar-dark  navbar-gray-dark">
     <div class="container">
       <a href="#" class="navbar-brand">
       <i class="fas fa-cash-register"></i>
@@ -52,10 +52,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       
         <!-- Notifications Dropdown Menu -->
      
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
               class="fas fa-th-large"></i></a>
-        </li>
+        </li> -->
+        
       </ul>
     </div>
   </nav>

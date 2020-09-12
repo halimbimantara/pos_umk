@@ -10,11 +10,12 @@ class Stok extends BaseController
 {
 	public function index()
 	{
+		
 		$mpos = new Produk_model();
 		$data['produk'] = $mpos->ceksisastok()->getResult();
+		$data['kategori']=$mpos->getListKategori(0)->getResult();
+
+		$data['suplier'] = $mpos->getSuplier()->getResult();
 		return view('admin/stok', $data);
-		// echo "<pre>";
-		// print_r($data);
-		// echo "</pre>";
 	}
 }

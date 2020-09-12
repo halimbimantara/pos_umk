@@ -94,7 +94,7 @@ class Pembelian extends BaseController
 
 	public function getcekdb()
 	{
-		$model= new Pembelian_model();
+		$model = new Pembelian_model();
 		$result = $model->testSelect();
 		var_dump($result);
 		echo date('Y-m-d H:i:s');
@@ -129,8 +129,19 @@ class Pembelian extends BaseController
 		$searchby = $this->request->getVar('searchTerm');
 		$data = array();
 		$model = new Pos_model();
-		$dataProduk = $model->getDataProdukSearch($searchby)->getResult('array');
+		$dataProduk = $model->getDataProdukSearchv2($searchby)->getResult('array');
 
+		if (sizeof($dataProduk) == 0) {
+			//tambahkan ke temp
+			$arrSearch = explode("=",$searchby);
+			$_arrsearch = array(
+				'nama_produk' => $searchby,
+				'harga' => 0,
+				'count' => 1
+			);
+			$model->addTotempSearch($_arrsearch);
+		}
+		// echo sizeof($dataProduk);
 		foreach ($dataProduk as $row) {
 			$data[] = array("id" => $row['kd_produk'], "text" => $row['nama_produk']);
 		}
@@ -184,7 +195,7 @@ class Pembelian extends BaseController
 			$hbeli = $hbeliterakhir->harga;
 		}
 
-		$stok = $dataProduk->stok == NULL ? 0 : $dataProduk->stok;
+		$stok = $dataProduk->stok_total == NULL ? 0 : $dataProduk->stok_total;
 
 		// var_dump($dataProduk);
 		// echo $hbeliterakhir == NULL ?'ok':'ik';
@@ -200,7 +211,7 @@ class Pembelian extends BaseController
 		</div>
 
 		<input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProduk->nama_produk . '"/>
-		<input type="hidden" name="tot_stok" id="tot_stok" value="' . $dataProduk->stok . '"/>
+		<input type="hidden" name="tot_stok" id="tot_stok" value="' . $dataProduk->stok_total . '"/>
 		<input type="hidden" name="url_image" id="url_image" value="' . $dataProduk->gambar_produk . '"/>
 		<div class="form-group">
 		<label class="control-label col-md-3">Sisa Stok</label>
@@ -212,17 +223,18 @@ class Pembelian extends BaseController
 	}
 
 
-	public function detailpembelian($kode_trx){
+	public function detailpembelian($kode_trx)
+	{
 		$mbeli = new Pembelian_model();
 		$r_total = $mbeli->getTotalPembelianCetak($kode_trx);
 		$result = $mbeli->getDetailPembelian($kode_trx);
-		$data['m_pembelian']=$result;
-		$data['total']='<tr>' .
-		'<td colspan="6"></td>' .
-		'<td>Total</td>' .
-		'<td>' . number_format($r_total->getRow()->total , 0, '', '.') . '</td>' .
-		'</tr>';;
-		
+		$data['m_pembelian'] = $result;
+		$data['total'] = '<tr>' .
+			'<td colspan="6"></td>' .
+			'<td>Total</td>' .
+			'<td>' . number_format($r_total->getRow()->total, 0, '', '.') . '</td>' .
+			'</tr>';;
+
 		return view('admin/pembelian/detail', $data);
 	}
 	public function getCekRow($kd_trxbeli)
@@ -293,8 +305,6 @@ class Pembelian extends BaseController
 		$data['data'] = $msetting->getSetting();
 		$_totalCetak = $mpos->getTotalPembelianCetak($id_trx);
 		$listItem = $mpos->cetakPembelian($id_trx);
-
-		$data = array();
 		$data['total'] = $_totalCetak->getRow('total');
 		// var_dump($listItem);
 		// exit;

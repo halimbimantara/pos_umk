@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Pembelian_model;
 use App\Models\Pos;
+use App\Models\Pos_model;
 use App\Models\Produk_model;
 
 class Produk extends BaseController
@@ -17,24 +18,31 @@ class Produk extends BaseController
 	public function index()
 	{
 		$mpos = new Produk_model();
+		$m_margin = new Pos_model();
+		$margin 	   = $m_margin->getmargin()->getRow()->margin;
 		$data = [
-			'pager' => $mpos->pager,
-			'produk' => $mpos->paginate(10),
+			'produk' => $mpos->showproduk()->getResult()
 		];
+		$data['margin'] = $margin;
+		$data['kemasan'] = $mpos->getListKemasan(0)->getResult();
+		$data['kategori'] = $mpos->getListKategori(0)->getResult();
+		$data['suplier'] = $mpos->getSuplier()->getResult();
 		return view('admin/product_view', $data);
 	}
+
+
 
 	public function addProduk()
 	{
 		$model = new Produk_model();
-
 		$data = array(
 			'kd_barcode' => $this->request->getVar('kd_barcode'),
-			'kd_produk' => $this->request->getVar('kd_produk'),
+			'kd_produk' => $this->request->getVar('kd_barcode'),
 			'nama_produk' => $this->request->getVar('nama_produk'),
 			'id_kategori'  => $this->request->getVar('id_kat'),
-			'kd_satuan'  => $this->request->getVar('kd_satuan'),
+			'k1'  => $this->request->getVar('kemasan_k1'),
 			'batas_grosir'  => $this->request->getVar('batas_grosir'),
+			'id_kategori'  => $this->request->getVar('kategori'),
 			'harga_eceran'  => $this->request->getVar('add_harga'),
 			'harga_grosir'  => $this->request->getVar('harga_grosir'),
 			'batas_min_stok'  => $this->request->getVar('b_min_stok'),
@@ -50,12 +58,18 @@ class Produk extends BaseController
 		// 	$response['success'] = false;
 		// 	$response['message'] = "Harap isi data dengan benar";
 		// } else {
-			$r_insert = $model->addProduk($data);
-			if ($r_insert != NULL) {
-				$response['success'] = true;
-			} else {
-				$response['success'] = false;
-			}
+		$avatar = $this->request->getFile('customFile');
+		$avatar->move(ROOTPATH . 'public/uploads');
+
+		$data = [
+			'gambar_produk' => $avatar->getName()
+		];
+		$r_insert = $model->addProduk($data);
+		if ($r_insert != NULL) {
+			$response['success'] = true;
+		} else {
+			$response['success'] = false;
+		}
 		// }
 		echo json_encode($response);
 	}
@@ -63,26 +77,51 @@ class Produk extends BaseController
 	public function editProduk()
 	{
 		$model = new Produk_model();
+
+		$kd_produk = $this->request->getVar('Ekd_produk');
+		$harga_eceran = $this->request->getVar('eharga_meceran');
+		$h_manual = $this->request->getVar('c_setharga');
+
 		$data = array(
-			'kd_barcode' => $this->request->getVar('kd_barcode'),
-			'kd_produk' => $this->request->getVar('kd_produk'),
-			'nama_produk' => $this->request->getVar('nama_produk'),
-			'id_kategori'  => $this->request->getVar('id_kat'),
-			'kd_satuan'  => $this->request->getVar('kd_satuan'),
-			'batas_grosir'  => $this->request->getVar('batas_grosir'),
-			'harga_grosir'  => $this->request->getVar('harga_grosir'),
-			'batas_min_stok'  => $this->request->getVar('b_min_stok'),
-			'batas_max_stok'  => $this->request->getVar('b_max_stok'),
+			'kd_barcode' => $this->request->getVar('Ekd_barcode'),
+			// 'kd_produk' => $this->request->getVar('Ekd_produk'),
+			'nama_produk' => $this->request->getVar('Enama_produk'),
+			// 'kd_satuan'  => $this->request->getVar('kd_satuan'),
+			// 'batas_grosir'  => $this->request->getVar('batas_grosir'),
+			// 'harga_grosir'  => $this->request->getVar('harga_grosir'),
+			'batas_min_stok'  => $this->request->getVar('eb_min_stok'),
+			'batas_max_stok'  => $this->request->getVar('eb_max_stok'),
 			'created_date'  => date('Y-m-d')
 		);
 
-		// $r_update = $model->editProduk($id,$data)
-		// $response = array();
-		// if ($r_insert != NULL) {
-		// 	$response['success'] = true;
+		// $r_update = $model->editproduk($kd_produk,$data);
+		// if ($r_update != NULL) {
+		// 	session()->setFlashdata('success', 'Update Suplier successfully');
 		// } else {
-		// 	$response['success'] = false;
+		// 	session()->setFlashdata('failed', 'Update Suplier failed');
 		// }
-		// echo json_encode($response);
+		// return redirect()->to(base_url('suplier'));
+
+		if ($h_manual) {
+			echo "manual";
+		} else {
+			echo "margin";
+		}
+	}
+
+	public function genbarcode()
+	{
+		// cek di db
+		$model = new Produk_model();
+		$random_number = substr(number_format(time() * rand(), 0, '', ''), 0, 12);
+		$isready = $model->cekBarcode($random_number);
+
+		// echo $random_number;
+		if ($isready > 0) {
+			$random_number = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+		} else {
+			$result = $random_number;
+		}
+		echo $result;
 	}
 }
