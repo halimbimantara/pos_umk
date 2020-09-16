@@ -13,6 +13,7 @@ class Produk extends BaseController
 	function __construct()
 	{
 		$request = \Config\Services::request();
+		$this->session = \Config\Services::session();
 	}
 
 	public function index()
@@ -27,7 +28,12 @@ class Produk extends BaseController
 		$data['kemasan'] = $mpos->getListKemasan(0)->getResult();
 		$data['kategori'] = $mpos->getListKategori(0)->getResult();
 		$data['suplier'] = $mpos->getSuplier()->getResult();
-		return view('admin/product_view', $data);
+		if($this->session->username){
+			$data['username'] = $this->session->username;
+			return view('admin/product_view', $data);
+		} else {
+			return redirect()->to(base_url('login'));
+		}
 	}
 
 

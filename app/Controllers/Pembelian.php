@@ -14,6 +14,7 @@ class Pembelian extends BaseController
 	{
 		$request = \Config\Services::request();
 		$this->model_pembelian = new Pembelian_model();
+		$this->session = \Config\Services::session();
 	}
 
 	public function index()
@@ -40,6 +41,7 @@ class Pembelian extends BaseController
 			$nomor = 1;
 		}
 		$data['nomor'] = ($nomor - 1) * $paginate;
+		$data['username'] = $_SESSION['username'];
 
 		return view('admin/pembelian_view', $data);
 	}

@@ -59,4 +59,29 @@ class Setting_model extends Model
         $builder->select('*');
         return $builder->get();
     }
+
+    function settings_all_users(){
+        $builder = $this->db->table('users');
+        $builder->select('*');
+        return $builder->get();
+    }
+
+    function settings_all_users_update($id , $data){
+        $query = $this->db->table('users')->update($data, array('id' => $id));
+        return $query;
+    }
+
+    function addUsers($data)
+    {
+        $builder = $this->db->table('users');
+        $result = $builder->insert($data);
+        return $result;
+    }
+
+    function deleteUsers($id)
+    {
+        $builder = $this->db->table('users');
+        $result = $builder->delete(['id' => $id]);
+        return $result;
+    }
 }

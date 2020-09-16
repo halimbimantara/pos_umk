@@ -46,6 +46,11 @@
 						<i class="fas fa-cash-register"> Kasir</i>
 					</a>
 				</button>
+				<button class="btn btn-navbar bg-danger" type="submit">
+					<a href="<?= base_url("login/logout") ?>">
+						<i> Logout</i>
+					</a>
+				</button>
 				<!-- Messages Dropdown Menu -->
 				<!-- <li class="nav-item dropdown"> -->
 				<a class="nav-link" data-toggle="dropdown" href="#">
@@ -157,7 +162,7 @@
 
 					</div>
 					<div class="info">
-						<a href="#" class="d-block">user</a>
+						<a href="#" class="d-block"><?php echo $username ?></a>
 					</div>
 				</div>
 
@@ -300,6 +305,12 @@
 								</p>
 							</a>
 							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="<?php echo base_url("settings/all_user_settings"); ?>" class="nav-link">
+										<i class="nav-icon fas fa-file"></i>
+										<p>All User Settings</p>
+									</a>
+								</li>
 								<li class="nav-item">
 									<a href="<?php echo base_url("profile"); ?>" class="nav-link">
 										<i class="nav-icon fas fa-file"></i>

@@ -8,6 +8,11 @@ use App\Models\Setting_model;
 
 class Pos extends BaseController
 {
+	function __construct()
+	{
+		$this->session = \Config\Services::session();
+	}
+
 	public function index()
 	{
 		$modelPos = new Pos_model();
@@ -20,6 +25,7 @@ class Pos extends BaseController
 
 		//empty data sebelumnya
 		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
+		$data['username'] = $_SESSION['username'];
 		return view('kasir/kasir_view', $data);
 	}
 
