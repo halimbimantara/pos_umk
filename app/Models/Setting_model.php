@@ -59,4 +59,10 @@ class Setting_model extends Model
         $builder->select('*');
         return $builder->get();
     }
+
+    function settings_all_users(){
+        $builder = $this->db->table('users');
+        $builder->select('*');
+        return $builder->get();
+    }
 }
