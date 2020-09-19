@@ -169,11 +169,14 @@ class Pos extends BaseController
 
 			$margin   = $modelPos->getmargin()->getRow()->margin;
 			$hg_ecer = 0;
+			$nama_brg="";
 			if ($Isicon != NULL) {
 				if ($Isicon == "yes") {
 					$hg_ecer = $hjual;
+					$nama_brg=$this->request->getVar('nama_barang');
 				} else {
 					$hg_ecer = $this->request->getVar('hrg_eceran');
+					$nama_brg=$this->request->getVar('nama_produk');
 				}
 			} else {
 				$hg_ecer = $this->request->getVar('hrg_eceran');
@@ -183,7 +186,7 @@ class Pos extends BaseController
 				'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
 				'kd_produk'  => $kd_produk,
 				'harga'  => $hg_ecer,
-				'nama_barang'  => $this->request->getVar('nama_produk'),
+				'nama_barang'  => $nama_brg,
 				'diskon' => 0,
 				'created_date' => date("Y-m-d"),
 			);
@@ -194,12 +197,13 @@ class Pos extends BaseController
 			} else {
 				//cek dlu
 				// $this->cekKolom($kd_produk, $qty, $data);
-				$r_insert = $modelPos->addDataPenjualanTemp($data);
 				$response = array();
 				$data['qty'] = $qty;
 				$data['kd_trx_pembelian'] = '1000';
 				$data['id_pembelian'] = '1000';
-				$data['sub_total'] = doubleval($data['harga'] * $qty);
+				$data['sub_total'] = intval($data['harga'] * $qty);
+
+				$r_insert = $modelPos->addDataPenjualanTemp($data);
 				if ($r_insert != NULL) {
 					$response['success'] = true;
 				} else {
@@ -207,6 +211,60 @@ class Pos extends BaseController
 				}
 				echo json_encode($response);
 			}
+		} else if ($tipe_trx == 2) {
+			// if (strpos($searchby, '=') !== false) {
+			// 	$_arrsearch = array(
+			// 		'nama_produk' => $searchby,
+			// 		'harga' => 0,
+			// 		'count' => 1
+			// 	);
+			// 	$model->addTotempSearch($_arrsearch);
+			// }
+
+			$var_item = explode("=", $kd_produk);
+			$_arrsearch = array(
+				'nama_produk' => $var_item[0],
+				'harga' => sizeof($var_item) > 2 ? $var_item[2] : 0,
+				'count' => 1
+			);
+			// $_arrsearch = array(
+			// 			'nama_produk' => $var_item[0],
+			// 			'harga' => 0,
+			// 			'count' => 1
+			// 		);
+			// $model->addTotempSearch($_arrsearch);
+			//jika ada yg sama update sesuai idnya 
+			$hasil_temp = $modelPos->getDataProdukSearchTemp($var_item[0])->getResult('array');
+			// print_r($hasil_temp[0]['id']);
+			// exit();
+			if (sizeof($hasil_temp) > 0) {
+				$idTempS = $hasil_temp[0]['id'];
+				$modelPos->updateTempSearch($idTempS, $var_item[0], sizeof($var_item) > 2 ? $var_item[2] : 0);
+			} else {
+				$modelPos->addTotempSearch($_arrsearch);
+			}
+			$qty = 1;
+			$data = array(
+				'kd_trx_penjualan' => $this->request->getVar('kd_trxpenjualan'),
+				'kd_produk'  => $kd_produk,
+				'harga'  => sizeof($var_item) > 2 ? $var_item[2] : 0,
+				'qty'  => $var_item[1],
+				'nama_barang'  => $var_item[0],
+				'diskon' => 0,
+				'created_date' => date("Y-m-d"),
+			);
+			$response = array();
+			// $data['qty'] = $qty;
+			$data['kd_trx_pembelian'] = '1000';
+			$data['id_pembelian'] = '1000';
+			$data['sub_total'] = sizeof($var_item) > 2 ? doubleval($var_item[2]) * doubleval($var_item[1]) : 0;
+			$r_insert2 = $modelPos->addDataPenjualanTemp($data);
+			if ($r_insert2 != NULL) {
+				$response['success'] = true;
+			} else {
+				$response['success'] = false;
+			}
+			echo json_encode($response);
 		} else {
 			$qty = 1;
 			$data = array(
@@ -218,17 +276,17 @@ class Pos extends BaseController
 				'created_date' => date("Y-m-d"),
 			);
 			$r_insert2 = $modelPos->addDataPenjualanTemp($data);
-				$response = array();
-				$data['qty'] = $qty;
-				$data['kd_trx_pembelian'] = '1000';
-				$data['id_pembelian'] = '1000';
-				$data['sub_total'] = 0;
-				if ($r_insert2 != NULL) {
-					$response['success'] = true;
-				} else {
-					$response['success'] = false;
-				}
-				echo json_encode($response);
+			$response = array();
+			$data['qty'] = $qty;
+			$data['kd_trx_pembelian'] = '1000';
+			$data['id_pembelian'] = '1000';
+			$data['sub_total'] = 0;
+			if ($r_insert2 != NULL) {
+				$response['success'] = true;
+			} else {
+				$response['success'] = false;
+			}
+			echo json_encode($response);
 		}
 	}
 
@@ -279,12 +337,12 @@ class Pos extends BaseController
 				// '<td>' . $no . '</td>' .
 				'<td>' . substr($rows->nama_barang, 0, 10) . '</td>' .
 				'<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
-				'<td align="right" style="background-color:#bdbdbd" onClick="show_qty()">' . $rows->qty . '</td>' .
+				'<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit('.$rows->id_penjualan.')">' . $rows->qty . '</td>' .
 				// '<td>' . $rows->diskon . '</td>' .
 				'<td align="right">' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
 				'<td><div class="hidden-md hidden-lg">
 				<div class="inline pos-rel">
-					<a href="#" class="btn-xs small danger" onclick=hapus_temp('  . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
+					<a href="#" data-toggle="tooltip" data-placement="top" title="Hapus Item" class="btn-xs small danger" onclick=hapus_temp('  . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
 				</div>
 				</div>
 				</td>' .
@@ -424,8 +482,8 @@ class Pos extends BaseController
 		} else {
 			$dataProdukV2      = $model->getDataProdukSearchByKodeTemp($searchby)->getRow();
 			//cari di kolom tb
-			echo '<input type="hidden" name="kd_produk" id="kd_produk" value="'.$dataProdukV2->kd_produk.'"/>
-		          <input type="hidden" name="nama_produk" id="nama_produk" value="'.$dataProdukV2->nama_produk.'"/>';
+			echo '<input type="hidden" name="kd_produk" id="kd_produk" value="' . $dataProdukV2->kd_produk . '"/>
+		          <input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProdukV2->nama_produk . '"/>';
 			echo '<input type="hidden" name="tipe_search" id="tipe_search" value="1"/>';
 		}
 	}

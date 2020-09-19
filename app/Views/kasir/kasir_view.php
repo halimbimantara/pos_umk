@@ -48,7 +48,7 @@
                         <!--  -->
                         <!-- Foto -->
                         <div class="col-md-7" id="foto" style="height: 100px;width: 100px;">
-                        <img  id="img_prod" class="img-fluid mb-4" src="<?= base_url()."/resources/dist/img/default-150x150.png"; ?>" alt="Photo"  style="width:100%">
+                            <img id="img_prod" class="img-fluid mb-4" src="<?= base_url() . "/resources/dist/img/default-150x150.png"; ?>" alt="Photo" style="width:100%">
                             <!-- <img id="img_prod" class="img-fluid mb-3" alt="Photo"> -->
                         </div>
                     </div>
@@ -111,7 +111,6 @@
                                     <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Barcode <i class="fa fa-barcode"></i></a>
                                 </li>
                                 <li class="nav-item">
-
                                     <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Search <i class="fa fa-search"></i></a>
                                 </li>
                                 <li class="nav-item">
@@ -140,10 +139,14 @@
                                 <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
                                     <form id="form_searchs">
                                         <div class="row">
-                                            <div class="card-body">
+                                            <div class="card-body" style="margin-top: -20px;">
                                                 <div class="form-group">
                                                     <label for="idprodukbarcode">Cari Nama Produk</label>
-                                                    <select autocomplete="off" id="id_barang" name="id_barang" required="false" onchange="showBarang(this.value)" style="width: 100%;" class="form-control" data-placeholder="Cari Produk..."></select>
+                                                    <!-- <select  class="select2" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Tooltip on top" id="id_barang" name="id_barang" required="false" onchange="showBarang(this.value)" style="width: 100%;" class="form-control" data-placeholder="Cari Produk..."></select> -->
+                                                    <!-- <label>Contoh : Bawang=2=2000</label> -->
+                                                    <input style="margin-top: 12px;" type="text" class="form-control" id="trx_kasir" placeholder="Format Input nama barang=qty=harga barang">
+                                                    <div id="itemList"></div>
+                                                    <br />
                                                 </div>
                                             </div>
                                         </div>
@@ -185,63 +188,63 @@
                 </div>
                 <div class="col-5 col-sm-5 col-md-12" hidden>
                     <!-- USERS LIST -->
-                        <!-- /.card-header -->
-                        <div class="card-body p-0">
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
 
-                            <form action="#" id="form-addtemp" class="form-horizontal">
-                                <input type="hidden" id="update_qty" name="update_qty" value="0" />
-                                <input type="hidden" id="kd_trxpenjualan" name="kd_trxpenjualan" value="<?= $nota_penjualan ?>" />
-                                <div id="detail_item" hidden></div>
-                            </form>
-                        </div>
-                        <div id="response_ajax"></div>
+                        <form action="#" id="form-addtemp" class="form-horizontal">
+                            <input type="hidden" id="update_qty" name="update_qty" value="0" />
+                            <input type="hidden" id="kd_trxpenjualan" name="kd_trxpenjualan" value="<?= $nota_penjualan ?>" />
+                            <div id="detail_item" hidden></div>
+                        </form>
                     </div>
+                    <div id="response_ajax"></div>
                 </div>
             </div>
-
         </div>
-        <div class="modal fade" id="modal_calculators" role="dialog">
-            <div class="modal-dialog ">
-                <div class="modal-content col-md-5">
-                    <div class="modal-header">
-                        <p>Masukan Jumlah Barang</p>
-                    </div>
-                    <div class="modal-body form">
-                        <div class="col-sm-12 col-md-offset-3 calculator" align="center">
-                            <div class="row displayBox">
-                                <p class="displayText" style="font-size: 50px;" id="display">0</p>
-                            </div>
-                            <div class="row numberPad" style="padding: 20px;">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <button class="btn btn-calc hvr-radial-out" id="seven">7</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="eight">8</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="nine">9</button>
-                                    </div>
-                                    <div class="row">
-                                        <button class="btn btn-calc hvr-radial-out" id="four">4</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="five">5</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="six">6</button>
-                                    </div>
-                                    <div class="row">
-                                        <button class="btn btn-calc hvr-radial-out" id="one">1</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="two">2</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="three">3</button>
-                                    </div>
-                                    <div class="row">
-                                        <button class="btn btn-calc hvr-radial-out" id="clear">C</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="zero">0</button>
-                                        <button class="btn btn-calc hvr-radial-out" id="backspace">⌫</button> </div>
+
+    </div>
+    <div class="modal fade" id="modal_calculators" role="dialog">
+        <div class="modal-dialog ">
+            <div class="modal-content col-md-5">
+                <div class="modal-header">
+                    <p>Masukan Jumlah Barang</p>
+                </div>
+                <div class="modal-body form">
+                    <div class="col-sm-12 col-md-offset-3 calculator" align="center">
+                        <div class="row displayBox">
+                            <p class="displayText" style="font-size: 50px;" id="display">0</p>
+                        </div>
+                        <div class="row numberPad" style="padding: 20px;">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <button class="btn btn-calc hvr-radial-out" id="seven">7</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="eight">8</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="nine">9</button>
                                 </div>
+                                <div class="row">
+                                    <button class="btn btn-calc hvr-radial-out" id="four">4</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="five">5</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="six">6</button>
+                                </div>
+                                <div class="row">
+                                    <button class="btn btn-calc hvr-radial-out" id="one">1</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="two">2</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="three">3</button>
+                                </div>
+                                <div class="row">
+                                    <button class="btn btn-calc hvr-radial-out" id="clear">C</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="zero">0</button>
+                                    <button class="btn btn-calc hvr-radial-out" id="backspace">⌫</button> </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" id="btnSaveProduk" onclick="save_qty()" class="btn btn-primary">Submit</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnSaveProduk" onclick="save_qty()" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- tes -->
@@ -278,6 +281,7 @@
 <?= $this->section('jscript') ?>
 <script type="text/javascript">
     var ismodelPop = false;
+
     $(document).ready(function() {
         // $('#form_menu').hide();
         // $('#form_barcode').hide();
@@ -473,13 +477,18 @@
     });
 
     $(function() {
+
         //Initialize Select2 Elements
-        $('.select2').select2()
+        // $('.select2').select2();
         //Initialize Select2 Elements
-        $('.select2bs4').select2({
-            theme: 'bootstrap4'
-        })
+        // $('.select2bs4').select2({
+        //     theme: 'bootstrap4'
+        // });
+
+        $('[data-toggle="tooltip"]').tooltip();
+
     });
+
     var save_method; //for save method string
     var nota_penjualan = $("#kd_trxpenjualan").val();
     var selesai_penjualan;
@@ -493,36 +502,102 @@
         //     console.log("max");
         // });
 
-        $("#id_barang").select2({
-            closeOnSelect: true,
-            // theme: "classic",
-            maximumResultsForSearch: 1,
-            selectOnClose: true,
-            ajax: {
-                url: "<?= base_url("pembelian/getProdukSelect") ?>",
-                type: "post",
-                dataType: 'json',
-                delay: 250,
-                data: function(params) {
-                    return {
-                        searchTerm: params.term // search term
-                    };
-                },
-                processResults: function(response) {
-                    // console.log("item id");
-                    // console.log(response[0].id);
-                    // $('#id_barang').val(data.text).trigger('change');
-                    // // $("#id_barang").append(response[0].text);
-                    // showBarang(response[0].id);
-                    // $('#id_barang option[value=val2]').attr('selected','selected');
-                    // $('#id_barang').select2('data',response);
+        // $("#id_barang").select2({
+        //     closeOnSelect: false,
+        //     theme: "classic",
+        //     maximumResultsForSearch: 1,
+        //     selectOnClose: false,
+        //     ajax: {
+        //         url: "<?//= //base_url("pembelian/getProdukSelect") ?>",
+        //         type: "post",
+        //         dataType: 'json',
+        //         delay: 300,
+        //         data: function(params) {
+        //             return {
+        //                 searchTerm: params.term // search term
+        //             };
+        //         },
+        //         processResults: function(response) {
+        //             //    console.log(response);
+        //             return {
+        //                 results: response
+        //             };
+        //         },
+        //         cache: false
+        //     }
+        // });
 
-                    return {
-                        results: response
-                    };
-                    // $("#id_barang").append("cuy");
-                },
-                cache: true
+        $('#trx_kasir').keyup(function() {
+            var query = $(this).val();
+            if (query != '') {
+                $.ajax({
+                    url: "<?= base_url("pembelian/getProdukSelectCustom") ?>",
+                    method: "POST",
+                    data: {
+                        searchTerm: query
+                    },
+                    success: function(data) {
+                        $('#itemList').fadeIn();
+                        $('#itemList').html(data);
+                    }
+                });
+            } else {
+                $('#itemList').html('');
+            }
+        });
+
+        $(document).on('click', '.list-group-item', function() {
+            $('#trx_kasir').val($(this).text());
+            $('#itemList').fadeOut();
+            //get value
+            var tipe_input = $(this).attr('rel-tipe');
+            // console.log($(this).attr('rel'));
+            if (tipe_input != 1) {
+                showBarang($(this).attr('rel'));
+            }else{
+                $("#trx_kasir").focus();
+            }
+        });
+
+        $('#trx_kasir').keypress(function(e) {
+            var in_value = $("#trx_kasir").val();
+            // console.log(.preventDefault())
+
+            var url = "<?php echo site_url('pos/addproduktemp') ?>";
+            if (e.key === "Enter" || (e.keyCode || e.which) === 13) {
+                e.preventDefault();
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: {
+                        tipe_search: 2,
+                        kd_trxpenjualan: $('#kd_trxpenjualan').val(),
+                        qty: 1,
+                        kd_produk: in_value,
+                        update_qty: 0,
+                    },
+                    success: function(data) {
+                        var json = JSON.parse(data);
+                        if (json.success) {
+                            reloadTable(nota_penjualan);
+                            reloadTotalBelanja(nota_penjualan);
+                            // $("#update_qty").val(0);
+                            // $("#form-addtemp")[0].reset();
+                            // $("#detail_item").empty();
+                            $('#btn_selesai').attr('hidden', false); //
+                            $('#bayar').attr('disabled', false); //
+
+                            // $("#idprodukbarcode").focus();
+                            $("#trx_kasir").val("");
+
+                        } else {
+                            alert("Gagal Menambahkan barang");
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('Error adding data');
+                    }
+                });
             }
         });
 
@@ -568,7 +643,7 @@
             $('#reset').hide();
             return;
         } else {
-            console.log("item s"+str);
+            // console.log("item s" + str);
             // add to db temp jual
             $("#form-addtemp")[0].reset();
             // $("#form-addtemp").trigger("reset");
@@ -592,7 +667,10 @@
             $("#id_barang").trigger("reset");
             $("#form-addtemp")[0].reset();
             // $("#form-addtemp").trigger("reset");
-            show_qty('');
+            var tipe_input = $("#tipe_search").val();
+            if (tipe_input != 1) {
+                show_qty('');
+            }
             var img_uri = $("#url_image").delay(3000).val();
             // $(".badge-danger").add();
             // $("#form-addtemp")[0].reset();
@@ -679,6 +757,7 @@
         }
 
         if (cstok == 0) {
+            $('#modal_calculators').modal('hide');
             alert("stok kosong");
         } else if (qty == 0 && tipe_trx == 0) {
             alert("Masukan Qty");
@@ -696,6 +775,7 @@
                         reloadTable(nota_penjualan);
                         reloadTotalBelanja(nota_penjualan);
                         $("#update_qty").val(0);
+                        $("#trx_kasir").val("");
                         // $("#form-addtemp")[0].reset();
                         // $("#detail_item").empty();
                         $('#btn_selesai').attr('hidden', false); //
@@ -786,7 +866,7 @@
         // });
         // console.log(values);
         // if(!values.empty){
-        //     $("#img_produk").attr("src", "<?= base_url('public/uploads') ?>" + '/' + value + "");
+        //     $("#img_produk").attr("src", "<?//= base_url('public/uploads') ?>" + '/' + value + "");
         // }
         $('#modal_calculators').modal('show');
         var displayBox = document.getElementById('display')
@@ -801,8 +881,9 @@
         //     // backdrop: 'static',
         //     keyboard: true
         // });
-        // var displayBox = document.getElementById('display')
-        // displayBox.innerHTML = 0;
+        $('#modal_calculators').modal('show');
+        var displayBox = document.getElementById('display')
+        displayBox.innerHTML = 0;
     }
 
     function hapus_temp(str) {

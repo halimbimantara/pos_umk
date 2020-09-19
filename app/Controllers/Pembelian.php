@@ -130,10 +130,7 @@ class Pembelian extends BaseController
 		$data = array();
 		$model = new Pos_model();
 		$dataProduk = $model->getDataProdukSearchv2($searchby)->getResult('array');
-
-		if (sizeof($dataProduk) == 0) {
-			//tambahkan ke temp
-			$arrSearch = explode("=",$searchby);
+		if (strpos($searchby, '=') !== false) {
 			$_arrsearch = array(
 				'nama_produk' => $searchby,
 				'harga' => 0,
@@ -141,11 +138,72 @@ class Pembelian extends BaseController
 			);
 			$model->addTotempSearch($_arrsearch);
 		}
+		// if (sizeof($dataProduk) == 0) {
+		// 	//tambahkan ke temp
+		// 	$arrSearch = explode("=",$searchby);
+		// 	$_arrsearch = array(
+		// 		'nama_produk' => $searchby,
+		// 		'harga' => 0,
+		// 		'count' => 1
+		// 	);
+		// 	$model->addTotempSearch($_arrsearch);
+		// }
 		// echo sizeof($dataProduk);
 		foreach ($dataProduk as $row) {
 			$data[] = array("id" => $row['kd_produk'], "text" => $row['nama_produk']);
 		}
 		echo json_encode($data);
+	}
+
+	public function getProdukSelectTipe2()
+	{
+		$searchby = $this->request->getVar('searchTerm');
+		$data = array();
+		$model = new Pos_model();
+		$dataProduk = $model->getDataProdukSearchv2($searchby)->getResult('array');
+		if (strpos($searchby, '=') !== false) {
+			$_arrsearch = array(
+				'nama_produk' => $searchby,
+				'harga' => 0,
+				'count' => 1
+			);
+			$model->addTotempSearch($_arrsearch);
+		}
+		// if (sizeof($dataProduk) == 0) {
+		// 	//tambahkan ke temp
+		// 	$arrSearch = explode("=",$searchby);
+		// 	$_arrsearch = array(
+		// 		'nama_produk' => $searchby,
+		// 		'harga' => 0,
+		// 		'count' => 1
+		// 	);
+		// 	$model->addTotempSearch($_arrsearch);
+		// }
+		// echo sizeof($dataProduk);
+		foreach ($dataProduk as $row) {
+			$data[] = array("id" => $row['kd_produk'], "text" => $row['nama_produk']);
+		}
+		echo json_encode($data);
+	}
+
+	public function getProdukSelectCustom()
+	{
+		$searchby = $this->request->getVar('searchTerm');
+		$data = array();
+		$model = new Pos_model();
+		$dataProduk = $model->getDataProdukSearchv2($searchby)->getResult('array');
+		
+		$output = '<ul class="list-group" id="results">';
+		
+		if(sizeof($dataProduk) > 0){
+			foreach ($dataProduk as $row) {
+				$output .= '<li rel-tipe="'.$row["tipe"].'" rel="'.$row["kd_produk"].'" class="list-group-item link-class">'.$row["nama_produk"].'</li>';
+			}
+		  } else {
+			$output .= '<li class="list-group-item link-class">Tidak ada yang cocok.</li>';  
+		  }  
+		  $output .= '</ul>';
+		  echo $output;
 	}
 
 	// public function cetak($id_trx)

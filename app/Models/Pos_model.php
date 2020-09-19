@@ -113,11 +113,13 @@ class Pos_model extends Model
 
     function getDataProdukSearchv2($search = null)
     {
-        $_query ="SELECT kd_produk,nama_produk FROM master_produk 
+        $_query = "SELECT kd_produk,nama_produk,(SELECT 0 ) as tipe FROM master_produk 
+                 WHERE nama_produk='" . $search . "'
+                 OR nama_produk LIKE '%" . $search . "%'
                  UNION ALL 
-                 SELECT id as kd_produk,nama_produk FROM trx_search_temp
-                 WHERE nama_produk='".$search."'
-                 OR nama_produk LIKE '%".$search."%'";
+                 SELECT id as kd_produk,nama_produk,(SELECT 1 ) as tipe FROM trx_search_temp
+                 WHERE nama_produk='" . $search . "'
+                 OR nama_produk LIKE '%" . $search . "%' ORDER BY nama_produk  DESC";
         // $_query ="SELECT kd_produk,nama_produk FROM master_produk 
         //          UNION ALL 
         //          SELECT id as kd_produk,nama_produk FROM trx_search_temp
@@ -140,8 +142,8 @@ class Pos_model extends Model
         //          SELECT id as kd_produk,nama_produk FROM trx_search_temp
         //          WHERE nama_produk='".$search."'
         //          OR nama_produk LIKE '%".$search."%'";
-        $_query ="SELECT id as kd_produk,nama_produk FROM trx_search_temp
-                 WHERE id='".$search."'";
+        $_query = "SELECT id as kd_produk,nama_produk FROM trx_search_temp
+                 WHERE id='" . $search . "'";
         // $builder = $this->db->table('master_produk');
         // $builder->select('kd_produk,nama_produk');
         // $builder->where('kd_produk =', $search);
@@ -151,6 +153,16 @@ class Pos_model extends Model
         $result = $this->db->query($_query);
         return $result;
     }
+
+    function getDataProdukSearchTemp($search = null)
+    {
+
+        $_query = "SELECT * FROM trx_search_temp WHERE nama_produk LIKE '%" . $search . "%'";
+        $result = $this->db->query($_query);
+        return $result;
+    }
+
+
 
 
     /**
@@ -269,6 +281,14 @@ class Pos_model extends Model
     }
 
 
+    function updateTempSearch($id, $nama, $harga)
+    {
+        $builder = $this->db->table('trx_search_temp');
+        $builder->set('nama_produk', $nama);
+        $builder->set('harga', $harga);
+        $builder->where('id', $id);
+        return $builder->update();
+    }
     /**
      * History Query
  
