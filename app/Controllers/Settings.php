@@ -6,6 +6,10 @@ use App\Models\Setting_model;
 
 class Settings extends BaseController
 {
+	function __construct()
+	{
+		$this->session = \Config\Services::session();
+	}
 	/**
 	 * apps setting
 	 */
@@ -15,6 +19,7 @@ class Settings extends BaseController
 		$data = array();
 		$data['data'] = $model->getSetting();
 		// var_dump($data['nama_apps']);
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/general', $data);
 	}
 
@@ -30,6 +35,7 @@ class Settings extends BaseController
 		$data = array();
 		$data['margin'] = $model->showMargin()->getRow();
 		// var_dump($data['nama_apps']);
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/penjualan_setting', $data);
 	}
 
@@ -77,6 +83,7 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['k1'] = $model->showkemasan(0)->getResult();
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/setting_satuan', $data);
 	}
 
@@ -93,6 +100,7 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['roles']=$model->settings_role()->getResult();
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/userroles_view', $data);
 	}
 
@@ -101,6 +109,7 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['roles_menu']=$model->settings_menus()->getResult();
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/userrolesmenu_view', $data);
 	}
 
@@ -108,6 +117,15 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['kategoriprod']=$model->settings_katproduk()->getResult();
+		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/kategoriprod_view', $data);
+	}
+
+	public function all_user_settings(){
+		$model = new Setting_model();
+		$data = array();
+		$data['setting_all_user']=$model->settings_all_users()->getResult();
+		$data['username'] = $_SESSION['username'];
+		return view('admin/settings/all_user_view', $data);
 	}
 }

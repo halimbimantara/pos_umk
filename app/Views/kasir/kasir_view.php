@@ -1,18 +1,8 @@
 <?= $this->extend('default_top_layout') ?>
-<style>
-    .modal-dialog {
-        position: absolute;
-        top: 50px;
-        right: 100px;
-        bottom: 0;
-        left: 0;
-        z-index: 10040;
-        overflow: auto;
-        overflow-y: auto;
-    }
-</style>
+
+
+
 <?= $this->section('content') ?>
-<!-- <link rel="stylesheet" href="<?= base_url("resources/dist/css/creative_calc/creative.css") ?>"> -->
 <!-- content -->
 <!-- Main content -->
 
@@ -20,18 +10,17 @@
     <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-            <div class="col-2">
+            <div class="col-sm-2">
                 <div class="col-sm-2 col-md-12">
                     <div class="form-group">
                         <div style="text-size-adjust: 14px;" id="total_belanja">
                             <!-- <label class="control-label">Total</label>
                                 <input type="hidden" name="mtotal_belanja" id="mtotal_belanja" />
                                 <h3><span style=" color: red;" class="info-box-number"></span></h3> -->
-                            <div>
-                                <!-- <label class="control-label">Bayar</label> -->
+                            <!-- <div>
                                 <input placeholder="Total Nota" name="mtotal_belanja" disabled id="mtotal_belanja" type="text" class="form-control">
                                 <span class="help-block"></span>
-                            </div>
+                            </div> -->
                             <label>Jenis Produk</label>
                         </div>
                         <div>
@@ -47,15 +36,30 @@
                         </div>
                         <!--  -->
                         <!-- Foto -->
-                        <div class="col-md-7" id="foto" style="height: 100px;width: 100px;">
-                            <img id="img_prod" class="img-fluid mb-4" src="<?= base_url() . "/resources/dist/img/default-150x150.png"; ?>" alt="Photo" style="width:100%">
+                        <div class="col-sm-5 col-md-12" id="foto">
+                            <div class="card card-black">
+                                <div class="card-header">
+                                    <h3 class="card-title">Gambar</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.card-tools -->
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body" style="padding: 1px;">
+                                    <img id="img_prod" class="img-fluid mb-4" src="<?= base_url() . "/resources/dist/img/default-150x150.png"; ?>" alt="Photo" style="width:100%">
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
                             <!-- <img id="img_prod" class="img-fluid mb-3" alt="Photo"> -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-5">
+            <div class="col-sm-5">
                 <div class="col-sm-9 col-md-12">
                     <!-- USERS LIST -->
                     <div class="row" style="padding-bottom: 10px;">
@@ -102,8 +106,8 @@
             <div class="clearfix hidden-md-up"></div>
 
 
-            <div class="col">
-                <div class="col-5 col-sm-5 col-md-12">
+            <div class="col-sm-5">
+                <div class="col-12 col-sm-5 col-md-12">
                     <div class="card card-gray-dark card-tabs">
                         <div class="card-header p-0 pt-1">
                             <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
@@ -125,7 +129,7 @@
                                     <form id="form_barcode">
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <label for="idprodukbarcode">Nama Produk / Barcode</label>
+                                                <label for="idprodukbarcode">Barcode</label>
                                                 <input type="text" class="form-control" onchange="showBarang(this.value)" id="idprodukbarcode" placeholder="Masukan nama / letakan kursor">
                                             </div>
 
@@ -142,8 +146,6 @@
                                             <div class="card-body" style="margin-top: -20px;">
                                                 <div class="form-group">
                                                     <label for="idprodukbarcode">Cari Nama Produk</label>
-                                                    <!-- <select  class="select2" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Tooltip on top" id="id_barang" name="id_barang" required="false" onchange="showBarang(this.value)" style="width: 100%;" class="form-control" data-placeholder="Cari Produk..."></select> -->
-                                                    <!-- <label>Contoh : Bawang=2=2000</label> -->
                                                     <input style="margin-top: 12px;" type="text" class="form-control" id="trx_kasir" placeholder="Format Input nama barang=qty=harga barang">
                                                     <div id="itemList"></div>
                                                     <br />
@@ -152,17 +154,19 @@
                                         </div>
                                     </form>
                                 </div>
+
                                 <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
-                                    <form id="form_menu">
-                                        <div class="row">
-                                            <div class="row col-sm-9">
+                                    <!-- <form id="form_menu"> -->
+                                    <div class="row">
+                                        <div class="col-sm-7 col-md-8 col-md-6">
+                                            <div class="row" id="produk_icon">
                                                 <?php foreach ($item_produk as $rows) {
                                                     $gambar = $rows->gambar_produk == '' ? base_url() . "/resources/dist/img/default-150x150.png" : base_url() . "/public/uploads/" . $rows->gambar_produk;
                                                 ?>
-                                                    <div class="col-sm-8 col-md-3" onclick="addproduk('<?= $rows->kd_produk ?>','<?= $rows->nama_produk ?>')">
+                                                    <div class="col-sm-4 col-md-4 col-md-6" onclick="addproduk('<?= $rows->kd_produk ?>','<?= $rows->nama_produk ?>')">
                                                         <img src="<?= $gambar; ?>" alt="Avatar" style="width:100%">
                                                         <div class="container">
-                                                            <div class="col-md-12">
+                                                            <div>
                                                                 <center>
                                                                     <p style="font-size: x-small;"><?= substr($rows->nama_produk, 0, 10); ?></p>
                                                                 </center>
@@ -171,14 +175,14 @@
                                                     </div>
                                                 <?php } ?>
                                             </div>
-
-                                            <div class="col-sm-3">
-
-                                                <?php foreach ($item_kategori as $cat) { ?>
-                                                    <button type="button" class="btn btn-block btn-outline-secondary btn-sm"><?= $cat->kategori ?></button>
-                                                <?php } ?>
-                                            </div>
-                                    </form>
+                                        </div>
+                                        <div class="col-sm-4 com-md-4">
+                                            <?php foreach ($item_kategori as $cat) { ?>
+                                                <button type="button" class="btn btn-block btn-outline-secondary btn-sm"><?= $cat->kategori ?></button>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                    <!-- </form> -->
                                 </div>
 
                             </div>
@@ -283,6 +287,22 @@
     var ismodelPop = false;
 
     $(document).ready(function() {
+
+        window.onresize = function(event) {
+            // applyOrientation();
+        }
+
+        function applyOrientation() {
+            if (window.innerHeight < window.innerWidth) {
+                alert("You are now in 1111");
+            } else {
+                if (window.innerHeight < window.innerWidth) {
+                    alert("You are now in 2222");
+                } else {
+                    alert("You are now in 33333");
+                }
+            }
+        }
         // $('#form_menu').hide();
         // $('#form_barcode').hide();
         // $('#form_searchs').show();
@@ -489,6 +509,17 @@
 
     });
 
+    function showIconProduk(id) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("produk_icon").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "<?= base_url('pos/showprodukkategori') ?>/" + str, true);
+        xhttp.send();
+    }
+
     var save_method; //for save method string
     var nota_penjualan = $("#kd_trxpenjualan").val();
     var selesai_penjualan;
@@ -497,35 +528,12 @@
     $('#bayar').attr('disabled', true); //
 
     $(document).ready(function() {
-        // $('#qty').on('mouseup keyup', function() {
-        //     $(this).val(Math.min(1, Math.max($("#stok").val(), $(this).val())));
-        //     console.log("max");
-        // });
-
-        // $("#id_barang").select2({
-        //     closeOnSelect: false,
-        //     theme: "classic",
-        //     maximumResultsForSearch: 1,
-        //     selectOnClose: false,
-        //     ajax: {
-        //         url: "<?//= //base_url("pembelian/getProdukSelect") ?>",
-        //         type: "post",
-        //         dataType: 'json',
-        //         delay: 300,
-        //         data: function(params) {
-        //             return {
-        //                 searchTerm: params.term // search term
-        //             };
-        //         },
-        //         processResults: function(response) {
-        //             //    console.log(response);
-        //             return {
-        //                 results: response
-        //             };
-        //         },
-        //         cache: false
-        //     }
-        // });
+        $("[data-toggle=popover]").popover({
+                    html: true,
+                    content: function() {
+                        return $('#popover-content').html();
+                    }
+                });
 
         $('#trx_kasir').keyup(function() {
             var query = $(this).val();
@@ -554,9 +562,32 @@
             // console.log($(this).attr('rel'));
             if (tipe_input != 1) {
                 showBarang($(this).attr('rel'));
-            }else{
+            } else {
                 $("#trx_kasir").focus();
+               
+
+                $('#element').popover('show');
             }
+        });
+
+        $(document).on('click', '.tb-trx', function() {
+            // $('#trx_kasir').val($(this).text());
+            // $('#itemList').fadeOut();
+            //get value
+            var img_uri = $(this).attr('rel-tb');
+            if (!img_uri.empty && img_uri != "-") {
+                // console.log(img_uri);
+                $("#img_prod").attr("src", "<?= base_url('public/uploads') ?>" + '/' + img_uri + "");
+                $("#img_prod").show();
+            } else {
+                console.log("kosong");
+                $("#img_prod").attr("src", "<?= base_url() . "/resources/dist/img/default-150x150.png" ?>");
+                $("#img_prod").show();
+            }
+
+            $(this).tooltip('enable').tooltip('open');
+            // console.log($(this).attr('rel'));
+            // alert(tipe_input);
         });
 
         $('#trx_kasir').keypress(function(e) {
@@ -603,17 +634,15 @@
 
         $("#gambar-checkbox").change(function() {
             var img_uri = $("#url_image").val();
-            if (this.checked) {
-                if (!img_uri.empty) {
-                    console.log(img_uri);
-                    $("#img_produk").attr("src", "<?= base_url('public/uploads') ?>" + '/' + img_uri + "");
-                    $("#img_produk").show();
-                } else {
-                    alert("gambar tidak ada");
-                }
+            if (!img_uri.empty) {
+                console.log(img_uri);
+                $("#img_produk").attr("src", "<?= base_url('public/uploads') ?>" + '/' + img_uri + "");
+                $("#img_produk").show();
             } else {
-                $("#img_produk").hide();
+                $("#img_produk").attr("src", "<?= base_url() . "/resources/dist/img/default-150x150.png" ?>");
+                $("#img_produk").show();
             }
+
         });
     });
 
@@ -931,5 +960,6 @@
         return rupiah.split('', rupiah.length - 1).reverse().join('');
 
     }
+    // Styled components version, not needed if using scss
 </script>
 <?= $this->endSection() ?>

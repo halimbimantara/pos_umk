@@ -38,9 +38,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			background-color: #f1f1f1;
 		}
 	</style>
+	<link rel="stylesheet" href="<?= base_url("resources/dist/css/flexgrid.css") ?>">
+	<style>
+		.modal-dialog {
+			position: absolute;
+			top: 50px;
+			right: 100px;
+			bottom: 0;
+			left: 0;
+			z-index: 10040;
+			overflow: auto;
+			overflow-y: auto;
+		}
+	</style>
 </head>
 
-<body class="hold-transition layout-top-nav sidebar-collapse layout-top-nav sidebar-closed text-sm">
+<body class="hold-transition layout-top-nav sidebar-collapse layout-top-nav sidebar-closed layout-navbar-fixed text-sm">
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -51,24 +64,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<span class="brand-text font-weight-light">Kasir</span>
 				</a>
 
-				<button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<!-- <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
+				</button> -->
 
 				<div class="collapse navbar-collapse order-3" id="navbarCollapse">
 					<!-- Left navbar links -->
-					<ul class="navbar-nav">
+					<!-- <ul class="navbar-nav">
 						<li class="nav-item">
 							<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
 						</li>
 
-					</ul>
+					</ul> -->
+
 				</div>
 
 				<!-- Right navbar links -->
 				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 					<!-- Messages Dropdown Menu -->
-
+					<div style="text-size-adjust: 14px;" id="total_belanja">
+						<div>
+							<!-- <label class="control-label">Bayar</label> -->
+							<input placeholder="Total Nota" name="mtotal_belanja" disabled="" id="mtotal_belanja" type="text" class="form-control">
+							<span class="help-block"></span>
+						</div>
+					</div>
 					<!-- Notifications Dropdown Menu -->
 
 					<!-- <li class="nav-item">

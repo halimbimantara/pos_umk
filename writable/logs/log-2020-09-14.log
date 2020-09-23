@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2020-09-14 22:14:04 --> Undefined offset: 2
 #0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(214): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Applications/X...', 214, Array)
 #1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->addproduktemp()
@@ -63,4 +64,233 @@ CRITICAL - 2020-09-14 23:11:30 --> Trying to get property 'kd_produk' of non-obj
 #2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pos))
 #3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+=======
+CRITICAL - 2020-09-14 08:47:35 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/pos_umk/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/pos_umk/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}
+CRITICAL - 2020-09-14 08:53:28 --> CodeIgniter\CodeIgniter::initializeKint(): Failed opening required '/opt/lampp/htdocs/pos_umk/system/ThirdParty/Kint/init.php' (include_path='.:/opt/lampp/lib/php')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-09-14 08:55:11 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/pos_umk/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/pos_umk/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}
+CRITICAL - 2020-09-14 08:56:02 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/pos_umk/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/pos_umk/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}
+CRITICAL - 2020-09-14 09:03:25 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/pos_umk/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/pos_umk/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}
+CRITICAL - 2020-09-14 09:49:34 --> Unknown database 'pos_umkm'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/pos_umk/app/Models/Produk_model.php(75): CodeIgniter\Database\BaseConnection->query('SELECT a.*,sum(...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Stok.php(15): App\Models\Produk_model->ceksisastok()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Stok->index()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Stok))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-14 10:10:20 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php on line 205
+#0 /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php(205): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Pembelian.php(173): App\Models\Pos_model->getListSuplier(NULL)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-14 11:11:22 --> Too few arguments to function App\Controllers\Pembelian::cetak(), 0 passed in /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Pembelian->cetak()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:19:27 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:19:47 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:20:14 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:21:22 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:21:30 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:21:34 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:27:38 --> Undefined property: App\Controllers\Login::$input
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 16:29:52 --> Undefined property: App\Controllers\Login::$input
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 16:34:04 --> Undefined property: App\Controllers\Login::$input
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 16:35:37 --> Undefined property: App\Controllers\Login::$input
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 20, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 16:41:05 --> Undefined property: App\Controllers\Login::$input
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 21, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 16:42:45 --> Cannot call constructor
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-14 16:45:42 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('login')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('login')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:09:43 --> Call to undefined function validation_errors()
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('main_login', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(13): view('main_login', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-14 17:11:06 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:11:48 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:14:22 --> Undefined property: App\Controllers\Login::$form_validation
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 20, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:15:33 --> Undefined property: App\Controllers\Login::$form_validation
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 20, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:17:37 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 8, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:44:47 --> Undefined property: App\Controllers\Login::$form_validation
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 22, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:44:54 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:44:56 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:45:40 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:48:09 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:48:10 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-14 17:48:10 --> Undefined property: App\Controllers\Login::$load
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+>>>>>>> origin/fiture-login
 #5 {main}

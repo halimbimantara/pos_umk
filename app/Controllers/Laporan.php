@@ -12,6 +12,7 @@ class Laporan extends BaseController
 	function __construct()
 	{
 		$request = \Config\Services::request();
+		$this->session = \Config\Services::session();
     }
 
     public function index()
@@ -21,7 +22,8 @@ class Laporan extends BaseController
 		// 	'pager' => $mpos->pager,
 		// 	'produk' => $mpos->paginate(10),
 		// ];
-		return view('laporan/penjualan_pembelian.php');
+		$data['username'] = $_SESSION['username'];
+		return view('laporan/penjualan_pembelian.php',$data);
 	}
 
 }

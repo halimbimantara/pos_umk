@@ -13,6 +13,7 @@ class Suplier extends BaseController
 	function __construct()
 	{
 		$request = \Config\Services::request();
+		$this->session = \Config\Services::session();
 	}
 
 	public function index()
@@ -22,6 +23,7 @@ class Suplier extends BaseController
 		$data = [
 			'suplier' => $mpos->getSuplier()->getResult()
 		];
+		$data['username'] = $_SESSION['username'];
 		return view('admin/suplier/suplier_view', $data);
 	}
 
@@ -36,6 +38,7 @@ class Suplier extends BaseController
 			'nama_suplier' => $data->getRow()->nama_suplier,
 			'produk' => $data->getResult()
 		];
+		$data['username'] = $_SESSION['username'];
 		return view('admin/suplier/suplier_produk', $data);
 	}
 

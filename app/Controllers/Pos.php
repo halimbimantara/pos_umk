@@ -8,6 +8,11 @@ use App\Models\Setting_model;
 
 class Pos extends BaseController
 {
+	function __construct()
+	{
+		$this->session = \Config\Services::session();
+	}
+
 	public function index()
 	{
 		$modelPos = new Pos_model();
@@ -20,6 +25,7 @@ class Pos extends BaseController
 
 		//empty data sebelumnya
 		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
+		$data['username'] = $_SESSION['username'];
 		return view('kasir/kasir_view', $data);
 	}
 
@@ -180,6 +186,8 @@ class Pos extends BaseController
 				}
 			} else {
 				$hg_ecer = $this->request->getVar('hrg_eceran');
+
+				$nama_brg=$this->request->getVar('nama_produk');
 			}
 
 			$data = array(
@@ -307,7 +315,7 @@ class Pos extends BaseController
 		}
 	}
 
-	public function getTotalBelanja($kd_trxjual)
+	public function getTotalBelanjaItem($kd_trxjual)
 	{
 		$mdata = new Pos_model();
 		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
@@ -324,6 +332,17 @@ class Pos extends BaseController
 									</div>';
 	}
 
+	public function getTotalBelanja($kd_trxjual)
+	{
+		$mdata = new Pos_model();
+		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
+		$r_total_item = $mdata->getTotalJenisProduk($kd_trxjual);
+		$r_total_qty = $mdata->getTotalProdukQty($kd_trxjual);
+		$totalelanja = $r_total->getRow('sub_total');
+		echo '<input placeholder="Total" name="mtotal_belanja" disabled id="mtotal_belanja" value="' . number_format($totalelanja, 0, '', '.') . '" type="text"  class="form-control">
+									</div>';
+	}
+
 	public function showTableTemp($kd_trxjual)
 	{
 		$mdata = new Pos_model();
@@ -332,10 +351,13 @@ class Pos extends BaseController
 		$result = '';
 		$no = 1;
 		$total_temp = number_format($r_total->getRow('sub_total'), 0, '', '.');
+		
 		foreach ($r_temp->getResult() as $rows) {
-			$result .= '<tr>' .
+			$info_tooltip=$rows->nama_barang."\n"."Sisa 10";
+			$gambar=$rows->gambar == null ?"-":$rows->gambar;
+			$result .= '<tr class="tb-trx" rel-tb="'.$gambar.'" data-toggle="tooltip" data-placement="left" title="'.$info_tooltip.'">' .
 				// '<td>' . $no . '</td>' .
-				'<td>' . substr($rows->nama_barang, 0, 10) . '</td>' .
+				'<td >' . substr($rows->nama_barang, 0, 10) . '</td>' .
 				'<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
 				'<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit('.$rows->id_penjualan.')">' . $rows->qty . '</td>' .
 				// '<td>' . $rows->diskon . '</td>' .
@@ -486,5 +508,9 @@ class Pos extends BaseController
 		          <input type="hidden" name="nama_produk" id="nama_produk" value="' . $dataProdukV2->nama_produk . '"/>';
 			echo '<input type="hidden" name="tipe_search" id="tipe_search" value="1"/>';
 		}
+	}
+
+	public function showprodukkategori($kat){
+
 	}
 }

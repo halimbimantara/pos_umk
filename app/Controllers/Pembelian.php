@@ -14,6 +14,7 @@ class Pembelian extends BaseController
 	{
 		$request = \Config\Services::request();
 		$this->model_pembelian = new Pembelian_model();
+		$this->session = \Config\Services::session();
 	}
 
 	public function index()
@@ -40,6 +41,7 @@ class Pembelian extends BaseController
 			$nomor = 1;
 		}
 		$data['nomor'] = ($nomor - 1) * $paginate;
+		$data['username'] = $_SESSION['username'];
 
 		return view('admin/pembelian_view', $data);
 	}
@@ -197,10 +199,19 @@ class Pembelian extends BaseController
 		
 		if(sizeof($dataProduk) > 0){
 			foreach ($dataProduk as $row) {
-				$output .= '<li rel-tipe="'.$row["tipe"].'" rel="'.$row["kd_produk"].'" class="list-group-item link-class">'.$row["nama_produk"].'</li>';
+				$harga=1000;
+				$color=$row["tipe"] == 1?"blue":"black";
+				$poper='<div id="popover-content">
+				  <div class="form-group">
+					<input class="btn btn-primary btn-xs" id="item_hakhir" type="button" value="10000" />
+					<input class="btn btn-success btn-xs" id="smdgn" type="button" value="=" />
+				  </div>
+			  </div>';
+				$harga_tmpsrc=$row["tipe"] == 1?"data-toggle='popover' data-container='body' data-html='true' data-placement='right'":"";
+				$output .= '<li rel-tipe="'.$row["tipe"].'" style="color:'.$color.'" rel="'.$row["kd_produk"].'" '.$harga_tmpsrc.' class="list-group-item link-class">'.$row["nama_produk"].'</li>'.$poper;
 			}
 		  } else {
-			$output .= '<li class="list-group-item link-class">Tidak ada yang cocok.</li>';  
+			$output .= '<li class=" link-class">Tidak ada yang cocok.</li>';  
 		  }  
 		  $output .= '</ul>';
 		  echo $output;
