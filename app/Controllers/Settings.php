@@ -128,4 +128,67 @@ class Settings extends BaseController
 		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/all_user_view', $data);
 	}
+
+	public function all_user_edit()
+	{
+		$model = new Setting_model();
+		$id_suplier=$this->request->getVar('suplier_id');
+		$data = array(
+			'first_name' => $this->request->getVar('enama_suplier'),
+			'username' => $this->request->getVar('username'),
+			'phone'  => $this->request->getVar('eno_sales'),
+			'alamat'  => $this->request->getVar('ealamat'),
+			'active'  => $this->request->getVar('eketerangan'),
+			'email'  => $this->request->getVar('email')
+			// 'created_date'  => date('Y-m-d')
+		);
+
+		if($this->request->getPost('password') != ''){
+			$data['password'] = sha1(base64_encode($this->request->getPost('password')));
+		}
+
+		$r_update = $model->settings_all_users_update($id_suplier,$data);
+		if ($r_update != NULL) {
+			session()->setFlashdata('success', 'Update Users successfully');
+		} else {
+			session()->setFlashdata('failed', 'Update Users failed');
+		}
+		return redirect()->to(base_url('settings/all_user_settings'));
+	}
+
+	public function usersDelete()
+    {
+        $model = new Setting_model();
+		$id = $this->request->getPost('suplier_id');
+		$r_delete =$model->deleteUsers($id);
+		if ($r_delete != NULL) {
+			session()->setFlashdata('success', 'Delete Users successfully');
+		} else {
+			session()->setFlashdata('failed', 'Delete Users failed');
+		}
+		return redirect()->to(base_url('settings/all_user_settings'));
+    }
+
+	public function all_user_add()
+	{
+		$model = new Setting_model();
+		$data = array(
+			'first_name' => $this->request->getVar('enama_suplier'),
+			'username' => $this->request->getVar('username'),
+			'password' => sha1(base64_encode($this->request->getPost('password'))),
+			'phone'  => $this->request->getVar('eno_sales'),
+			'alamat'  => $this->request->getVar('ealamat'),
+			'active'  => $this->request->getVar('eketerangan'),
+			'email'  => $this->request->getVar('email')
+			// 'created_date'  => date('Y-m-d')
+		);
+
+		$r_update = $model->addUsers($data);
+		if ($r_update != NULL) {
+			session()->setFlashdata('success', 'Add Users successfully');
+		} else {
+			session()->setFlashdata('failed', 'Add Users failed');
+		}
+		return redirect()->to(base_url('settings/all_user_settings'));
+	}
 }

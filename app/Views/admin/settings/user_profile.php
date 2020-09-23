@@ -9,7 +9,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                     <div class="text-center">
-                        <img class="profile-user-img img-fluid img-circle" src="<?= base_url()."/resources/dist/img/avatar.png"?>" alt="User profile picture">
+                        <img class="profile-user-img img-fluid img-circle" src="<?= ( $users[0]->image !=null ? base_url()."/resources/uploads/".$users[0]->image : base_url()."/resources/dist/img/avatar.png" ) ?>" alt="User profile picture">
                     </div>
 
                     <h3 class="profile-username text-center">Andi Riyadi</h3>
@@ -126,30 +126,46 @@
                         <!-- /.tab-pane -->
 
                         <div class="tab-pane" id="settings">
-                            <form class="form-horizontal">
+                            <?= form_open_multipart(base_url('profile/process')); ?>
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Nama Lengkap</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        <input type="text" value="<?php echo $users[0]->first_name; ?>" class="form-control" name="first_name" id="inputName" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" value="<?php echo $users[0]->email; ?>" class="form-control" name="email" id="inputName" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        <?php echo $users[0]->username; ?>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail" class="col-sm-2 col-form-label">No telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                        <input type="text" name="phone" value="<?php echo $users[0]->phone; ?>" class="form-control" id="inputEmail" placeholder="No Tlpn">
                                     </div>
                                 </div>
                             
                                 <div class="form-group row">
-                                    <label for="inputSkills" class="col-sm-2 col-form-label">Ganti Password</label>
+                                    <label for="inputSkills" class="col-sm-2 col-form-label">Password Baru</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control">
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputSkills" class="col-sm-2 col-form-label">Upload Photo</label>
+                                    <div class="col-sm-10">
+                                    <div class="custom-file">
+                                        <input type="file" name="file_upload" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -166,7 +182,7 @@
                                         <button type="submit" class="btn btn-danger">Submit</button>
                                     </div>
                                 </div>
-                            </form>
+                            <?= form_close() ?>
                         </div>
                         <!-- /.tab-pane -->
                     </div>
@@ -181,3 +197,16 @@
 </div><!-- /.container-fluid -->
 
 <?= $this->endSection() ?>
+
+<? $this->section('jscript'); ?>
+
+<!-- bs-custom-file-input -->
+<script src="<?= base_url("resources/plugins/bs-custom-file-input/bs-custom-file-input.min.js")?>"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<?= $this->endSection(); ?>

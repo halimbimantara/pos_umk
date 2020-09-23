@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 CRITICAL - 2020-09-15 07:52:06 --> Trying to get property 'kd_produk' of non-object
 #0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(464): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/X...', 464, Array)
 #1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->showproduk('undefined')
@@ -70,6 +71,8 @@ CRITICAL - 2020-09-15 07:54:35 --> Trying to get property 'kd_produk' of non-obj
 #3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
 =======
+=======
+>>>>>>> 1271c58f73bcc95d52dcae572527cc36b3c16fe1
 CRITICAL - 2020-09-15 09:18:50 --> Undefined property: App\Controllers\Login::$form_validation
 #0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 21, Array)
 #1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
@@ -838,5 +841,8 @@ CRITICAL - 2020-09-15 17:11:05 --> Undefined index: username
 #2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
 #3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+<<<<<<< HEAD
 >>>>>>> origin/fiture-login
+=======
+>>>>>>> 1271c58f73bcc95d52dcae572527cc36b3c16fe1
 #5 {main}

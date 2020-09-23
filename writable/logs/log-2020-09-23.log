@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2020-09-23 16:56:09 --> Undefined index: username
 #0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Pos.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Applications/X...', 28, Array)
 #1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Pos->index()
@@ -26,3 +27,197 @@ CRITICAL - 2020-09-23 21:01:18 --> Undefined index: username
 #3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
 #5 {main}
+=======
+CRITICAL - 2020-09-23 08:26:21 --> Unknown column 'first_name' in 'field list'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('UPDATE `data_su...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `data_su...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `data_su...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2410): CodeIgniter\Database\BaseConnection->query('UPDATE `data_su...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(70): CodeIgniter\Database\BaseBuilder->update(Array, Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(144): App\Models\Setting_model->settings_all_users_update('1', Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-23 08:27:14 --> Unknown column 'keterangan' in 'field list'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('UPDATE `users` ...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2410): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(70): CodeIgniter\Database\BaseBuilder->update(Array, Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(144): App\Models\Setting_model->settings_all_users_update('1', Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-23 08:29:03 --> Unknown column 'keterangan' in 'field list'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('UPDATE `users` ...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `users` ...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `users` ...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2410): CodeIgniter\Database\BaseConnection->query('UPDATE `users` ...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(70): CodeIgniter\Database\BaseBuilder->update(Array, Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(144): App\Models\Setting_model->settings_all_users_update('1', Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-23 08:49:17 --> Undefined property: App\Controllers\Settings::$validation
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 157, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 08:50:02 --> Undefined variable: r_update
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(165): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 165, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 08:50:12 --> Undefined index: enama_suplier
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/all_user_view.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 227, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(131): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-23 08:50:26 --> Undefined variable: r_update
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(165): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 165, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_edit()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 08:51:13 --> Undefined index: enama_suplier
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/all_user_view.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 227, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(131): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-23 08:51:24 --> Undefined index: enama_suplier
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/all_user_view.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 227, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(131): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-23 08:53:21 --> Undefined index: enama_suplier
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/all_user_view.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 227, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(131): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-23 09:07:51 --> Class 'App\Controllers\Produk_model' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usersDelete()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-23 09:11:58 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(160): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 160, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usersDelete()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 09:50:49 --> syntax error, unexpected '}'
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('settings/all_us...')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('settings/all_us...')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 09:52:05 --> Duplicate entry 'muhajir@gmail.com' for key 'uc_email'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `us...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(77): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(186): App\Models\Setting_model->addUsers(Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_add()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-23 11:13:50 --> Trying to get property 'id' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(63): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 63, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 11:16:24 --> Function name must be a string
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-23 11:17:25 --> Function name must be a string
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-23 11:22:10 --> Function name must be a string
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-23 12:58:58 --> Call to undefined function form_open_multipart()
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Profile.php(13): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Profile->index()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-23 13:24:58 --> syntax error, unexpected '$data' (T_VARIABLE)
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('profile')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('profile')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 13:25:11 --> syntax error, unexpected 'return' (T_RETURN)
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('profile')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('profile')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 14:13:30 --> syntax error, unexpected '$data' (T_VARIABLE)
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('profile')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('profile')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-23 14:13:54 --> The uploaded file has already been moved.
+#0 /opt/lampp/htdocs/pos_umk/system/HTTP/Files/UploadedFile.php(167): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Profile.php(56): CodeIgniter\HTTP\Files\UploadedFile->move('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Profile->process()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+>>>>>>> 1271c58f73bcc95d52dcae572527cc36b3c16fe1

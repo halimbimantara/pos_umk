@@ -51,8 +51,8 @@ class Register extends BaseController
                 'email' => $email,
                 'username' => $username,
                 'password'  => $password,
-                'phone'  => $no_hp
-                // 'alamat' => $alamat
+                'phone'  => $no_hp,
+                'alamat' => $alamat
             ];
             $this->connect->table('users')->insert($data);
 

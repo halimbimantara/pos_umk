@@ -104,9 +104,25 @@
 												<td><?php echo ($mdata->active == 1 ? 'Aktive' : 'Tidak Aktive') ?></td>
 												<td class="text-right py-0 align-middle">
 													<div class="btn-group btn-group-sm">
-														<a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+														<a href="#" class="btn btn-view btn-info"
+														data-idsuplier="<?= $mdata->id; ?>"
+														data-namasuplier="<?= $mdata->first_name; ?>"
+														data-hp="<?= $mdata->phone; ?>"
+														data-alamat="<?= $mdata->alamat; ?>"
+														data-ket="<?= $mdata->active; ?>"
+														data-email="<?= $mdata->email; ?>"
+														data-username="<?= $mdata->username; ?>"
+														><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-edit btn-primary"
+														data-idsuplier="<?= $mdata->id; ?>"
+														data-namasuplier="<?= $mdata->first_name; ?>"
+														data-hp="<?= $mdata->phone; ?>"
+														data-alamat="<?= $mdata->alamat; ?>"
+														data-ket="<?= $mdata->active; ?>"
+														data-email="<?= $mdata->email; ?>"
+														data-username="<?= $mdata->username; ?>"
+														><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-delete btn-danger" data-idsuplier="<?= $mdata->id; ?>"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
@@ -137,12 +153,12 @@
 </section>
 <!-- inline scripts related to this page -->
 <!-- Bootstrap modal -->
-<form action="<?= base_url('settings/addroles') ?>" method="post">
+<form action="<?= base_url('settings/all_user_add') ?>" method="post">
 	<div class="modal fade " id="modal_addproduk" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-secondary">
-					<h4 class="modal-title">Tambah Hak Akses</h4>
+					<h4 class="modal-title">Tambah Users</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -153,9 +169,60 @@
 						<input type="hidden" value="" name="id" />
 						<div class="form-body">
 							<div class="form-group">
-								<label class="control-label col-md-3">Nama Roles</label>
+								<label class="control-label col-md-6">Nama Suplier</label>
 								<div class="col-md-9">
-									<input name="nama_roles" placeholder="nama roles" requeired id="nama_roles" class="form-control" type="text">
+									<input name="enama_suplier" placeholder="nama suplier" requeired id="nama_suplier" class="form-control enama_suplier" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-6">Username</label>
+								<div class="col-md-9">
+									<input name="username" placeholder="nama username" requeired id="username" class="form-control username" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-6">Password</label>
+								<div class="col-md-9">
+									<input name="password" placeholder="password" requeired id="password" class="form-control password" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group" style="margin-top: 10px">
+								<label class="control-label col-md-3">Alamat</label>
+								<div class="col-md-9">
+									<textarea name="ealamat" placeholder="Alamat" class="form-control ealamat"></textarea>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group" style="margin-top: 10px">
+								<label class="control-label col-md-3">Email</label>
+								<div class="col-md-9">
+									<input name="email" id="email" placeholder="085xxxx" class="form-control email" type="email">
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<hr>
+							</hr>
+							<div class="form-group">
+								<label class="control-label col-md-3">No Hp Sales</label>
+								<div class="col-md-9">
+									<input name="eno_sales" id="no_sales" placeholder="085xxxx" class="form-control eno_sales" type="number">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group" style="margin-top: 10px">
+								<label class="control-label col-md-3">Keterangan</label>
+								<div class="col-md-9">
+									<select name="eketerangan" class="form-control eketerangan">
+										<option value='1'>Aktive</option>
+										<option value='0'>Non Aktive</option>
+									</select>
 									<span class="help-block"></span>
 								</div>
 							</div>
@@ -185,7 +252,7 @@
 				</div>
 				<div class="modal-body">
 
-					<h4>Apakah anda yakin akan menghapus data suplier ?</h4>
+					<h4>Apakah anda yakin akan menghapus data Users ?</h4>
 
 				</div>
 				<div class="modal-footer">
@@ -199,8 +266,8 @@
 </form>
 
 <!-- Edit  -->
-<form action="<?= base_url('suplier/edit') ?>" method="post">
-	<div class="modal fade " id="modal_editsuplier" role="dialog">
+<form action="<?= base_url('settings/all_user_edit') ?>" method="post">
+	<div class="modal fade " id="modal_edit" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-secondary">
@@ -221,6 +288,22 @@
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label class="control-label col-md-6">Username</label>
+								<div class="col-md-9">
+									<input name="username" placeholder="nama username" requeired id="username" class="form-control username" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-6">Password</label>
+								<div class="col-md-9">
+									<input name="password" placeholder="password" requeired id="password" class="form-control password" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
 							<div class="form-group" style="margin-top: 10px">
 								<label class="control-label col-md-3">Alamat</label>
 								<div class="col-md-9">
@@ -228,15 +311,15 @@
 									<span class="help-block"></span>
 								</div>
 							</div>
-							<hr>
-							</hr>
-							<div class="form-group">
-								<label class="control-label col-md-3">No Telepon</label>
+							<div class="form-group" style="margin-top: 10px">
+								<label class="control-label col-md-3">Email</label>
 								<div class="col-md-9">
-									<input name="eno_tlpn" id="no_tlpn" placeholder="085xxxx" class="form-control eno_tlpn" type="number">
+									<input name="email" id="email" placeholder="085xxxx" class="form-control email" type="email">
 									<span class="help-block"></span>
 								</div>
 							</div>
+							<hr>
+							</hr>
 							<div class="form-group">
 								<label class="control-label col-md-3">No Hp Sales</label>
 								<div class="col-md-9">
@@ -248,7 +331,10 @@
 							<div class="form-group" style="margin-top: 10px">
 								<label class="control-label col-md-3">Keterangan</label>
 								<div class="col-md-9">
-									<textarea name="eketerangan" placeholder="Keterangan" class="form-control eketerangan"></textarea>
+									<select name="eketerangan" class="form-control eketerangan">
+										<option value='1'>Aktive</option>
+										<option value='0'>Non Aktive</option>
+									</select>
 									<span class="help-block"></span>
 								</div>
 							</div>
@@ -262,6 +348,7 @@
 				</div>
 			</div><!-- /.modal-content -->
 		</div>
+	</div>
 </form>
 <!-- /.modal-dialog -->
 
@@ -303,21 +390,45 @@
 			// get data from button edit
 			const id = $(this).data('idsuplier');
 			const namesuplier = $(this).data('namasuplier');
-			const tlpn = $(this).data('tlpn');
 			const hp = $(this).data('hp');
 			const alamat = $(this).data('alamat');
 			const ket = $(this).data('ket');
+			const email = $(this).data('email');
+			const username = $(this).data('username');
 
-			console.log(id + namesuplier + tlpn);
+			console.log(id + namesuplier);
 			$('.enama_suplier').val(namesuplier);
-			$('.eno_tlpn').val(tlpn);
 			$('.eno_sales').val(hp);
 			$('.ealamat').val(alamat);
 			$('.eketerangan').val(ket);
 			$('.suplierID').val(id);
+			$('.email').val(email);
+			$('.username').val(username);
 			// $('.product_category').val(category).trigger('change');
 			// Call Modal Edit
-			$('#modal_editsuplier').modal('show');
+			$('#modal_edit').modal('show');
+		});
+
+		$('.btn-view').on('click', function() {
+			const id = $(this).data('idsuplier');
+			const namesuplier = $(this).data('namasuplier');
+			const hp = $(this).data('hp');
+			const alamat = $(this).data('alamat');
+			const ket = $(this).data('ket');
+			const email = $(this).data('email');
+			const username = $(this).data('username');
+
+			console.log(id + namesuplier);
+			$('.enama_suplier').val(namesuplier);
+			$('.eno_sales').val(hp);
+			$('.ealamat').val(alamat);
+			$('.eketerangan').val(ket);
+			$('.suplierID').val(id);
+			$('.email').val(email);
+			$('.username').val(username);
+			// $('.product_category').val(category).trigger('change');
+			// Call Modal Edit
+			$('#modal_view').modal('show');
 		});
 	});
 	jQuery(function($) {

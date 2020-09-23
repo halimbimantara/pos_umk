@@ -1,0 +1,838 @@
+CRITICAL - 2020-09-22 11:49:58 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')'
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('login')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('login')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 11:50:52 --> syntax error, unexpected 'return' (T_RETURN)
+#0 /opt/lampp/htdocs/pos_umk/system/Router/Router.php(192): CodeIgniter\Router\Router->autoRoute('login')
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(785): CodeIgniter\Router\Router->handle('login')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 11:51:02 --> Class 'App\Controllers\Notification' not found
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-22 12:03:38 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 19, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(20): App\Controllers\Login->cek_login()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:04:38 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 19, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cek_login()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:04:42 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 19, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cek_login()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:04:51 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 19, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cek_login()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:04:53 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 19, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cek_login()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:05:19 --> syntax error, unexpected '}'
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:08:13 --> syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';'
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:08:39 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:09:43 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:10:03 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:10:05 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:02 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:12 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:13 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:13 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:13 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:13 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:11:43 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:12:23 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:14:49 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:24 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:27 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:29 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:42 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:43 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:44 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:44 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:53 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:54 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:54 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:54 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:54 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:54 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:55 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:15:55 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:16:50 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:16:52 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:16:53 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:16:53 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:17:23 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:29 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:29 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:30 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:30 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:30 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:42 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:17:53 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:18:33 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:35 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:35 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:35 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:35 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:36 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:36 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:36 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:18:36 --> Undefined property: App\Controllers\Login::$cek_login
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:19:14 --> Class 'App\Controllers\cek_login' not found
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): App\Controllers\Login->__construct()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 12:20:02 --> Call to undefined method App\Controllers\Login::cek_login()
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-22 12:21:18 --> 
+#0 /opt/lampp/htdocs/pos_umk/system/HTTP/RedirectResponse.php(92): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(798): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(70): redirect('login')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:23:58 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:00 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:01 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:01 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:01 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:02 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:02 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:02 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:02 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:02 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:04 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:04 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:04 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:24:04 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 67, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:03 --> syntax error, unexpected 'return' (T_RETURN)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:36:16 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:17 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:18 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:18 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:18 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:18 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:19 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:19 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:19 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:42 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:36:44 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:37:00 --> syntax error, unexpected '$session' (T_VARIABLE)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:37:58 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:38:27 --> syntax error, unexpected 'var' (T_VAR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:38:35 --> syntax error, unexpected 'var' (T_VAR)
+#0 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/pos_umk/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(8): spl_autoload_call('App\\Controllers...')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(882): App\Controllers\Home->__construct()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-22 12:38:40 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:57:42 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 12:58:02 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 69, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 13:05:46 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 13:06:20 --> Undefined variable: session
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 68, Array)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): App\Controllers\Login->cekLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-22 13:08:39 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:08:42 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:08:43 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:08:45 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:08:46 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(13): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 13, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:14:46 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 17, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 13:46:37 --> Call to undefined method App\Controllers\Login::cek_login()
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->index()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-22 14:13:47 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-22 14:14:04 --> Call to a member function move() on null
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-22 15:07:40 --> Trying to get property 'nama_suplier' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Suplier.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 38, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Suplier->detail('1')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Suplier))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-22 15:07:47 --> Trying to get property 'nama_suplier' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Suplier.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 38, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Suplier->detail('1')
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Suplier))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
