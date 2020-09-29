@@ -1,0 +1,79 @@
+CRITICAL - 2020-09-27 16:15:12 --> Undefined offset: 0
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/user_profile.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Profile.php(31): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Profile->index()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-27 16:15:26 --> Undefined offset: 0
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/user_profile.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Profile.php(31): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Profile->index()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-27 16:15:27 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(112): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 112, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:30 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(112): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 112, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:31 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 103, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userroles()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:33 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 103, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userroles()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:33 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 128, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:36 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 128, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 16:15:37 --> Undefined offset: 0
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/user_profile.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/opt/lampp/htdo...', 12, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Profile.php(31): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Profile->index()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-27 16:15:38 --> Undefined index: username
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 128, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

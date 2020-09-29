@@ -10,7 +10,7 @@
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
 					<li class="breadcrumb-item"><a href="#">Admin</a></li>
-					<li class="breadcrumb-item active">Suplier</li>
+					<li class="breadcrumb-item active">Role</li>
 				</ol>
 			</div>
 		</div>
@@ -54,7 +54,7 @@
 				<!-- Default box -->
 				<div class="card card-secondary">
 					<div class="card-header">
-						<h3 class="card-title"><i class="fas fa-store-alt"></i> Data User Hak Akses</h3>
+						<h3 class="card-title"><i class="fas fa-store-alt"></i> Data Menu Hak Akses Role <?php echo $nama_role; ?></h3>
 
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -65,44 +65,73 @@
 					<div class="card-body">
 						<div class="row" style="margin-bottom: 10px;">
 							<div class="col-xs-8">
-								<button class="btn btn-app btn-success btn-xs" onclick="add_produk()">
-									<i class="ace-icon fa fa-plus align-top bigger-125"></i>
-									Tambah
 							</div>
-							</button>
 
 						</div>
 						<!-- content -->
 						<div class="col-12">
 							<table id="simple-table" class="table  table-bordered table-hover">
 								<thead>
-									<tr>
-										<th style="width:3px">No</th>
-										<th>Nama Akses</th>
-										<th width="12%">Action</th>
+									<tr align="center">
+										<th align="center">Menu</th>
+										<th colspan="4">Action</th>
 									</tr>
 								</thead>
 
 								<tbody>
-									<?php if ($roles) : ?>
 										<?php
-										$no = 1;
-										foreach ($roles as $mdata) : ?>
+										foreach ($menu->menuusers()->getResult() as $mdata) : 
+										?>
 											<tr>
-												<td><?php echo $no; ?></td>
-												<td><?php echo $mdata->role; ?></td>
-												<td class="text-right py-0 align-middle">
-													<div class="btn-group btn-group-sm">
-														<a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
-														<a href="<?php echo base_url("settings/userrolesedit/".$mdata->id); ?>" class="btn btn-edit btn-primary"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
+												<td colspan="5"><?php echo $mdata->menu; ?></td>
 											</tr>
-										<?php
-											$no++;
-										endforeach; ?>
-									<?php endif; ?>
+											<?php foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) : 
+												$getChaked = $menu->roleAcces($role_id,$mdata->id,$submenu->id)->getRow();
+												// if($getChaked) {
+												// 	echo "<pre>";
+												// var_dump($getChaked);
+												// echo "</pre>";
+												// }
+												?>
+											<tr>
+												<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $submenu->submenu; ?></td>
+												<td> 
+												<div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+												<input type="checkbox" 
+												<?php echo ($getChaked ? ($getChaked->aktif == 1 ? 'checked=""' : '') : '') ?>
+												 class="custom-control-input" id="<?php echo $submenu->id; ?>"
+												 value="1"
+												 >
+												<label class="custom-control-label" for="<?php echo $submenu->id; ?>">View</label>
+												</div>
+												</td>
+												<td> 
+												<div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+												<input type="checkbox" 
+												<?php echo ($getChaked ? ($getChaked->insert == 1 ? 'checked=""' : '') : '') ?>
+												class="custom-control-input" id="<?php echo $submenu->id.'insert'; ?>">
+												<label class="custom-control-label" for="<?php echo $submenu->id.'insert'; ?>">insert</label>
+												</div>
+												</td>
+												<td> 
+												<div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+												<input type="checkbox" 
+												<?php echo ($getChaked ? ($getChaked->update == 1 ? 'checked=""' : '') : '') ?>
+												class="custom-control-input" id="<?php echo $submenu->id.'update'; ?>">
+												<label class="custom-control-label" for="<?php echo $submenu->id.'update'; ?>">Update</label>
+												</div>
+												</td>
+												<td> 
+												<div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+												<input type="checkbox" 
+												<?php echo ($getChaked ? ($getChaked->delete == 1 ? 'checked=""' : '') : '') ?>
+												class="custom-control-input" id="<?php echo $submenu->id.'delete'; ?>">
+												<label class="custom-control-label" for="<?php echo $submenu->id.'delete'; ?>">Delete</label>
+												</div>
+												</td>
+												</tr>
+												<?php endforeach; ?>
+										<?php endforeach; ?>
 								</tbody>
 							</table>
 							<div class="row">
@@ -277,6 +306,203 @@
 				$('#form-hargamanual').hide();
 			}
 		});
+
+		<?php 
+		foreach ($menu->menuusers()->getResult() as $mdata) :  
+			foreach ($menu->submenuusers($mdata->menu_id)->getResult() as $submenu) : 	
+		?>
+			$('#<?php echo $submenu->id; ?>').on("click",function() {
+
+				var url = "<?php echo site_url('settings/roleSubmite') ?>";
+
+				if ($(this).prop('checked')) {
+					$.ajax({
+						url: url,
+						type: "POST",
+						data: {
+							aktif: "1",
+							role_id: <?php echo $role_id; ?>,
+							menu_id: <?php echo $mdata->id; ?>,
+							submenu_id: <?php echo $submenu->id; ?>
+						},
+						success: function(data) {
+							alert("sukses Merubah data");
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							$('#response_ajax').load(errorThrown);
+							alert("Gagal Merubah data");
+						}
+					}); 
+				}
+				else {
+
+				$.ajax({
+						url: url,
+						type: "POST",
+						data: {
+							aktif: "0",
+							role_id: <?php echo $role_id; ?>,
+							menu_id: <?php echo $mdata->id; ?>,
+							submenu_id: <?php echo $submenu->id; ?>
+						},
+						success: function(data) {
+							alert("sukses Merubah data");
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							$('#response_ajax').load(errorThrown);
+							alert("Gagal Merubah data");
+						}
+					});
+				}
+				
+			});
+
+			// insert
+
+			$('#<?php echo $submenu->id.'insert'; ?>').on("click",function() {
+
+			var url = "<?php echo site_url('settings/roleSubmiteInsert') ?>";
+
+			if ($(this).prop('checked')) {
+				$.ajax({
+					url: url,
+					type: "POST",
+					data: {
+						insert: "1",
+						role_id: <?php echo $role_id; ?>,
+						menu_id: <?php echo $mdata->id; ?>,
+						submenu_id: <?php echo $submenu->id; ?>
+					},
+					success: function(data) {
+						alert("sukses Merubah data");
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#response_ajax').load(errorThrown);
+						alert("Gagal Merubah data");
+					}
+				}); 
+			}
+			else {
+			$.ajax({
+					url: url,
+					type: "POST",
+					data: {
+						insert: "0",
+						role_id: <?php echo $role_id; ?>,
+						menu_id: <?php echo $mdata->id; ?>,
+						submenu_id: <?php echo $submenu->id; ?>
+					},
+					success: function(data) {
+						alert("sukses Merubah data");
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#response_ajax').load(errorThrown);
+						alert("Gagal Merubah data");
+					}
+				});
+			}
+
+			});
+
+			// update
+
+			$('#<?php echo $submenu->id.'update'; ?>').on("click",function() {
+
+				var url = "<?php echo site_url('settings/roleSubmiteUpdate') ?>";
+
+				if ($(this).prop('checked')) {
+					$.ajax({
+						url: url,
+						type: "POST",
+						data: {
+							update: "1",
+							role_id: <?php echo $role_id; ?>,
+							menu_id: <?php echo $mdata->id; ?>,
+							submenu_id: <?php echo $submenu->id; ?>
+						},
+						success: function(data) {
+							alert("sukses Merubah data");
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							$('#response_ajax').load(errorThrown);
+							alert("Gagal Merubah data");
+						}
+					}); 
+				}
+				else {
+
+				$.ajax({
+						url: url,
+						type: "POST",
+						data: {
+							update: "0",
+							role_id: <?php echo $role_id; ?>,
+							menu_id: <?php echo $mdata->id; ?>,
+							submenu_id: <?php echo $submenu->id; ?>
+						},
+						success: function(data) {
+							alert("sukses Merubah data");
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							$('#response_ajax').load(errorThrown);
+							alert("Gagal Merubah data");
+						}
+					});
+				}
+
+			});
+
+		// delete
+
+		$('#<?php echo $submenu->id.'delete'; ?>').on("click",function() {
+
+			var url = "<?php echo site_url('settings/roleSubmiteDelete') ?>";
+
+			if ($(this).prop('checked')) {
+				$.ajax({
+					url: url,
+					type: "POST",
+					data: {
+						delete: "1",
+						role_id: <?php echo $role_id; ?>,
+						menu_id: <?php echo $mdata->id; ?>,
+						submenu_id: <?php echo $submenu->id; ?>
+					},
+					success: function(data) {
+						alert("sukses Merubah data");
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#response_ajax').load(errorThrown);
+						alert("Gagal Merubah data");
+					}
+				}); 
+			}
+			else {
+
+			$.ajax({
+					url: url,
+					type: "POST",
+					data: {
+						delete: "0",
+						role_id: <?php echo $role_id; ?>,
+						menu_id: <?php echo $mdata->id; ?>,
+						submenu_id: <?php echo $submenu->id; ?>
+					},
+					success: function(data) {
+						alert("sukses Merubah data");
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#response_ajax').load(errorThrown);
+						alert("Gagal Merubah data");
+					}
+				});
+			}
+
+		});
+		<?php 
+			endforeach;
+		endforeach; 
+		?>
 
 		// get Delete Product
 		$('.btn-delete').on('click', function() {

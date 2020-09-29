@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\Setting_model;
+use CodeIgniter\Database\ConnectionInterface;
 
 class Settings extends BaseController
 {
 	function __construct()
 	{
 		$this->session = \Config\Services::session();
+		$this->connect = \Config\Database::connect();
 	}
 	/**
 	 * apps setting
@@ -56,6 +58,124 @@ class Settings extends BaseController
 			return redirect()->to(base_url('settings'));
 		}
 	}
+
+	public function addroles()
+	{
+		$data = [
+			'role' => $this->request->getPost('nama_roles')
+		];
+		$model = new Setting_model();
+		$update = $model->addRole($data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Role Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userroles'));
+		}
+	}
+
+	public function addMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('nama_menu')
+		];
+		$model = new Setting_model();
+		$add = $model->addMenu($data);
+		if ($add) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function updateMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('nama_menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->updateMenu($id,$data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function deleteMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->deleteMenu($id);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Delete Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	// sub menu
+
+	public function addMenusub()
+	{
+		$data = [
+			'menu_id' => $this->request->getPost('nama_menu'),
+			'submenu' => $this->request->getPost('nama_submenu'),
+			'url' => $this->request->getPost('url')
+		];
+		$model = new Setting_model();
+		$add = $model->addMenusub($data);
+		if ($add) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function updateMenusub()
+	{
+		$data = [
+			'menu_id' => $this->request->getPost('nama_menu'),
+			'submenu' => $this->request->getPost('nama_submenu'),
+			'url' => $this->request->getPost('url')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->updateMenusub($id,$data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function deleteMenusub()
+	{
+		$data = [
+			'submenu' => $this->request->getPost('menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->deleteMenusub($id);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Delete Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	// end sub menu
+
 	public function updateMargin()
 	{
 		$data = [
@@ -104,11 +224,23 @@ class Settings extends BaseController
 		return view('admin/settings/userroles_view', $data);
 	}
 
+	public function userrolesedit($role_id)
+	{
+		$model = new Setting_model();
+		$data = array();
+		$data['role_id'] = $role_id;
+		$data['nama_role'] = $model->getRoleMenu($role_id)->getRow()->role;
+		$data['menu']= $model;
+		$data['username'] = $this->session->username;
+		return view('admin/settings/userroles_view_edit', $data);
+	}
+
 	public function usermenu()
 	{
 		$model = new Setting_model();
 		$data = array();
 		$data['roles_menu']=$model->settings_menus()->getResult();
+		$data['menu']=$model;
 		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/userrolesmenu_view', $data);
 	}
@@ -127,6 +259,114 @@ class Settings extends BaseController
 		$data['setting_all_user']=$model->settings_all_users()->getResult();
 		$data['username'] = $_SESSION['username'];
 		return view('admin/settings/all_user_view', $data);
+	}
+
+	public function roleSubmite(){
+		$data = [
+			'aktif' => $this->request->getPost('aktif')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id,$menu_id,$submenu_id)->getRow();
+
+		if($roleAcces){
+			$update = $model->updateSettingRole($data,$role_id,$menu_id,$submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/'.$role_id));
+		}
+	}
+
+	public function roleSubmiteInsert(){
+		$data = [
+			'insert' => $this->request->getPost('insert')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id,$menu_id,$submenu_id)->getRow();
+
+		if($roleAcces){
+			$update = $model->updateSettingRole($data,$role_id,$menu_id,$submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/'.$role_id));
+		}
+	}
+
+	public function roleSubmiteUpdate(){
+		$data = [
+			'update' => $this->request->getPost('update')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id,$menu_id,$submenu_id)->getRow();
+
+		if($roleAcces){
+			$update = $model->updateSettingRole($data,$role_id,$menu_id,$submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/'.$role_id));
+		}
+	}
+
+	public function roleSubmiteDelete(){
+		$data = [
+			'delete' => $this->request->getPost('delete')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id,$menu_id,$submenu_id)->getRow();
+
+		if($roleAcces){
+			$update = $model->updateSettingRole($data,$role_id,$menu_id,$submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/'.$role_id));
+		}
 	}
 
 	public function all_user_edit()

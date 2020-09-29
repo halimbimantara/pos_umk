@@ -1,0 +1,782 @@
+CRITICAL - 2020-09-29 10:42:45 --> Too few arguments to function App\Controllers\Settings::userrolesedit(), 0 passed in /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-29 10:42:54 --> Too few arguments to function App\Controllers\Settings::userrolesedit(), 0 passed in /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit()
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-29 10:43:50 --> Too few arguments to function App\Models\Setting_model::roleAcces(), 1 passed in /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php on line 93 and exactly 3 expected
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): App\Models\Setting_model->roleAcces('1')
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:54:21 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 98, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:55:52 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::getRow()
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): App\Models\Setting_model->roleAcces('1', '1', '1')
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:55:53 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::getRow()
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): App\Models\Setting_model->roleAcces('1', '1', '1')
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:56:40 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 98, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:58:11 --> Object of class stdClass could not be converted to string
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(98): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/opt/lampp/htdo...', 98, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:59:06 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getRow
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 10:59:59 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:12 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:14 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:14 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:15 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:15 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:15 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:16 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:16 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:00:47 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:48 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:49 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:49 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:49 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:49 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:49 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:50 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:50 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:00:50 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:01:47 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:02:00 --> Function name must be a string
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:02:12 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:10 --> Call to undefined method stdClass::aktif()
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:05:16 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:18 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:18 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:19 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:19 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:19 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:20 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:20 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:20 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:20 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:21 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:05:21 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:06:30 --> Cannot use object of type stdClass as array
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 11:06:55 --> syntax error, unexpected '[', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 11:07:47 --> Trying to get property 'menu_id' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:07:48 --> Trying to get property 'menu_id' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:09:12 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:00 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:01 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:01 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:01 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:01 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:01 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:02 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:11:02 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(92): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 92, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:16:29 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:17:40 --> count(): Parameter must be an array or an object that implements Countable
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:18:02 --> count(): Parameter must be an array or an object that implements Countable
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:18:41 --> count(): Parameter must be an array or an object that implements Countable
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', '/opt/lampp/htdo...', 93, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:30 --> syntax error, unexpected ')'
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 11:19:31 --> syntax error, unexpected ')'
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 11:19:31 --> syntax error, unexpected ')'
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 11:19:32 --> syntax error, unexpected ')'
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 11:19:38 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:39 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:40 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:40 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:40 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:41 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:19:41 --> Trying to get property 'aktif' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userroles_view_edit.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 94, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 11:25:14 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(116): view('admin/settings/...', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 12:42:20 --> Unknown column 'role_id' in 'where clause'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('UPDATE `setting...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `setting...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `setting...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2410): CodeIgniter\Database\BaseConnection->query('UPDATE `setting...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(120): CodeIgniter\Database\BaseBuilder->update()
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(174): App\Models\Setting_model->updateSettingRole(Array, '1', '1', '1')
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->roleSubmite()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-29 14:30:31 --> Unknown column 'nama_roles' in 'field list'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `ro...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ro...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ro...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ro...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(77): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(68): App\Models\Setting_model->addRole(Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->addroles()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-09-29 14:41:56 --> Undefined variable: menu
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userrolesmenu_view.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 106, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(142): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 14:42:12 --> Undefined variable: mdasubmenuta
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/userrolesmenu_view.php(110): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 110, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(142): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-29 14:42:26 --> Call to undefined method stdClass::submenuusers()
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(142): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-29 14:53:03 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php on line 205
+#0 /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php(205): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Pembelian.php(175): App\Models\Pos_model->getListSuplier(NULL)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 14:53:11 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::like() must be of the type string, null given, called in /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php on line 205
+#0 /opt/lampp/htdocs/pos_umk/app/Models/Pos_model.php(205): CodeIgniter\Database\BaseBuilder->like('nama_suplier', NULL)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Pembelian.php(175): App\Models\Pos_model->getListSuplier(NULL)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Pembelian->getSuplier()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembelian))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-09-29 17:43:27 --> Cannot redeclare App\Controllers\Settings::updateMenu()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-09-29 18:11:05 --> Unknown column 'submenu' in 'field list'
+#0 /opt/lampp/htdocs/pos_umk/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `ro...')
+#1 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ro...')
+#2 /opt/lampp/htdocs/pos_umk/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ro...')
+#3 /opt/lampp/htdocs/pos_umk/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ro...', Array, false)
+#4 /opt/lampp/htdocs/pos_umk/app/Models/Setting_model.php(84): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(134): App\Models\Setting_model->addMenu(Array)
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->addMenusub()
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#8 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

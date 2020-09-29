@@ -65,11 +65,17 @@
 					<div class="card-body">
 						<div class="row" style="margin-bottom: 10px;">
 							<div class="col-xs-8">
-								<button class="btn btn-app btn-success btn-xs" onclick="add_produk()">
+								<button class="btn btn-app btn-success btn-xs" onclick="add_menu()">
 									<i class="ace-icon fa fa-plus align-top bigger-125"></i>
-									Tambah
+									Tambah Menu
+								</button>
 							</div>
-							</button>
+							<div class="col-xs-8">
+								<button class="btn btn-app btn-success btn-xs" onclick="add_sub_menu()">
+									<i class="ace-icon fa fa-plus align-top bigger-125"></i>
+									Tambah Sub Menu
+								</button>
+							</div>
 
 						</div>
 						<!-- content -->
@@ -79,7 +85,7 @@
 									<tr>
 										<th style="width:3px">No</th>
 										<th>Nama Menu</th>
-										<th>Keterangan</th>
+										<th>Keterangan / Url</th>
 										<th width="12%">Action</th>
 									</tr>
 								</thead>
@@ -95,12 +101,49 @@
 												<td><?php echo $mdata->catatan; ?></td>
 												<td class="text-right py-0 align-middle">
 													<div class="btn-group btn-group-sm">
-														<a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
-														<a href="#" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-														<a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+														<a href="#" class="btn btn-view btn-info"
+														data-id="<?= $mdata->id; ?>"
+														data-menu="<?= $mdata->menu; ?>"
+														><i class="fas fa-eye"></i></a>
+														<a href="#" class="btn btn-edit btn-primary"
+														data-id="<?= $mdata->id; ?>"
+														data-menu="<?= $mdata->menu; ?>"
+														><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-delete btn-danger"
+														data-id="<?= $mdata->id; ?>"
+														><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
+											<?php
+											$no2 = 1;
+											foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) :
+											?>
+												<tr>
+													<td></td>
+													<td><?php echo $no2.'. '.$submenu->submenu; ?></td>
+													<td><?php echo $submenu->url; ?></td>
+													<td class="text-right py-0 align-middle">
+														<div class="btn-group btn-group-sm">
+															<a href="#" class="btn btn-view-sub btn-info"
+															data-id="<?= $submenu->id; ?>"
+															data-submenu="<?= $submenu->submenu; ?>"
+															data-menu="<?= $mdata->id; ?>"
+															data-url="<?= $submenu->url; ?>"
+															><i class="fas fa-eye"></i></a>
+															<a href="#" class="btn btn-edit-sub btn-primary"
+															data-id="<?= $submenu->id; ?>"
+															data-submenu="<?= $submenu->submenu; ?>"
+															data-menu="<?= $mdata->id; ?>"
+															data-url="<?= $submenu->url; ?>"
+															><i class="fas fa-pencil-alt"></i></a>
+															<a href="#" class="btn btn-delete-sub btn-danger"
+															data-id="<?= $submenu->id; ?>"
+															><i class="fas fa-trash"></i></a>
+														</div>
+													</td>
+												</tr>
+											<?php $no2++; endforeach; ?>
 										<?php
 											$no++;
 										endforeach; ?>
@@ -128,12 +171,12 @@
 </section>
 <!-- inline scripts related to this page -->
 <!-- Bootstrap modal -->
-<form action="<?= base_url('settings/addroles') ?>" method="post">
+<form action="<?= base_url('settings/addMenu') ?>" method="post">
 	<div class="modal fade " id="modal_addproduk" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-secondary">
-					<h4 class="modal-title">Tambah Hak Akses</h4>
+					<h4 class="modal-title">Tambah Menu</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -144,9 +187,9 @@
 						<input type="hidden" value="" name="id" />
 						<div class="form-body">
 							<div class="form-group">
-								<label class="control-label col-md-3">Nama Roles</label>
+								<label class="control-label col-md-3">Nama Menu</label>
 								<div class="col-md-9">
-									<input name="nama_roles" placeholder="nama roles" requeired id="nama_roles" class="form-control" type="text">
+									<input name="nama_menu" placeholder="nama menu" requeired id="nama_roles" class="form-control" type="text">
 									<span class="help-block"></span>
 								</div>
 							</div>
@@ -163,13 +206,66 @@
 </form>
 <!-- End Bootstrap modal -->
 
+<!-- modal sub menu -->
+<form action="<?= base_url('settings/addMenusub') ?>" method="post">
+	<div class="modal fade " id="modal_sub_menu" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-secondary">
+					<h4 class="modal-title">Tambah Sub Menu</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body form">
+					<?= \Config\Services::validation()->listErrors(); ?>
+					<form action="#" id="form_addprod" class="form-horizontal">
+						<input type="hidden" value="" name="id" />
+						<div class="form-body">
+							<div class="form-group">
+								<label class="control-label col-md-3">Menu</label>
+								<div class="col-md-9">
+									<select class="custom-select" name="nama_menu">
+										<?php foreach ($roles_menu as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->menu; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Nama Sub menu</label>
+								<div class="col-md-9">
+									<input name="nama_submenu" placeholder="nama menu" requeired  class="form-control" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Url</label>
+								<div class="col-md-9">
+									<input name="url" placeholder="url menu" requeired  class="form-control" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" id="btnSave" class="btn btn-primary">Simpan</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
+</form>
+<!-- end modal sub menu -->
+
 <!-- Delete -->
-<form action="<?= base_url('suplier/delete') ?>" method="post">
+<form action="<?= base_url('settings/deleteMenu') ?>" method="post">
 	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Delete Suplier</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Delete Menu</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -180,7 +276,7 @@
 
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="suplier_id" class="suplierID">
+					<input type="hidden" name="id" class="id">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
 					<button type="submit" class="btn btn-primary">Ya</button>
 				</div>
@@ -190,7 +286,7 @@
 </form>
 
 <!-- Edit  -->
-<form action="<?= base_url('suplier/edit') ?>" method="post">
+<form action="<?= base_url('settings/updateMenu') ?>" method="post">
 	<div class="modal fade " id="modal_editsuplier" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -205,41 +301,9 @@
 					<form action="#" id="form_addprod" class="form-horizontal">
 						<div class="form-body">
 							<div class="form-group">
-								<label class="control-label col-md-6">Nama Suplier</label>
+								<label class="control-label col-md-6">Nama menu</label>
 								<div class="col-md-9">
-									<input name="enama_suplier" placeholder="nama suplier" requeired id="nama_suplier" class="form-control enama_suplier" type="text">
-									<span class="help-block"></span>
-								</div>
-							</div>
-
-							<div class="form-group" style="margin-top: 10px">
-								<label class="control-label col-md-3">Alamat</label>
-								<div class="col-md-9">
-									<textarea name="ealamat" placeholder="Alamat" class="form-control ealamat"></textarea>
-									<span class="help-block"></span>
-								</div>
-							</div>
-							<hr>
-							</hr>
-							<div class="form-group">
-								<label class="control-label col-md-3">No Telepon</label>
-								<div class="col-md-9">
-									<input name="eno_tlpn" id="no_tlpn" placeholder="085xxxx" class="form-control eno_tlpn" type="number">
-									<span class="help-block"></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3">No Hp Sales</label>
-								<div class="col-md-9">
-									<input name="eno_sales" id="no_sales" placeholder="085xxxx" class="form-control eno_sales" type="number">
-									<span class="help-block"></span>
-								</div>
-							</div>
-
-							<div class="form-group" style="margin-top: 10px">
-								<label class="control-label col-md-3">Keterangan</label>
-								<div class="col-md-9">
-									<textarea name="eketerangan" placeholder="Keterangan" class="form-control eketerangan"></textarea>
+									<input name="nama_menu" id="nama_menu" placeholder="nama menu" requeired  class="form-control nama_menu" type="text">
 									<span class="help-block"></span>
 								</div>
 							</div>
@@ -247,13 +311,187 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="suplier_id" class="suplierID">
+					<input type="hidden" name="id" class="id">
 					<button type="submit" id="btnEdit" class="btn btn-primary">Update</button>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div>
+	</div>
 </form>
+<!-- /.modal-dialog -->
+
+<!-- View  -->
+<form action="#" method="post">
+	<div class="modal fade " id="modal_viewmenu" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-secondary">
+					<h4 class="modal-title">Edit Suplier</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body form">
+					<?= \Config\Services::validation()->listErrors(); ?>
+					<form action="#" id="form_addprod" class="form-horizontal">
+						<div class="form-body">
+							<div class="form-group">
+								<label class="control-label col-md-6">Nama Menu</label>
+								<div class="col-md-9">
+									<input name="nama_menu" placeholder="nama menu" requeired id="nama_menu" class="form-control nama_menu" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" class="id">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div>
+	</div>
+</form>
+
+<!-- modal sub menu -->
+<form action="<?= base_url('settings/updateMenusub') ?>" method="post">
+	<div class="modal fade " id="modal_editsupliersub" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-secondary">
+					<h4 class="modal-title">Edit Suplier</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body form">
+					<?= \Config\Services::validation()->listErrors(); ?>
+					<form action="#" id="form_addprod" class="form-horizontal">
+						<div class="form-body">
+						<div class="form-group">
+								<label class="control-label col-md-3">Menu</label>
+								<div class="col-md-9">
+									<select class="custom-select nama_menu" name="nama_menu">
+										<?php foreach ($roles_menu as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->menu; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Nama Sub menu</label>
+								<div class="col-md-9">
+									<input name="nama_submenu" placeholder="nama menu" requeired  class="form-control nama_submenu" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Url</label>
+								<div class="col-md-9">
+									<input name="url" placeholder="url menu" requeired  class="form-control url" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" class="id">
+					<button type="submit" id="btnEdit" class="btn btn-primary">Update</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div>
+	</div>
+</form>
+<!-- /.modal-dialog -->
+
+<!-- View sub menu  -->
+<form action="#" method="post">
+	<div class="modal fade " id="modal_viewmenusub" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-secondary">
+					<h4 class="modal-title">Edit Suplier</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body form">
+					<?= \Config\Services::validation()->listErrors(); ?>
+					<form action="#" id="form_addprod" class="form-horizontal">
+						<div class="form-body">
+						<div class="form-group">
+								<label class="control-label col-md-3">Menu</label>
+								<div class="col-md-9">
+									<select class="custom-select nama_menu" id="nama_menu" name="nama_menu">
+										<?php foreach ($roles_menu as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->menu; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Nama Sub menu</label>
+								<div class="col-md-9">
+									<input name="nama_submenu" id="nama_submenu" placeholder="nama menu" requeired  class="form-control nama_submenu" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-6">Url</label>
+								<div class="col-md-9">
+									<input name="url" id="url" placeholder="url menu" requeired  class="form-control url" type="text">
+									<span class="help-block"></span>
+								</div>
+							</div>
+
+							
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" class="id">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div>
+	</div>
+</form>
+
+<!-- delete sub menu -->
+
+<form action="<?= base_url('settings/deleteMenusub') ?>" method="post">
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Delete Menu</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<h4>Apakah anda yakin akan menghapus data suplier ?</h4>
+
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" class="id">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+					<button type="submit" class="btn btn-primary">Ya</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<!-- end modal sub menu -->
 <!-- /.modal-dialog -->
 
 <!-- Modal Delete Product-->
@@ -283,32 +521,73 @@
 		// get Delete Product
 		$('.btn-delete').on('click', function() {
 			// get data from button edit
-			const id = $(this).data('idsuplier');
+			const id = $(this).data('id');
 			// Set data to Form Edit
-			$('.suplierID').val(id);
+			$('.id').val(id);
 			// Call Modal Edit
 			$('#deleteModal').modal('show');
 		});
 
 		$('.btn-edit').on('click', function() {
 			// get data from button edit
-			const id = $(this).data('idsuplier');
-			const namesuplier = $(this).data('namasuplier');
-			const tlpn = $(this).data('tlpn');
-			const hp = $(this).data('hp');
-			const alamat = $(this).data('alamat');
-			const ket = $(this).data('ket');
-
-			console.log(id + namesuplier + tlpn);
-			$('.enama_suplier').val(namesuplier);
-			$('.eno_tlpn').val(tlpn);
-			$('.eno_sales').val(hp);
-			$('.ealamat').val(alamat);
-			$('.eketerangan').val(ket);
-			$('.suplierID').val(id);
+			const id = $(this).data('id');
+			const nama_menu = $(this).data('menu');
+			$('.id').val(id);
+			$('.nama_menu').val(nama_menu);
 			// $('.product_category').val(category).trigger('change');
 			// Call Modal Edit
 			$('#modal_editsuplier').modal('show');
+		});
+
+		$('.btn-view').on('click', function() {
+			// get data from button edit
+			const id = $(this).data('id');
+			const nama_menu = $(this).data('menu');
+			$('.id').val(id);
+			$('.nama_menu').val(nama_menu);
+			// $('.product_category').val(category).trigger('change');
+			// Call Modal Edit
+			$('#modal_viewmenu').modal('show');
+		});
+
+		// sub menu
+		$('.btn-delete-sub').on('click', function() {
+			// get data from button edit
+			const id = $(this).data('id');
+			// Set data to Form Edit
+			$('.id').val(id);
+			// Call Modal Edit
+			$('#deleteModalsub').modal('show');
+		});
+
+		$('.btn-edit-sub').on('click', function() {
+			// get data from button edit
+			const id = $(this).data('id');
+			const nama_menu = $(this).data('menu');
+			const sub_menu = $(this).data('submenu');
+			const url = $(this).data('url');
+			$('.id').val(id);
+			$('.nama_menu').val(nama_menu).attr('checked');
+			$('.nama_submenu').val(sub_menu);
+			$('.url').val(url);
+			// $('.product_category').val(category).trigger('change');
+			// Call Modal Edit
+			$('#modal_editsupliersub').modal('show');
+		});
+
+		$('.btn-view-sub').on('click', function() {
+			// get data from button edit
+			const id = $(this).data('id');
+			const nama_menu = $(this).data('menu');
+			const sub_menu = $(this).data('submenu');
+			const url = $(this).data('url');
+			$('.id').val(id);
+			$('.nama_menu').val(nama_menu).attr('checked');
+			$('.nama_submenu').val(sub_menu);
+			$('.url').val(url);
+			// $('.product_category').val(category).trigger('change');
+			// Call Modal Edit
+			$('#modal_viewmenusub').modal('show');
 		});
 	});
 	jQuery(function($) {
@@ -374,8 +653,12 @@
 		});
 	}
 
-	function add_produk() {
+	function add_menu() {
 		$('#modal_addproduk').modal('show');
+	}
+
+	function add_sub_menu() {
+		$('#modal_sub_menu').modal('show');
 	}
 
 	function showBarang(str) {
