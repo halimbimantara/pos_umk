@@ -339,7 +339,7 @@ class Settings extends BaseController
 		$data = array();
 		$data['role_id'] = $role_id;
 		$data['nama_role'] = $model->getRoleMenu($role_id)->getRow()->role;
-		$data['menu']= $model;
+		$data['getmenu']= $model;
 		$data['username'] = $this->session->username;
 		$modelaut = new Auth_model();
 			$menu = '';

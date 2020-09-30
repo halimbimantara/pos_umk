@@ -80,13 +80,13 @@
 
 								<tbody>
 										<?php
-										foreach ($menu->menuusers()->getResult() as $mdata) : 
+										foreach ($getmenu->menuusers()->getResult() as $mdata) : 
 										?>
 											<tr>
 												<td colspan="5"><?php echo $mdata->menu; ?></td>
 											</tr>
-											<?php foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) : 
-												$getChaked = $menu->roleAcces($role_id,$mdata->id,$submenu->id)->getRow();
+											<?php foreach ($getmenu->submenuusers($mdata->id)->getResult() as $submenu) : 
+												$getChaked = $getmenu->roleAcces($role_id,$mdata->id,$submenu->id)->getRow();
 												// if($getChaked) {
 												// 	echo "<pre>";
 												// var_dump($getChaked);
@@ -308,8 +308,8 @@
 		});
 
 		<?php 
-		foreach ($menu->menuusers()->getResult() as $mdata) :  
-			foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) : 	
+		foreach ($getmenu->menuusers()->getResult() as $mdata) :  
+			foreach ($getmenu->submenuusers($mdata->id)->getResult() as $submenu) : 	
 		?>
 			$('#<?php echo $submenu->id; ?>').on("click",function() {
 
