@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Setting_model;
 use CodeIgniter\Database\ConnectionInterface;
+use App\Models\Auth_model;
 
 class Settings extends BaseController
 {
@@ -22,6 +23,33 @@ class Settings extends BaseController
 		$data['data'] = $model->getSetting();
 		// var_dump($data['nama_apps']);
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/general', $data);
 	}
 
@@ -38,6 +66,33 @@ class Settings extends BaseController
 		$data['margin'] = $model->showMargin()->getRow();
 		// var_dump($data['nama_apps']);
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/penjualan_setting', $data);
 	}
 
@@ -204,6 +259,33 @@ class Settings extends BaseController
 		$data = array();
 		$data['k1'] = $model->showkemasan(0)->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/setting_satuan', $data);
 	}
 
@@ -221,6 +303,33 @@ class Settings extends BaseController
 		$data = array();
 		$data['roles']=$model->settings_role()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/userroles_view', $data);
 	}
 
@@ -232,6 +341,33 @@ class Settings extends BaseController
 		$data['nama_role'] = $model->getRoleMenu($role_id)->getRow()->role;
 		$data['menu']= $model;
 		$data['username'] = $this->session->username;
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/userroles_view_edit', $data);
 	}
 
@@ -242,6 +378,33 @@ class Settings extends BaseController
 		$data['roles_menu']=$model->settings_menus()->getResult();
 		$data['menu']=$model;
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/userrolesmenu_view', $data);
 	}
 
@@ -250,6 +413,33 @@ class Settings extends BaseController
 		$data = array();
 		$data['kategoriprod']=$model->settings_katproduk()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/kategoriprod_view', $data);
 	}
 
@@ -257,7 +447,35 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['setting_all_user']=$model->settings_all_users()->getResult();
+		$data['role']=$model->settings_role()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('admin/settings/all_user_view', $data);
 	}
 

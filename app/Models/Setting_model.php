@@ -61,9 +61,9 @@ class Setting_model extends Model
     }
 
     function settings_all_users(){
-        $builder = $this->db->table('users');
-        $builder->select('*');
-        return $builder->get();
+        $builder = $this->db->query("SELECT a.* , b.role as role_name , b.id as role_id FROM users a 
+        LEFT JOIN role b ON a.role = b.id");
+        return $builder;
     }
 
     function settings_all_users_update($id , $data){

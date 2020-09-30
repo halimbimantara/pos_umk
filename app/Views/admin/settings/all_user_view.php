@@ -79,6 +79,7 @@
 									<tr>
 										<th style="width:3px">No</th>
 										<th>Nama</th>
+										<th>Role</th>
 										<th>Email</th>
 										<th>Username</th>
 										<th>No Tlpn</th>
@@ -96,6 +97,7 @@
 											<tr>
 												<td><?php echo $no; ?></td>
 												<td><?php echo $mdata->first_name; ?></td>
+												<td><?php echo $mdata->role_name; ?></td>
 												<td><?php echo $mdata->email; ?></td>
 												<td><?php echo $mdata->username; ?></td>
 												<td><?php echo $mdata->phone; ?></td>
@@ -112,6 +114,7 @@
 														data-ket="<?= $mdata->active; ?>"
 														data-email="<?= $mdata->email; ?>"
 														data-username="<?= $mdata->username; ?>"
+														data-role_id="<?= $mdata->role_id; ?>"
 														><i class="fas fa-eye"></i></a>
 														<a href="#" class="btn btn-edit btn-primary"
 														data-idsuplier="<?= $mdata->id; ?>"
@@ -121,6 +124,7 @@
 														data-ket="<?= $mdata->active; ?>"
 														data-email="<?= $mdata->email; ?>"
 														data-username="<?= $mdata->username; ?>"
+														data-role_id="<?= $mdata->role_id; ?>"
 														><i class="fas fa-pencil-alt"></i></a>
 														<a href="#" class="btn btn-delete btn-danger" data-idsuplier="<?= $mdata->id; ?>"><i class="fas fa-trash"></i></a>
 													</div>
@@ -173,6 +177,17 @@
 								<div class="col-md-9">
 									<input name="enama_suplier" placeholder="nama suplier" requeired id="nama_suplier" class="form-control enama_suplier" type="text">
 									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-3">Role</label>
+								<div class="col-md-9">
+									<select class="custom-select role" id="role" name="role">
+										<?php foreach ($role as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->role; ?></option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 							</div>
 
@@ -258,6 +273,17 @@
 								<div class="col-md-9">
 									<input name="enama_suplier" placeholder="nama suplier" requeired id="nama_suplier" class="form-control enama_suplier" type="text">
 									<span class="help-block"></span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-3">Role</label>
+								<div class="col-md-9">
+									<select class="custom-select role" id="role" name="role">
+										<?php foreach ($role as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->role; ?></option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 							</div>
 
@@ -369,6 +395,17 @@
 							</div>
 
 							<div class="form-group">
+								<label class="control-label col-md-3">Role</label>
+								<div class="col-md-9">
+									<select class="custom-select role" id="role" name="role">
+										<?php foreach ($role as $mkat) : ?>
+											<option value="<?= $mkat->id ?>"><?= $mkat->role; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
 								<label class="control-label col-md-6">Username</label>
 								<div class="col-md-9">
 									<input name="username" placeholder="nama username" requeired id="username" class="form-control username" type="text">
@@ -475,6 +512,7 @@
 			const ket = $(this).data('ket');
 			const email = $(this).data('email');
 			const username = $(this).data('username');
+			const role_id = $(this).data('role_id');
 
 			console.log(id + namesuplier);
 			$('.enama_suplier').val(namesuplier);
@@ -484,6 +522,7 @@
 			$('.suplierID').val(id);
 			$('.email').val(email);
 			$('.username').val(username);
+			$('.role').val(role_id).attr('checked');
 			// $('.product_category').val(category).trigger('change');
 			// Call Modal Edit
 			$('#modal_edit').modal('show');
@@ -498,6 +537,8 @@
 			const email = $(this).data('email');
 			const username = $(this).data('username');
 
+			const role_id = $(this).data('role_id');
+
 			console.log(id + namesuplier);
 			$('.enama_suplier').val(namesuplier);
 			$('.eno_sales').val(hp);
@@ -506,6 +547,7 @@
 			$('.suplierID').val(id);
 			$('.email').val(email);
 			$('.username').val(username);
+			$('.role').val(role_id).attr('checked');
 			// $('.product_category').val(category).trigger('change');
 			// Call Modal Edit
 			$('#modal_view').modal('show');

@@ -427,7 +427,7 @@
 					<?= \Config\Services::validation()->listErrors(); ?>
 					<form action="#" id="form_addprod" class="form-horizontal">
 						<div class="form-body">
-						<div class="form-group">
+							<div class="form-group">
 								<label class="control-label col-md-3">Menu</label>
 								<div class="col-md-9">
 									<select class="custom-select nama_menu" id="nama_menu" name="nama_menu">

@@ -2,6 +2,7 @@
 
 use CodeIgniter\Controller;
 use CodeIgniter\Database\ConnectionInterface;
+use App\Models\Auth_model;
 
 class Login extends BaseController
 {
@@ -60,6 +61,7 @@ class Login extends BaseController
 				return redirect()->to(base_url('login'));
 			} else {
 				$_SESSION['username'] = $username;
+				$_SESSION['roleid'] = $querycek->getRow()->role;
 				return redirect()->to(base_url('home'));
 			}
             // menuju ke halaman home

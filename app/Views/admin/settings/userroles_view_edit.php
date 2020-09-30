@@ -309,7 +309,7 @@
 
 		<?php 
 		foreach ($menu->menuusers()->getResult() as $mdata) :  
-			foreach ($menu->submenuusers($mdata->menu_id)->getResult() as $submenu) : 	
+			foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) : 	
 		?>
 			$('#<?php echo $submenu->id; ?>').on("click",function() {
 
