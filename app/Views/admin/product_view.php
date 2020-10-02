@@ -148,7 +148,7 @@
 							<label class="control-label col-md-3">Kode Barcode</label>
 							<div class="col-md-9">
 								<div class="input-group input-group-sm">
-									<input type="text" id="kd_barcode" class="form-control">
+									<input type="text" id="kd_barcode" name="kd_barcode" class="form-control">
 									<span class="input-group-append">
 										<button type="button" onclick="generateBarcode()" class="btn btn-info btn-flat"><i class="fa fa-barcode" aria-hidden="true"></i> Generate</button>
 									</span>

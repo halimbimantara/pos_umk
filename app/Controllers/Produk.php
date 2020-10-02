@@ -61,11 +61,11 @@ class Produk extends BaseController
 		// 	$response['message'] = "Harap isi data dengan benar";
 		// } else {
 		$avatar = $this->request->getFile('customFile');
-		$avatar->move(ROOTPATH . 'public/uploads');
+		// $avatar->move(ROOTPATH . 'public/uploads');
 
-		$data = [
-			'gambar_produk' => $avatar->getName()
-		];
+		// $data = [
+		// 	'gambar_produk' => $avatar->getName()
+		// ];
 		$r_insert = $model->addProduk($data);
 		if ($r_insert != NULL) {
 			$response['success'] = true;
