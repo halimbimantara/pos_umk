@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Pos_model;
 use App\Models\Pembelian_model;
 use App\Models\Setting_model;
+use App\Models\Auth_model;
 
 class Pos extends BaseController
 {
@@ -26,7 +27,77 @@ class Pos extends BaseController
 		//empty data sebelumnya
 		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
 		return view('kasir/kasir_view', $data);
+	}
+
+	public function mobile()
+	{
+		$modelPos = new Pos_model();
+		$data = array();
+		$data = array(
+			'nota_penjualan' => $this->getNotaPenjualan(),
+			'item_produk' => $modelPos->getListProduk()->getResult(),
+			'item_kategori' => $modelPos->getKategoriProduk()->getResult(),
+		);
+
+		//empty data sebelumnya
+		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
+		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+			$menu = '';
+			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+
+				$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							'.$getmenu->menu.'
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+				$menu .=	'<ul class="nav nav-treeview">';
+					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
+						$menu .=	'<li class="nav-item">
+								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>'.$getsubmenu->submenu.'</p>
+								</a>
+							</li>';
+					}
+				$menu .= '</ul>';
+
+				$menu .= '</li>';
+			}
+
+			$data['menu'] = $menu;
+		return view('kasir/mobile_kasir_view', $data);
 	}
 
 	//--------------------------------------------------------------------
@@ -344,6 +415,42 @@ class Pos extends BaseController
 	}
 
 	public function showTableTemp($kd_trxjual)
+	{
+		$mdata = new Pos_model();
+		$r_temp  = $mdata->getTablePenjualantmp($kd_trxjual);
+		$r_total = $mdata->getTotalPenjualan($kd_trxjual);
+		$result = '';
+		$no = 1;
+		$total_temp = number_format($r_total->getRow('sub_total'), 0, '', '.');
+		
+		foreach ($r_temp->getResult() as $rows) {
+			$info_tooltip=$rows->nama_barang."\n"."Sisa 10";
+			$gambar=$rows->gambar == null ?"-":$rows->gambar;
+			$result .= '<tr class="tb-trx" rel-tb="'.$gambar.'" data-toggle="tooltip" data-placement="left" title="'.$info_tooltip.'">' .
+				// '<td>' . $no . '</td>' .
+				'<td >' . substr($rows->nama_barang, 0, 12) . '<br>' . $rows->qty . ' x '.number_format($rows->harga, 0, '', '.').'</td>' .
+				// '<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
+				// '<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit('.$rows->id_penjualan.')">' . $rows->qty . '</td>' .
+				// '<td>' . $rows->diskon . '</td>' .
+				'<td align="right">' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
+				'<td><div class="hidden-md hidden-lg">
+				<div class="inline pos-rel">
+					<a href="#" data-toggle="tooltip" data-placement="top" title="Hapus Item" class="btn-xs small danger" onclick=hapus_temp('  . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
+				</div>
+				</div>
+				</td>' .
+				'</tr>';
+			$no++;
+		}
+		$total = '<tr>' .
+			'<td colspan="1"></td>' .
+			'<td >Total</td>' .
+			'<td colspan="2" align="right">' . $total_temp . '</td>' .
+			// '<td></td>' .
+			'</tr>';
+		echo $result . $total;
+	}
+	public function showTableTempv1($kd_trxjual)
 	{
 		$mdata = new Pos_model();
 		$r_temp  = $mdata->getTablePenjualantmp($kd_trxjual);

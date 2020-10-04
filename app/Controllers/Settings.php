@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\Setting_model;
+use CodeIgniter\Database\ConnectionInterface;
+use App\Models\Auth_model;
 
 class Settings extends BaseController
 {
 	function __construct()
 	{
 		$this->session = \Config\Services::session();
+		$this->connect = \Config\Database::connect();
 	}
 	/**
 	 * apps setting
@@ -20,6 +23,33 @@ class Settings extends BaseController
 		$data['data'] = $model->getSetting();
 		// var_dump($data['nama_apps']);
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/general', $data);
 	}
 
@@ -36,6 +66,33 @@ class Settings extends BaseController
 		$data['margin'] = $model->showMargin()->getRow();
 		// var_dump($data['nama_apps']);
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/penjualan_setting', $data);
 	}
 
@@ -56,6 +113,124 @@ class Settings extends BaseController
 			return redirect()->to(base_url('settings'));
 		}
 	}
+
+	public function addroles()
+	{
+		$data = [
+			'role' => $this->request->getPost('nama_roles')
+		];
+		$model = new Setting_model();
+		$update = $model->addRole($data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Role Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userroles'));
+		}
+	}
+
+	public function addMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('nama_menu')
+		];
+		$model = new Setting_model();
+		$add = $model->addMenu($data);
+		if ($add) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function updateMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('nama_menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->updateMenu($id, $data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function deleteMenu()
+	{
+		$data = [
+			'menu' => $this->request->getPost('menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->deleteMenu($id);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Delete Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	// sub menu
+
+	public function addMenusub()
+	{
+		$data = [
+			'menu_id' => $this->request->getPost('nama_menu'),
+			'submenu' => $this->request->getPost('nama_submenu'),
+			'url' => $this->request->getPost('url')
+		];
+		$model = new Setting_model();
+		$add = $model->addMenusub($data);
+		if ($add) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Insert Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function updateMenusub()
+	{
+		$data = [
+			'menu_id' => $this->request->getPost('nama_menu'),
+			'submenu' => $this->request->getPost('nama_submenu'),
+			'url' => $this->request->getPost('url')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->updateMenusub($id, $data);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	public function deleteMenusub()
+	{
+		$data = [
+			'submenu' => $this->request->getPost('menu')
+		];
+		$id = $this->request->getPost('id');
+		$model = new Setting_model();
+		$update = $model->deleteMenusub($id);
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Delete Menu successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/usermenu'));
+		}
+	}
+
+	// end sub menu
+
 	public function updateMargin()
 	{
 		$data = [
@@ -84,6 +259,33 @@ class Settings extends BaseController
 		$data = array();
 		$data['k1'] = $model->showkemasan(0)->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/setting_satuan', $data);
 	}
 
@@ -99,40 +301,308 @@ class Settings extends BaseController
 	{
 		$model = new Setting_model();
 		$data = array();
-		$data['roles']=$model->settings_role()->getResult();
+		$data['roles'] = $model->settings_role()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/userroles_view', $data);
+	}
+
+	public function userrolesedit($role_id)
+	{
+		$model = new Setting_model();
+		$data = array();
+		$data['role_id'] = $role_id;
+		$data['nama_role'] = $model->getRoleMenu($role_id)->getRow()->role;
+		$data['getmenu'] = $model;
+		$data['username'] = $this->session->username;
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
+		return view('admin/settings/userroles_view_edit', $data);
+	}
+
+	public function  getSubmenu($id)
+	{
+		$model = new Setting_model();
+		return $model->submenuusers($id);
 	}
 
 	public function usermenu()
 	{
 		$model = new Setting_model();
 		$data = array();
-		$data['roles_menu']=$model->settings_menus()->getResult();
+		$data['roles_menu'] = $model->settings_menus()->getResult();
+		$data['menu'] = $model;
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/userrolesmenu_view', $data);
 	}
 
-	public function setingkategori(){
+	public function setingkategori()
+	{
 		$model = new Setting_model();
 		$data = array();
-		$data['kategoriprod']=$model->settings_katproduk()->getResult();
+		$data['kategoriprod'] = $model->settings_katproduk()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/kategoriprod_view', $data);
 	}
 
-	public function all_user_settings(){
+	public function all_user_settings()
+	{
 		$model = new Setting_model();
 		$data = array();
-		$data['setting_all_user']=$model->settings_all_users()->getResult();
+		$data['setting_all_user'] = $model->settings_all_users()->getResult();
+		$data['role'] = $model->settings_role()->getResult();
 		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('admin/settings/all_user_view', $data);
+	}
+
+	public function roleSubmite()
+	{
+		$data = [
+			'aktif' => $this->request->getPost('aktif')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id, $menu_id, $submenu_id)->getRow();
+
+		if ($roleAcces) {
+			$update = $model->updateSettingRole($data, $role_id, $menu_id, $submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/' . $role_id));
+		}
+	}
+
+	public function roleSubmiteInsert()
+	{
+		$data = [
+			'insert' => $this->request->getPost('insert')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id, $menu_id, $submenu_id)->getRow();
+
+		if ($roleAcces) {
+			$update = $model->updateSettingRole($data, $role_id, $menu_id, $submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/' . $role_id));
+		}
+	}
+
+	public function roleSubmiteUpdate()
+	{
+		$data = [
+			'update' => $this->request->getPost('update')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id, $menu_id, $submenu_id)->getRow();
+
+		if ($roleAcces) {
+			$update = $model->updateSettingRole($data, $role_id, $menu_id, $submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/' . $role_id));
+		}
+	}
+
+	public function roleSubmiteDelete()
+	{
+		$data = [
+			'delete' => $this->request->getPost('delete')
+		];
+		$role_id = $this->request->getPost('role_id');
+		$menu_id = $this->request->getPost('menu_id');
+		$submenu_id = $this->request->getPost('submenu_id');
+		$model = new Setting_model();
+		$roleAcces = $model->roleAcces($role_id, $menu_id, $submenu_id)->getRow();
+
+		if ($roleAcces) {
+			$update = $model->updateSettingRole($data, $role_id, $menu_id, $submenu_id);
+		} else {
+			$data['role_id'] = $role_id;
+			$data['menu_id'] = $menu_id;
+			$data['submenu_id'] = $submenu_id;
+			$update = $model->insertSettingRole($data);
+		}
+
+		if ($update) {
+			// Deklarasikan session flashdata dengan tipe success
+			session()->setFlashdata('success', 'Update General Setting successfully');
+			// Redirect halaman ke product
+			return redirect()->to(base_url('settings/userrolesedit/' . $role_id));
+		}
 	}
 
 	public function all_user_edit()
 	{
 		$model = new Setting_model();
-		$id_suplier=$this->request->getVar('suplier_id');
+		$id_suplier = $this->request->getVar('suplier_id');
 		$data = array(
 			'first_name' => $this->request->getVar('enama_suplier'),
 			'username' => $this->request->getVar('username'),
@@ -143,11 +613,11 @@ class Settings extends BaseController
 			// 'created_date'  => date('Y-m-d')
 		);
 
-		if($this->request->getPost('password') != ''){
+		if ($this->request->getPost('password') != '') {
 			$data['password'] = sha1(base64_encode($this->request->getPost('password')));
 		}
 
-		$r_update = $model->settings_all_users_update($id_suplier,$data);
+		$r_update = $model->settings_all_users_update($id_suplier, $data);
 		if ($r_update != NULL) {
 			session()->setFlashdata('success', 'Update Users successfully');
 		} else {
@@ -157,17 +627,17 @@ class Settings extends BaseController
 	}
 
 	public function usersDelete()
-    {
-        $model = new Setting_model();
+	{
+		$model = new Setting_model();
 		$id = $this->request->getPost('suplier_id');
-		$r_delete =$model->deleteUsers($id);
+		$r_delete = $model->deleteUsers($id);
 		if ($r_delete != NULL) {
 			session()->setFlashdata('success', 'Delete Users successfully');
 		} else {
 			session()->setFlashdata('failed', 'Delete Users failed');
 		}
 		return redirect()->to(base_url('settings/all_user_settings'));
-    }
+	}
 
 	public function all_user_add()
 	{

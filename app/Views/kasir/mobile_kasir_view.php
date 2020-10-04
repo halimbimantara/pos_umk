@@ -1,33 +1,24 @@
-<?= $this->extend('default_top_layout_v2') ?>
-
-
-
+<?= $this->extend('default_top_layout') ?>
 <?= $this->section('content') ?>
 <!-- content -->
 <!-- Main content -->
-
 <section class="content" style="padding-top: 10px;">
     <div class="container-fluid">
         <!-- Info boxes -->
+        <div class="row" style="padding-bottom: 10px;margin-top: 10px;">
+            <div class="col-6"> <input placeholder="Bayar" name="bayar" disabled id="bayar" type="text" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)">
+            </div>
+            <div class="col-6"><input placeholder="Kembalian" name="kembalian" disabled id="kembalian" class="form-control">
+            </div>
+        </div>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-2" hidden>
                 <div class="col-sm-2 col-md-12">
                     <div class="form-group">
                         <div style="text-size-adjust: 14px;" id="total_belanja">
-                            <!-- <label class="control-label">Total</label>
-                                <input type="hidden" name="mtotal_belanja" id="mtotal_belanja" />
-                                <h3><span style=" color: red;" class="info-box-number"></span></h3> -->
-                            <!-- <div>
-                                <input placeholder="Total Nota" name="mtotal_belanja" disabled id="mtotal_belanja" type="text" class="form-control">
-                                <span class="help-block"></span>
-                            </div> -->
                             <label>Jenis Produk</label>
                         </div>
                         <div>
-                            <!-- Total item yg di beli
-                        - misal gatsby dan oreo maka itemnya 2 jenis
-                        -->
-                            <!-- <label>Total Produk</label> -->
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -65,35 +56,22 @@
                     <div class="row" style="padding-bottom: 10px;">
                         <div class="col-sm-6">
                             <!-- <label class="control-label">Bayar</label> -->
-                            <input placeholder="Bayar" name="bayar" disabled id="bayar" type="text" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)">
+                            <!-- <input placeholder="Bayar" name="bayar" disabled id="bayar" type="text" oninput='validity.valid||(value="");' class="form-control" onchange="showKembali(this.value)" onkeyup="showKembali(this.value)"> -->
                             <span class="help-block"></span>
                         </div>
                         <div class="col-sm-6">
                             <!-- <label class="control-label">Kembalian</label> -->
-                            <input placeholder="Kembalian" name="kembalian" disabled id="kembalian" class="form-control">
+                            <!-- <input placeholder="Kembalian" name="kembalian" disabled id="kembalian" class="form-control"> -->
                             <span class="help-block"></span>
                         </div>
                     </div>
-                    <!-- <div class="card-header">
-                            <h3 class="card-title">Kasir Transaksi</h3>
-
-                            <div class="card-tools">
-                                <span class="badge badge-danger">No Nota <?//= $nota_penjualan; ?></span>
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div> -->
-                    <!-- /.card-header -->
-                    <!--Table -->
                     <table id="table-penjualan-temp" style="background-color: white;" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <!-- <th style="width:3px">No</th> -->
                                 <th>Produk</th>
-                                <th>Harga</th>
-                                <th style="width:3px" align="right">Qty</th>
-                                <!-- <th>Diskon</th> -->
-                                <th>S.Total</th>
+                                <!-- <th>Harga</th> -->
+                                <!-- <th style="width:3px" align="right">Qty</th> -->
+                                <th>Total</th>
                                 <th width="2%">#</th>
                             </tr>
                         </thead>
@@ -107,7 +85,7 @@
 
 
             <div class="col-sm-5">
-                <div class="col-12 col-sm-5 col-md-12">
+                <div class="col-12 col-sm-5 col-md-12" hidden>
                     <div class="card card-gray-dark card-tabs">
                         <div class="card-header p-0 pt-1">
                             <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
@@ -146,8 +124,8 @@
                                             <div class="card-body" style="margin-top: -20px;">
                                                 <div class="form-group">
                                                     <label for="idprodukbarcode">Cari Nama Produk</label>
-                                                    <input style="margin-top: 12px;" type="text" class="form-control" id="trx_kasir" placeholder="Format Input nama barang=qty=harga barang">
-                                                    <div id="itemList"></div>
+                                                    <!-- <input style="margin-top: 12px;" type="text" class="form-control" id="trx_kasir" placeholder="Format Input nama barang=qty=harga barang">
+                                                    <div id="itemList"></div> -->
                                                     <br />
                                                 </div>
                                             </div>
@@ -163,7 +141,7 @@
                                                 <?php foreach ($item_produk as $rows) {
                                                     $gambar = $rows->gambar_produk == '' ? base_url() . "/resources/dist/img/default-150x150.png" : base_url() . "/public/uploads/" . $rows->gambar_produk;
                                                 ?>
-                                                    <div class="col-sm-4 col-md-4 col-md-3" onclick="addproduk('<?= $rows->kd_produk ?>','<?= $rows->nama_produk ?>')">
+                                                    <div class="col-sm-4 col-md-4 col-md-6" onclick="addproduk('<?= $rows->kd_produk ?>','<?= $rows->nama_produk ?>')">
                                                         <img src="<?= $gambar; ?>" alt="Avatar" style="width:100%">
                                                         <div class="container">
                                                             <div>
@@ -190,7 +168,7 @@
                         <!-- /.card -->
                     </div>
                 </div>
-                <div class="col-5 col-sm-5 col-md-12" hidden>
+                <div class="col-5 col-sm-5 col-md-12">
                     <!-- USERS LIST -->
                     <!-- /.card-header -->
                     <div class="card-body p-0">
@@ -250,7 +228,38 @@
         </div>
     </div>
 </section>
+<style>
+    #PopupOverlay {
+        display: none;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: #000000;
+        opacity: .75;
+        z-index: 5;
+    }
+</style>
+<footer class="main-footer" style="background-color: #343a40;">
+    <div class="row">
+        <div class="col-2">
+            <div class="class=" form-control""><label style="
+    margin-top: 20px;
+    color: wheat;
+">Search</label></div>
+        </div>
+        <div id="itemList" style="margin-bottom: 20px;margin-top:-70px;"></div>
+        <div class="col-10"><input style="margin-top: 12px;" type="text" class="form-control" id="trx_kasir" placeholder="Format Input nama barang=qty=harga barang">
 
+        </div>
+    </div>
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
 <!-- tes -->
 <div class="modal fade " id="modal_cetaknota" role="dialog">
     <div class="modal-dialog modal-sm">
@@ -287,6 +296,66 @@
     var ismodelPop = false;
 
     $(document).ready(function() {
+
+        $.extend($.ui.autocomplete.prototype, {
+    _renderMenu: function(ul, items) {
+      //remove scroll event to prevent attaching multiple scroll events to one container element
+      $(ul).unbind("scroll");
+
+      var self = this;
+      self._scrollMenu(ul, items);
+    },
+
+    _scrollMenu: function(ul, items) {
+      var self = this;
+      var maxShow = 5;
+      var results = [];
+      var pages = Math.ceil(items.length / maxShow);
+      results = items.slice(0, maxShow);
+
+      if (pages > 1) {
+        $(ul).scroll(function() {
+          if (isScrollbarBottom($(ul))) {
+            ++window.pageIndex;
+            if (window.pageIndex >= pages) return;
+
+            results = items.slice(window.pageIndex * maxShow, window.pageIndex * maxShow + maxShow);
+
+            //append item to ul
+            $.each(results, function(index, item) {
+              self._renderItem(ul, item);
+            });
+            //refresh menu
+            self.menu.deactivate();
+            self.menu.refresh();
+            // size and position menu
+            ul.show();
+            self._resizeMenu();
+            ul.position($.extend({
+              of: self.element
+            }, self.options.position));
+            if (self.options.autoFocus) {
+              self.menu.next(new $.Event("mouseover"));
+            }
+          }
+        });
+      }
+
+      $.each(results, function(index, item) {
+        self._renderItem(ul, item);
+      });
+    }
+  });
+
+  function isScrollbarBottom(container) {
+    var height = container.outerHeight();
+    var scrollHeight = container[0].scrollHeight;
+    var scrollTop = container.scrollTop();
+    if (scrollTop >= scrollHeight - height) {
+      return true;
+    }
+    return false;
+  };
 
         window.onresize = function(event) {
             // applyOrientation();
@@ -529,11 +598,11 @@
 
     $(document).ready(function() {
         $("[data-toggle=popover]").popover({
-                    html: true,
-                    content: function() {
-                        return $('#popover-content').html();
-                    }
-                });
+            html: true,
+            content: function() {
+                return $('#popover-content').html();
+            }
+        });
 
         $('#trx_kasir').keyup(function() {
             var query = $(this).val();
@@ -564,7 +633,7 @@
                 showBarang($(this).attr('rel'));
             } else {
                 $("#trx_kasir").focus();
-               
+
 
                 $('#element').popover('show');
             }
@@ -817,7 +886,7 @@
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Error adding / update data');
+                    // alert('Error adding / update data');
                     console.log(jqXHR + "-" + errorThrown);
                     $('#btn_addtmp').text('Tambah'); //change button text
                     $('#btn_addtmp').attr('disabled', false); //set 
@@ -832,7 +901,7 @@
     }
 
     function reloadTable(str) {
-        $("#table-content").load("<?= base_url('pos/showTableTempv1') ?>/" + str);
+        $("#table-content").load("<?= base_url('pos/showTableTemp') ?>/" + str);
     }
 
     //harga * jumlah

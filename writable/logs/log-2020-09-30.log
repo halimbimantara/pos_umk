@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2020-09-30 21:26:36 --> Call to a member function move() on null
 #0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Produk->addProduk()
 #1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
@@ -66,3 +67,65 @@ CRITICAL - 2020-09-30 21:34:37 --> Argument 2 passed to CodeIgniter\Database\Bas
 #4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
 #6 {main}
+=======
+CRITICAL - 2020-09-30 09:02:41 --> Undefined property: stdClass::$role_name
+#0 /opt/lampp/htdocs/pos_umk/app/Views/admin/settings/all_user_view.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 100, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(261): view('admin/settings/...', Array)
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->all_user_settings()
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-30 10:50:57 --> Trying to get property 'role' of non-object
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Login.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/opt/lampp/htdo...', 64, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Login->posLogin()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-30 11:01:37 --> Undefined variable: submenu
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 48, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-30 11:02:05 --> Undefined variable: menu
+#0 /opt/lampp/htdocs/pos_umk/app/Views/default_layout.php(174): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 174, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/pos_umk/system/View/View.php(247): CodeIgniter\View\View->render('default_layout', Array, true)
+#3 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('laporan/penjual...', Array, true)
+#4 /opt/lampp/htdocs/pos_umk/app/Controllers/Laporan.php(26): view('laporan/penjual...', Array)
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Laporan->index()
+#6 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#7 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-09-30 11:03:22 --> Undefined variable: model
+#0 /opt/lampp/htdocs/pos_umk/app/Controllers/Laporan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 28, Array)
+#1 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Laporan->index()
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-30 11:53:29 --> Call to a member function menuusers() on string
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(371): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('4')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-30 11:53:54 --> Call to a member function menuusers() on string
+#0 /opt/lampp/htdocs/pos_umk/system/View/View.php(236): include()
+#1 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /opt/lampp/htdocs/pos_umk/app/Controllers/Settings.php(371): view('admin/settings/...', Array)
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Settings->userrolesedit('1')
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+>>>>>>> fiture-manage-users

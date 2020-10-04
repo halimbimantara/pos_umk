@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	</style>
 </head>
 
-<body class="hold-transition layout-top-nav layout-top-nav  layout-navbar-fixed text-sm sidebar-mini layout-footer-fixed">
+<body class="hold-transition layout-top-nav layout-top-nav  layout-navbar-fixed text-sm">
 	<div class="wrapper">
 
 		<!-- Navbar -->
