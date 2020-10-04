@@ -1,0 +1,81 @@
+CRITICAL - 2020-10-04 13:45:46 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(408): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 13:47:58 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(408): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 13:48:21 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(408): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 13:49:16 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(408): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 14:08:40 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(408): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 17:03:53 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(414): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 17:04:06 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(414): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 17:05:01 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(414): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-04 17:08:15 --> Call to a member function submenuusers() on string
+#0 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/View/View.php(236): include()
+#1 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/Common.php(1071): CodeIgniter\View\View->render('admin/settings/...', Array, true)
+#2 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/app/Controllers/Settings.php(414): view('admin/settings/...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(910): App\Controllers\Settings->usermenu()
+#4 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Settings))
+#5 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/XAMPP/xamppfiles/htdocs/pos_beta/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
