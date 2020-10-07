@@ -111,7 +111,7 @@
 											 $no2 = 1;
 											//  print_r($CI=$menu->tes());
 											//  exit();
-											 foreach ($menu->submenuusers($mdata->id)->getResult() as $submenu) :
+											 foreach ($menus->submenuusers($mdata->id)->getResult() as $submenu) :
 											?>
 												<tr>
 													<td></td>

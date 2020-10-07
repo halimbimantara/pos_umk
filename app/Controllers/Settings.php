@@ -382,7 +382,7 @@ class Settings extends BaseController
 		$model = new Setting_model();
 		$data = array();
 		$data['roles_menu'] = $model->settings_menus()->getResult();
-		$data['menu'] = $model;
+		$data['menus'] = $model;
 		$data['username'] = $_SESSION['username'];
 		$modelaut = new Auth_model();
 		$menu = '';
