@@ -1,0 +1,8 @@
+CRITICAL - 2020-10-07 16:07:45 --> syntax error, unexpected 'echo' (T_ECHO)
+#0 /opt/lampp/htdocs/pos_umk/system/Common.php(1071): CodeIgniter\View\View->render('main_layout', Array, true)
+#1 /opt/lampp/htdocs/pos_umk/app/Controllers/Home.php(55): view('main_layout', Array)
+#2 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(910): App\Controllers\Home->index()
+#3 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#4 /opt/lampp/htdocs/pos_umk/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/pos_umk/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}

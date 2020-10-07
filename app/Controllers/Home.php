@@ -58,6 +58,11 @@ class Home extends BaseController
 		}
 	}
 
+	public function updatefile(){
+		echo "sh ".base_url()."/scriptGit.sh";
+		echo shell_exec("sh ".base_url()."/scriptGit.sh");
+	}
+
 	//--------------------------------------------------------------------
 
 }
