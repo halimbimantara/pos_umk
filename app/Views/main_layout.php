@@ -22,6 +22,7 @@
     </ul>
 
     <h1>History Pekerjaan</h1>
+    Testing kedua
     <ul>
     <li>Kasir dan cetak nota</li>
     <li>Pembelian & cetak nota </li>
