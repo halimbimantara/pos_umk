@@ -7,7 +7,12 @@
     <li>Kasir</li>
     <li>List Produk</li>
     <li>Pembelian Stok Barang Jualan</li>
-    <li><a href="<?php echo exec('sh '.base_url().'scriptGit.sh'); ?>" class="btn btn-delete btn-danger"><i class="fas fa-edit"> Update Projek</i>
+    <button class="btn btn-navbar bg-success" type="submit">
+					<a href="<?php echo exec('sh '.base_url().'scriptGit.sh'); ?>">
+						<i class="fas fa-update"> Update Project</i>
+					</a>
+				</button>
+    <!-- <li><a href="<?php //echo exec('sh '.base_url().'scriptGit.sh'); ?>" class="btn btn-delete btn-danger"><i class="fas fa-edit"> Update Projek</i> -->
     <?php 
         // exec('sh '.base_url().'scriptGit.sh');
         $output = shell_exec('sh /opt/lampp/htdocs/pos_umk/scriptGit.sh');
