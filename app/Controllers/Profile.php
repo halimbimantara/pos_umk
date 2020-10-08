@@ -8,7 +8,10 @@ class Profile extends BaseController
 {
 	function __construct()
 	{
+		helper('form');
 		$this->session = \Config\Services::session();
+		$this->connect = \Config\Database::connect();
+		$this->model_upload = new UploadModel();
 	}
 	public function index()
 	{
@@ -65,7 +68,7 @@ class Profile extends BaseController
         }
  
         $validated = $this->validate([
-            'file_upload' => 'uploaded[file_upload]|mime_in[file_upload,image/jpg,image/jpeg,image/gif,image/png]|max_size[file_upload,4096]'
+            'file_upload' => 'uploaded[file_upload]|mime_in[file_upload,image/jpg,image/jpeg,image/gif,image/png]|max_size[file_upload,8096]'
         ]);
   
         if ($validated == FALSE) {
@@ -76,10 +79,7 @@ class Profile extends BaseController
         } else {
  
             $avatar = $this->request->getFile('file_upload');
-			$avatar->move(ROOTPATH . 'resources/uploads');
-			
-			var_dump (ROOTPATH);
-			exit();
+			$avatar->move(ROOTPATH . 'resources/uploads/logo');
  
             $data = [
 				'image' => $avatar->getName(),

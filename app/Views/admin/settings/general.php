@@ -45,7 +45,7 @@
                     Success alert preview. This alert is dismissable.
                 </div> -->
 
-                <form role="form" id="form-general-setting" action="<?= base_url() . "/settings/updateGeneralSetting"; ?>" method="post">
+                <form role="form" id="form-general-setting" action="<?= base_url() . "/settings/updateGeneralSetting"; ?>" enctype="multipart/form-data" method="post">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Aplikasi</label>
@@ -67,6 +67,16 @@
                             <label for="exampleInputPassword1">Alamat Usaha</label>
                             <textarea class="form-control" name="alamat_usaha" value="" rows="3" placeholder="Enter ..."><?= $data[0]->alamat_usaha; ?></textarea>
                         </div>
+                        <div class="form-group">
+                        <img class="profile-user-img img-fluid" src="<?= ( $data[0]->logo !=null ? base_url()."/resources/uploads/".$data[0]->logo : base_url()."/resources/dist/img/avatar.png" ) ?>" alt="User profile picture">
+                                    <label for="inputSkills">Upload Logo</label>
+                                    <div class="col-sm-10">
+                                    <div class="custom-file">
+                                        <input type="file" name="file_upload" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                    </div>
+                                </div>
                     </div>
                     <!-- /.card-body -->
 
@@ -124,3 +134,16 @@
 </div>
 
 <?= $this->endSection() ?>
+
+<? $this->section('jscript'); ?>
+
+<!-- bs-custom-file-input -->
+<script src="<?= base_url("resources/plugins/bs-custom-file-input/bs-custom-file-input.min.js")?>"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<?= $this->endSection(); ?>
