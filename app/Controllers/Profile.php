@@ -5,10 +5,14 @@ use App\Models\UploadModel;
 use App\Models\Auth_model;
 
 class Profile extends BaseController
-{
+{	
+	protected $model_upload;
 	function __construct()
 	{
+		helper('form','url');
 		$this->session = \Config\Services::session();
+		$this->connect = \Config\Database::connect();
+		$this->model_upload = new UploadModel();
 	}
 	public function index()
 	{
