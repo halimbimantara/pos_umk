@@ -61,7 +61,7 @@
 										<th style="width:3px">Harga Eceran</th>
 										<th style="width:3px">Harga Grosir</th>
 										<th style="width:3px">Minimum Grosir</th>
-										<th width="10%">Tanggal Buat</th>
+										<!-- <th width="10%">Tanggal Buat</th> -->
 										<th>Keterangan</th>
 										<th style="width:100px">
 											<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
@@ -88,7 +88,8 @@
 												<td><?php echo $mbeli->harga_eceran > 0 ? number_format($mbeli->harga_eceran, 0, '', '.') : number_format($hjual, 0, '', '.'); ?></td>
 												<td><?php echo  number_format($mbeli->harga_grosir, 0, '', '.'); ?></td>
 												<td><?php echo $mbeli->batas_grosir; ?></td>
-												<td><?php echo date("d-m-Y", strtotime($mbeli->created_date)); ?></td>
+												<!-- <td><?php //echo date("d-m-Y", strtotime($mbeli->created_date)); 
+															?></td> -->
 												<td><?php echo $mbeli->keterangan; ?></td>
 												<td>
 													<div class="hidden-md hidden-lg">
@@ -175,17 +176,19 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-md-6">Batas Minimum stok</label>
-							<div class="col-md-9">
-								<input disabled name="b_min_stok" id="b_min_stok" class="form-control" type="number">
-								<span class="help-block">10% Dari Maksimum </span>
-							</div>
-						</div>
-						<div class="form-group">
 							<label class="control-label col-md-6">Batas Maksimal stok</label>
 							<div class="col-md-9">
 								<input onchange="setminstok(this.value)" name="b_max_stok" id="b_max_stok" class="form-control" type="number">
 								<span class="help-block"></span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-6">Batas Minimum stok</label>
+							<div class="col-md-9">
+								<input disabled name="ib_min_stok" id="ib_min_stok" class="form-control" type="number">
+								<input name="b_min_stok" id="b_min_stok" class="form-control" type="hidden">
+								<span class="help-block">10% Dari Maksimum </span>
 							</div>
 						</div>
 
@@ -210,9 +213,9 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Gambar</label>
 							<div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFile" name="customFile">
-                      <label class="custom-file-label" for="customFile">Choose file</label>
-                    </div>
+								<input type="file" class="custom-file-input" id="customFile" name="customFile">
+								<label class="custom-file-label" for="customFile">Choose file</label>
+							</div>
 						</div>
 						<div class="form-group" hidden>
 							<label class="control-label col-md-3">Harga Eceran</label>
@@ -355,10 +358,9 @@
 <script src="<?= base_url("resources/assets/js/chosen.jquery.min.js") ?>"></script>
 <script src="<?= base_url("resources/plugins/bs-custom-file-input/bs-custom-file-input.min.js") ?>"></script>
 <script type="text/javascript">
-
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
+	$(document).ready(function() {
+		bsCustomFileInput.init();
+	});
 	var save_method; //for save method string
 	var nota_pembelian;
 	$(document).ready(function() {
@@ -411,8 +413,9 @@ $(document).ready(function () {
 	});
 
 	function setminstok(val) {
-		 var total_min =  parseFloat(val) * 0.1;
+		var total_min = parseFloat(val) * 0.1;
 		$('#b_min_stok').val(total_min);
+		$('#ib_min_stok').val(total_min);
 	}
 
 	function add_person() {
@@ -445,14 +448,17 @@ $(document).ready(function () {
 			dataType: 'json',
 			data: form_data,
 			success: function(data) {
-				$('#btnSave').text('tambah'); //change button text
+				$('#modal_addproduk').modal('hide');
 				$('#btnSave').attr('disabled', false); //set button enable 
 				// $('#btn_addProduk').attr('disabled', false); //set 
 				// $('#response_ajax').load(data);
+				if (data.success) {
+					console.log("oke");
+				}
 				var json = JSON.parse(data);
 				if (json.success) {
-					$('#modal_addproduk').modal('hide');
 					$('#form_addprod')[0].reset();
+					$('#btnSave').text('tambah'); //change button text
 					location.reload();
 				} else {
 					alert(json.message);
