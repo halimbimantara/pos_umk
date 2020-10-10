@@ -98,11 +98,15 @@ class Settings extends BaseController
 
 	public function updateGeneralSetting()
 	{
+		$logo = $this->request->getFile('file_upload');
+		$logo->move(ROOTPATH . 'resources/uploads');
+
 		$data = [
 			'nama_usaha' => $this->request->getPost('nama_usaha'),
 			'alamat_usaha' => $this->request->getPost('alamat_usaha'),
 			'no_tlpn' => $this->request->getPost('no_tlpn'),
 			'no_wa' => $this->request->getPost('no_wa'),
+			'logo' => $logo->getName()
 		];
 		$model = new Setting_model();
 		$update = $model->updateSetting($data);
