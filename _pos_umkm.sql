@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2020 at 08:07 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.3.16
+-- Generation Time: Sep 30, 2020 at 06:12 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,28 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pos_umkm`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `app_update`
---
-
-CREATE TABLE `app_update` (
-  `id` int(10) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `tgl_update` date NOT NULL,
-  `update_query_path` text NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
-  `versi` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `app_update`
---
-
-INSERT INTO `app_update` (`id`, `name`, `tgl_update`, `update_query_path`, `keterangan`, `versi`) VALUES
-(1, 'update fitur transaksi', '2020-10-04', 'path query', 'keterangan', '1.2.0');
 
 -- --------------------------------------------------------
 
@@ -147,7 +126,7 @@ CREATE TABLE `data_suplier` (
 --
 
 INSERT INTO `data_suplier` (`id_suplier`, `nama_suplier`, `alamat`, `keterangan`, `no_tlpn`, `nama_sales`, `sales_hp`, `created_date`, `user_create`, `status`) VALUES
-(1, 'PT Abadi Jaya Telur', 'Jl A Yani No 90 Sindang Laya', 'suplier makanan', 4351212, '', 9989, '2020-08-03', 0, 0),
+(1, 'Admin', 'Jakarta', '1', 0, '', 854567, '2020-09-23', 0, 0),
 (2, 'PT. Uniliver Kediri', 'Jl Sindang asri', 'Uniliver', 9989898, '', 65656565, '2020-08-09', 0, 0),
 (3, 'Distributor Beras', 'Jl.MayorBismo', '-', 908880, '', 2147483647, '2020-08-09', 0, 1),
 (4, 'Agung Jaya Merdeka', 'Jagakarsa - Jaksel', 'Supplier Unilever', 2147483647, '', 2147483647, '2020-08-15', 0, 0),
@@ -254,7 +233,7 @@ INSERT INTO `master_delivery` (`id_delivery`, `nama`, `tarif`, `jarak`, `create_
 
 CREATE TABLE `master_margin` (
   `id` int(10) NOT NULL,
-  `margin` double NOT NULL DEFAULT 0,
+  `margin` double NOT NULL DEFAULT '0',
   `create_date` timestamp NULL DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -298,18 +277,18 @@ INSERT INTO `master_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `total_pembe
 --
 
 CREATE TABLE `master_penjualan` (
-  `id_pembelian` int(12) NOT NULL DEFAULT 0,
+  `id_pembelian` int(12) NOT NULL DEFAULT '0',
   `kd_trx_penjualan` varchar(50) NOT NULL,
   `total_penjualan` double NOT NULL,
-  `ongkir` double NOT NULL DEFAULT 0 COMMENT 'apabila ada ongkir',
+  `ongkir` double NOT NULL DEFAULT '0' COMMENT 'apabila ada ongkir',
   `diskon_nota` double NOT NULL,
-  `delivery` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 Tidak 1 Ya',
+  `delivery` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 Tidak 1 Ya',
   `id_pelanggan` int(5) NOT NULL,
   `nama_pelanggan` varchar(100) NOT NULL,
   `id_kasir` int(5) NOT NULL,
   `keterangan` text NOT NULL,
   `created_by` int(11) NOT NULL COMMENT 'user yang menambah',
-  `created_date` date NOT NULL 
+  `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -323,36 +302,35 @@ CREATE TABLE `master_produk` (
   `kd_barcode` varchar(100) NOT NULL,
   `nama_produk` varchar(100) NOT NULL,
   `id_kategori` int(5) DEFAULT NULL,
-  `promo` tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 aktif 0 tidak',
-  `harga_promo` double NOT NULL DEFAULT 0,
+  `promo` tinyint(1) NOT NULL DEFAULT '0' COMMENT '1 aktif 0 tidak',
+  `harga_promo` double NOT NULL DEFAULT '0',
   `gambar_produk` varchar(255) NOT NULL,
   `k1` int(2) DEFAULT NULL,
   `k2` int(5) DEFAULT NULL,
-  `batas_grosir` int(5) NOT NULL DEFAULT 0,
-  `harga_grosir` double NOT NULL DEFAULT 0,
+  `batas_grosir` int(5) NOT NULL DEFAULT '0',
+  `harga_grosir` double NOT NULL DEFAULT '0',
   `eceran` int(5) NOT NULL,
-  `harga_eceran` double NOT NULL DEFAULT 0,
-  `stok` int(5) NOT NULL DEFAULT 0,
-  `batas_min_stok` int(5) NOT NULL DEFAULT 0,
+  `harga_eceran` double NOT NULL DEFAULT '0',
+  `stok` int(5) NOT NULL DEFAULT '0',
+  `batas_min_stok` int(5) NOT NULL DEFAULT '0',
   `batas_min_stok_persen` int(5) NOT NULL,
-  `batas_max_stok` int(5) NOT NULL DEFAULT 0,
-  `created_date` date NOT NULL DEFAULT current_timestamp(),
+  `batas_max_stok` int(5) NOT NULL DEFAULT '0',
+  `created_date` date NOT NULL,
   `create_by` int(5) NOT NULL,
   `modified_by` int(5) DEFAULT NULL,
-  `keterangan` text DEFAULT NULL,
-  `kd_satuan` int(5) NOT NULL
+  `keterangan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `master_produk`
 --
 
-INSERT INTO `master_produk` (`kd_produk`, `kd_barcode`, `nama_produk`, `id_kategori`, `promo`, `harga_promo`, `gambar_produk`, `k1`, `k2`, `batas_grosir`, `harga_grosir`, `eceran`, `harga_eceran`, `stok`, `batas_min_stok`, `batas_min_stok_persen`, `batas_max_stok`, `created_date`, `create_by`, `modified_by`, `keterangan`, `kd_satuan`) VALUES
-('089686060126', '089686060126', 'POP MIE BAKSO', 2, 0, 0, '', 10, NULL, 0, 0, 0, 0, 0, 0, 10, 200, '2020-08-16', 0, NULL, NULL, 0),
-('4801010120223', '4801010120223', 'JOHNSON BABY COLOGNE SLIDE', NULL, 0, 0, 'johnson-blue.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL, 8),
-('8992222055499', '8992222055499', 'GATSBY SIDESWEPT STYLING POMADE', NULL, 0, 0, 'gatsby-pomade.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL, 0),
-('8992779269103', '8992779269103', 'KIT MOTOR MULTIGUNA', NULL, 0, 0, 'kit-prod.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL, 0),
-('8997023620679', '8997023620679', 'EXTRA FOOD FRUIT VEGETABLE HPAI', NULL, 0, 0, '', NULL, 0, 5, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL, 0);
+INSERT INTO `master_produk` (`kd_produk`, `kd_barcode`, `nama_produk`, `id_kategori`, `promo`, `harga_promo`, `gambar_produk`, `k1`, `k2`, `batas_grosir`, `harga_grosir`, `eceran`, `harga_eceran`, `stok`, `batas_min_stok`, `batas_min_stok_persen`, `batas_max_stok`, `created_date`, `create_by`, `modified_by`, `keterangan`) VALUES
+('089686060126', '089686060126', 'POP MIE BAKSO', 2, 0, 0, '', 10, NULL, 0, 0, 0, 0, 0, 0, 10, 200, '2020-08-16', 0, NULL, NULL),
+('4801010120223', '4801010120223', 'JOHNSON BABY COLOGNE SLIDE', NULL, 0, 0, 'johnson-blue.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL),
+('8992222055499', '8992222055499', 'GATSBY SIDESWEPT STYLING POMADE', NULL, 0, 0, 'gatsby-pomade.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL),
+('8992779269103', '8992779269103', 'KIT MOTOR MULTIGUNA', NULL, 0, 0, 'kit-prod.jpeg', NULL, 0, 10, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL),
+('8997023620679', '8997023620679', 'EXTRA FOOD FRUIT VEGETABLE HPAI', NULL, 0, 0, '', NULL, 0, 5, 0, 0, 0, 0, 3, 0, 20, '2020-08-09', 0, NULL, NULL);
 
 --
 -- Triggers `master_produk`
@@ -399,39 +377,6 @@ INSERT INTO `ref_menu2` (`id_menu`, `parrent`, `nama_menu`, `link`, `urutan`, `c
 (52, 50, 'Rumah Sakit', 'ref_rs', '2', NULL, 'icon-folder2'),
 (53, 50, 'UKOT/UMOT', 'ref_ukot', '3', NULL, 'icon-folder2'),
 (54, 50, 'RT ALKES PKRT', 'ref_rt_alkes', '4', NULL, 'icon-folder2'),
-(100, 0, 'Petugas', 'ref_petugas', '2', NULL, 'icon-user-tie'),
-(1, 0, 'Settings', '#', '99', NULL, 'icon-cog3'),
-(2, 1, 'Profil App', 'ref_profil_app', '1', NULL, 'icon-browser'),
-(3, 1, 'Menus', 'ref_menu', '2', NULL, 'icon-grid'),
-(4, 1, 'Role', 'ref_role', '3', NULL, 'icon-table2'),
-(5, 1, 'Users', 'ref_users', '4', NULL, 'icon-people'),
-(50, 0, 'Sarana', '#', '1', NULL, 'icon-city'),
-(51, 50, 'Puskesmas', 'ref_puskesmas', '1', NULL, 'icon-folder2'),
-(52, 50, 'Rumah Sakit', 'ref_rs', '2', NULL, 'icon-folder2'),
-(53, 50, 'UKOT/UMOT', 'ref_ukot', '3', NULL, 'icon-folder2'),
-(54, 50, 'RT ALKES PKRT', 'ref_rt_alkes', '4', NULL, 'icon-folder2'),
-(100, 0, 'Petugas', 'ref_petugas', '2', NULL, 'icon-user-tie'),
-(1, 0, 'Settings', '#', '99', NULL, 'icon-cog3'),
-(2, 1, 'Profil App', 'ref_profil_app', '1', NULL, 'icon-browser'),
-(3, 1, 'Menus', 'ref_menu', '2', NULL, 'icon-grid'),
-(4, 1, 'Role', 'ref_role', '3', NULL, 'icon-table2'),
-(5, 1, 'Users', 'ref_users', '4', NULL, 'icon-people'),
-(50, 0, 'Sarana', '#', '1', NULL, 'icon-city'),
-(51, 50, 'Puskesmas', 'ref_puskesmas', '1', NULL, 'icon-folder2'),
-(52, 50, 'Rumah Sakit', 'ref_rs', '2', NULL, 'icon-folder2'),
-(53, 50, 'UKOT/UMOT', 'ref_ukot', '3', NULL, 'icon-folder2'),
-(54, 50, 'RT ALKES PKRT', 'ref_rt_alkes', '4', NULL, 'icon-folder2'),
-(100, 0, 'Petugas', 'ref_petugas', '2', NULL, 'icon-user-tie'),
-(1, 0, 'Settings', '#', '99', NULL, 'icon-cog3'),
-(2, 1, 'Profil App', 'ref_profil_app', '1', NULL, 'icon-browser'),
-(3, 1, 'Menus', 'ref_menu', '2', NULL, 'icon-grid'),
-(4, 1, 'Role', 'ref_role', '3', NULL, 'icon-table2'),
-(5, 1, 'Users', 'ref_users', '4', NULL, 'icon-people'),
-(50, 0, 'Sarana', '#', '1', NULL, 'icon-city'),
-(51, 50, 'Puskesmas', 'ref_puskesmas', '1', NULL, 'icon-folder2'),
-(52, 50, 'Rumah Sakit', 'ref_rs', '2', NULL, 'icon-folder2'),
-(53, 50, 'UKOT/UMOT', 'ref_ukot', '3', NULL, 'icon-folder2'),
-(54, 50, 'RT ALKES PKRT', 'ref_rt_alkes', '4', NULL, 'icon-folder2'),
 (100, 0, 'Petugas', 'ref_petugas', '2', NULL, 'icon-user-tie');
 
 -- --------------------------------------------------------
@@ -454,7 +399,8 @@ INSERT INTO `role` (`id`, `role_id`, `role`) VALUES
 (1, 1, 'Pegawai'),
 (2, 2, 'Kasir'),
 (3, 3, 'Kabag'),
-(4, 4, 'CEO');
+(4, 4, 'CEO'),
+(5, 0, 'Keuangan');
 
 -- --------------------------------------------------------
 
@@ -469,9 +415,9 @@ CREATE TABLE `role_akses` (
   `submenu_id` int(11) NOT NULL,
   `info` text NOT NULL,
   `aktif` int(1) NOT NULL,
-  `insert` int(11) NOT NULL DEFAULT 0,
-  `update` int(11) NOT NULL DEFAULT 0,
-  `delete` int(11) NOT NULL DEFAULT 0
+  `insert` int(11) NOT NULL DEFAULT '0',
+  `update` int(11) NOT NULL DEFAULT '0',
+  `delete` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -566,17 +512,15 @@ CREATE TABLE `settings` (
   `nama_usaha` varchar(255) NOT NULL,
   `alamat_usaha` varchar(255) NOT NULL,
   `no_tlpn` varchar(50) NOT NULL,
-  `no_wa` varchar(50) NOT NULL,
-  `app_version` varchar(50) NOT NULL,
-  `logo` text NOT NULL
+  `no_wa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `nama_apps`, `nama_usaha`, `alamat_usaha`, `no_tlpn`, `no_wa`, `app_version`, `logo`) VALUES
-(1, 'MobieCash', '', 'Jl.A Yani', '085815962808', '085812222', '1.0.1', '');
+INSERT INTO `settings` (`id`, `nama_apps`, `nama_usaha`, `alamat_usaha`, `no_tlpn`, `no_wa`) VALUES
+(1, 'MobieCash', '', '', '085815962808', '085812222');
 
 -- --------------------------------------------------------
 
@@ -680,8 +624,8 @@ CREATE TABLE `trx_history_harga_jual` (
   `id_history_jual` int(10) NOT NULL,
   `kd_produk` varchar(50) NOT NULL,
   `harga` double NOT NULL,
-  `tanggal_modified` datetime NOT NULL DEFAULT current_timestamp(),
-  `keterangan` text DEFAULT NULL,
+  `tanggal_modified` datetime NOT NULL,
+  `keterangan` text,
   `modified_by` int(5) DEFAULT NULL COMMENT 'user yang merubah'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -711,8 +655,7 @@ INSERT INTO `trx_history_harga_jual` (`id_history_jual`, `kd_produk`, `harga`, `
 (19, '089686060126', 0, '2020-08-20 00:00:00', NULL, NULL),
 (20, '4801010120223', 0, '2020-08-30 00:00:00', NULL, NULL),
 (21, '8992222055499', 0, '2020-09-03 00:00:00', NULL, NULL),
-(22, '8992779269103', 0, '2020-09-03 00:00:00', NULL, NULL),
-(23, '4801010120223', 0, '2020-10-04 00:00:00', NULL, NULL);
+(22, '8992779269103', 0, '2020-09-03 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -728,10 +671,10 @@ CREATE TABLE `trx_pembelian` (
   `harga` double NOT NULL,
   `qty` int(10) NOT NULL,
   `stok` int(5) NOT NULL,
-  `total` double NOT NULL DEFAULT 0,
-  `diskon` double NOT NULL DEFAULT 0,
+  `total` double NOT NULL DEFAULT '0',
+  `diskon` double NOT NULL DEFAULT '0',
   `kd_satuan` int(11) DEFAULT NULL,
-  `keterangan` text DEFAULT NULL,
+  `keterangan` text,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -762,10 +705,10 @@ CREATE TABLE `trx_pembelian_temp` (
   `nama_barang` varchar(255) DEFAULT NULL,
   `harga` double NOT NULL,
   `qty` int(10) NOT NULL,
-  `total` double NOT NULL DEFAULT 0,
-  `diskon` double NOT NULL DEFAULT 0,
+  `total` double NOT NULL DEFAULT '0',
+  `diskon` double NOT NULL DEFAULT '0',
   `kd_satuan` int(11) DEFAULT NULL,
-  `keterangan` text DEFAULT NULL,
+  `keterangan` text,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -784,10 +727,10 @@ CREATE TABLE `trx_penjualan` (
   `nama_barang` varchar(255) NOT NULL,
   `harga` double NOT NULL,
   `qty` int(10) NOT NULL,
-  `total` double NOT NULL DEFAULT 0,
-  `diskon` double NOT NULL DEFAULT 0,
+  `total` double NOT NULL DEFAULT '0',
+  `diskon` double NOT NULL DEFAULT '0',
   `kd_satuan` int(11) NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp()
+  `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -799,14 +742,7 @@ INSERT INTO `trx_penjualan` (`id_penjualan`, `kd_trx_penjualan`, `kd_produk`, `k
 (2, 'JL200817223828', '8992222055499', 'BL200809095511', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-08-17'),
 (3, 'JL200817223828', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-17'),
 (4, 'JL200817223828', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-17'),
-(5, 'JL200821235042', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-21'),
-(6, 'JL201011055026', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-10-11'),
-(7, 'JL201011112224', '8992779269103', '1000', NULL, 'KIT MOTOR MULTIGUNA', 13750, 1, 13750, 0, 0, '2020-10-11'),
-(8, 'JL201011112224', '8992222055499', '1000', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-10-11'),
-(10, 'JL201011123424', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 3, 46200, 0, 0, '2020-10-11'),
-(11, 'JL201011123424', '8992779269103', '1000', NULL, 'KIT MOTOR MULTIGUNA', 13750, 1, 13750, 0, 0, '2020-10-11'),
-(13, 'JL201011125007', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-10-11'),
-(14, 'JL201011125007', '8992222055499', '1000', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-10-11');
+(5, 'JL200821235042', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-21');
 
 -- --------------------------------------------------------
 
@@ -824,8 +760,8 @@ CREATE TABLE `trx_penjualan_tmp` (
   `harga` double NOT NULL,
   `qty` int(10) NOT NULL,
   `sub_total` double NOT NULL,
-  `diskon` double NOT NULL DEFAULT 0,
-  `kd_satuan` int(11) NOT NULL DEFAULT 0,
+  `diskon` double NOT NULL DEFAULT '0',
+  `kd_satuan` int(11) NOT NULL DEFAULT '0',
   `created_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -848,11 +784,9 @@ CREATE TABLE `trx_search_temp` (
 --
 
 INSERT INTO `trx_search_temp` (`id`, `nama_produk`, `harga`, `count`, `expired`) VALUES
-(3, 'B', 0, 1, '0000-00-00 00:00:00'),
-(4, 'bayam merah', 1000, 1, '0000-00-00 00:00:00'),
-(5, 'sawi', 400, 1, '0000-00-00 00:00:00'),
-(6, 'wortel', 1000, 1, '0000-00-00 00:00:00'),
-(7, 'Tomat', 4000, 1, '0000-00-00 00:00:00');
+(1, 'bayam', 12000, 3, '2020-09-30 13:30:18'),
+(2, 'bayam', 0, 1, '0000-00-00 00:00:00'),
+(3, 'bawang', 0, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -875,9 +809,9 @@ CREATE TABLE `users` (
   `remember_code` varchar(255) DEFAULT NULL,
   `created_on` int(11) UNSIGNED NOT NULL,
   `last_login` int(11) UNSIGNED DEFAULT NULL,
-  `active` tinyint(1) UNSIGNED DEFAULT 0,
+  `active` tinyint(1) UNSIGNED DEFAULT '0',
   `first_name` varchar(50) DEFAULT NULL,
-  `role` int(11) NOT NULL DEFAULT 0,
+  `role` int(11) NOT NULL DEFAULT '0',
   `last_name` varchar(50) DEFAULT NULL,
   `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
@@ -890,10 +824,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `role`, `last_name`, `company`, `phone`, `alamat`, `image`) VALUES
-(1, '127.0.0.1', 'admin', 'f5c828ff122cd8d0509051584236cceb28c78bfa', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 4, 'istrator', 'ADMIN', '0875567', 'Jakarta', 'Screen Shot 2020-09-30 at 19.18.28_1.png'),
+(1, '127.0.0.1', 'admin', 'f5c828ff122cd8d0509051584236cceb28c78bfa', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 4, 'istrator', 'ADMIN', '0875567', 'Jakarta', 'kisspng_2.jpg'),
 (3, '', 'muhajir', 'd0f00efe1de5f6bf933d7bcdc244ef64983dea9b', 'muhajir@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, 'muhajir', 0, NULL, NULL, '085212614165', 'muhajir', NULL),
-(5, '', 'jojon', 'aac1e0e8e7038304d7a0764a4e1f61ff3151903f', 'muhajir2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'jojon21', 0, NULL, NULL, '085212614165', 'bandung', NULL),
-(6, '', 'kasir', '910230f5f11e05e8b0abb337512c99cd79751c86', 'bimadel6@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'kasirk', 0, NULL, NULL, '0888282', 'jl kewagean', NULL);
+(5, '', 'jojon', 'aac1e0e8e7038304d7a0764a4e1f61ff3151903f', 'muhajir2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'jojon21', 0, NULL, NULL, '085212614165', 'bandung', NULL);
 
 -- --------------------------------------------------------
 
@@ -910,50 +843,11 @@ CREATE TABLE `users_groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_musers`
---
-
-CREATE TABLE `_musers` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(254) NOT NULL,
-  `activation_selector` varchar(255) DEFAULT NULL,
-  `activation_code` varchar(255) DEFAULT NULL,
-  `forgotten_password_selector` varchar(255) DEFAULT NULL,
-  `forgotten_password_code` varchar(255) DEFAULT NULL,
-  `forgotten_password_time` int(11) UNSIGNED DEFAULT NULL,
-  `remember_selector` varchar(255) DEFAULT NULL,
-  `remember_code` varchar(255) DEFAULT NULL,
-  `created_on` int(11) UNSIGNED NOT NULL,
-  `last_login` int(11) UNSIGNED DEFAULT NULL,
-  `active` tinyint(1) UNSIGNED DEFAULT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `alamat` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `role` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `_musers`
---
-
-INSERT INTO `_musers` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `alamat`, `image`, `role`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$08$200Z6ZZbp3RAEXoaWcMA6uJOFicwNZaqk4oDhqTUiFXFe63MG.Daa', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 'istrator', 'ADMIN', '0', '', '', 4),
-(2, '', 'halim', '59971a5c6213ecbb4e58bf91b4a56962f05311d8', 'halim@wlb.co.id', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'halim', NULL, NULL, '085815962808', '', '', 4);
-
--- --------------------------------------------------------
-
---
 -- Structure for view `get_produk`
 --
 DROP TABLE IF EXISTS `get_produk`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk`  AS  select `a`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on(`b`.`kd_produk` = `a`.`kd_produk`)) group by `a`.`kd_produk` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk`  AS  select `a`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on((`b`.`kd_produk` = `a`.`kd_produk`))) group by `a`.`kd_produk` ;
 
 -- --------------------------------------------------------
 
@@ -962,7 +856,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `get_produk_stok`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk_stok`  AS  select `b`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on(`b`.`kd_produk` = `a`.`kd_produk`)) group by `a`.`kd_produk` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `get_produk_stok`  AS  select `b`.`kd_produk` AS `kd_produk`,`b`.`kd_barcode` AS `kd_barcode`,`b`.`nama_produk` AS `nama_produk`,`b`.`gambar_produk` AS `gambar`,`b`.`harga_promo` AS `harga_promo`,`b`.`harga_grosir` AS `harga_grosir`,`b`.`batas_grosir` AS `batas_grosir`,`b`.`harga_eceran` AS `harga_eceran`,sum(`a`.`stok`) AS `stok` from (`master_produk` `b` left join `trx_pembelian` `a` on((`b`.`kd_produk` = `a`.`kd_produk`))) group by `a`.`kd_produk` ;
 
 -- --------------------------------------------------------
 
@@ -971,17 +865,11 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `suplier_pembelian`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `suplier_pembelian`  AS  select `a`.`id_pembelian` AS `id_pembelian`,`a`.`kd_trx_pembelian` AS `kd_trx_pembelian`,`a`.`kd_produk` AS `kd_produk`,`a`.`nama_barang` AS `nama_barang`,`a`.`harga` AS `harga`,`a`.`qty` AS `qty`,`a`.`stok` AS `stok`,`a`.`total` AS `total`,`a`.`diskon` AS `diskon`,`a`.`kd_satuan` AS `kd_satuan`,`a`.`keterangan` AS `keterangan`,`a`.`created_date` AS `created_date`,`b`.`id_suplier` AS `id_suplier` from (`trx_pembelian` `a` left join `master_pembelian` `b` on(`a`.`kd_trx_pembelian` = `b`.`kd_trx_pembelian`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `suplier_pembelian`  AS  select `a`.`id_pembelian` AS `id_pembelian`,`a`.`kd_trx_pembelian` AS `kd_trx_pembelian`,`a`.`kd_produk` AS `kd_produk`,`a`.`nama_barang` AS `nama_barang`,`a`.`harga` AS `harga`,`a`.`qty` AS `qty`,`a`.`stok` AS `stok`,`a`.`total` AS `total`,`a`.`diskon` AS `diskon`,`a`.`kd_satuan` AS `kd_satuan`,`a`.`keterangan` AS `keterangan`,`a`.`created_date` AS `created_date`,`b`.`id_suplier` AS `id_suplier` from (`trx_pembelian` `a` left join `master_pembelian` `b` on((`a`.`kd_trx_pembelian` = `b`.`kd_trx_pembelian`))) ;
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `app_update`
---
-ALTER TABLE `app_update`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `data_kode_cetak`
@@ -1042,6 +930,12 @@ ALTER TABLE `master_pembelian`
 --
 ALTER TABLE `master_produk`
   ADD PRIMARY KEY (`kd_produk`);
+
+--
+-- Indexes for table `ref_menu2`
+--
+ALTER TABLE `ref_menu2`
+  ADD PRIMARY KEY (`id_menu`) USING BTREE;
 
 --
 -- Indexes for table `role`
@@ -1147,24 +1041,8 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- Indexes for table `_musers`
---
-ALTER TABLE `_musers`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uc_email` (`email`),
-  ADD UNIQUE KEY `uc_activation_selector` (`activation_selector`),
-  ADD UNIQUE KEY `uc_forgotten_password_selector` (`forgotten_password_selector`),
-  ADD UNIQUE KEY `uc_remember_selector` (`remember_selector`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `app_update`
---
-ALTER TABLE `app_update`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `data_kode_cetak`
@@ -1221,10 +1099,16 @@ ALTER TABLE `master_pembelian`
   MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `ref_menu2`
+--
+ALTER TABLE `ref_menu2`
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `role_akses`
@@ -1236,7 +1120,7 @@ ALTER TABLE `role_akses`
 -- AUTO_INCREMENT for table `role_menu`
 --
 ALTER TABLE `role_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `role_submenu`
@@ -1266,13 +1150,13 @@ ALTER TABLE `tb_kategori_produk`
 -- AUTO_INCREMENT for table `tb_kemasan`
 --
 ALTER TABLE `tb_kemasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `trx_history_harga_jual`
 --
 ALTER TABLE `trx_history_harga_jual`
-  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `trx_pembelian`
@@ -1290,7 +1174,7 @@ ALTER TABLE `trx_pembelian_temp`
 -- AUTO_INCREMENT for table `trx_penjualan`
 --
 ALTER TABLE `trx_penjualan`
-  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `trx_penjualan_tmp`
@@ -1302,25 +1186,19 @@ ALTER TABLE `trx_penjualan_tmp`
 -- AUTO_INCREMENT for table `trx_search_temp`
 --
 ALTER TABLE `trx_search_temp`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `_musers`
---
-ALTER TABLE `_musers`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -1331,7 +1209,7 @@ ALTER TABLE `_musers`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `_musers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -29,6 +29,7 @@
                 <!-- Default box -->
                 <div class="card card-secondary">
                     <div class="card-header">
+                        <?php //echo "co".index_page();?>
                         <h3 class="card-title"><i class="fas fa-cart-plus"></i> Transaksi Pembelian Nota <?= $m_pembelian->getRow()->kd_trx_pembelian ?></h3>
 
                         <div class="card-tools">
@@ -38,7 +39,17 @@
                         </div>
                     </div>
                     <div class="card-body">
+                    <div class="row" style="margin-bottom: 10px;">
+							<div class="col-xs-8">
+								<a href="<?= base_url('pembelian/cetak/')."/".$kode_trx; ?>" class="btn btn-app btn-success btn-xs">
+									<i class="ace-icon fa fa-print align-top bigger-125"></i>
+									Cetak
 
+</a>
+								
+							</div>
+
+						</div>
                         <!-- content -->
                         <div class="col-12">
                             <table id="simple-table" class="table  table-bordered table-hover">

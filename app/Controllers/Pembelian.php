@@ -45,32 +45,32 @@ class Pembelian extends BaseController
 		$data['username'] = $_SESSION['username'];
 
 		$modelaut = new Auth_model();
-			$menu = '';
-			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
 
-				$menu .= '<li class="nav-item has-treeview">
+			$menu .= '<li class="nav-item has-treeview">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							'.$getmenu->menu.'
+							' . $getmenu->menu . '
 							<i class="right fas fa-angle-left"></i>
 						</p>
 					</a>';
-				$menu .=	'<ul class="nav nav-treeview">';
-					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
-						$menu .=	'<li class="nav-item">
-								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>'.$getsubmenu->submenu.'</p>
+									<p>' . $getsubmenu->submenu . '</p>
 								</a>
 							</li>';
-					}
-				$menu .= '</ul>';
-
-				$menu .= '</li>';
 			}
+			$menu .= '</ul>';
 
-			$data['menu'] = $menu;
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 
 		return view('admin/pembelian_view', $data);
 	}
@@ -223,28 +223,28 @@ class Pembelian extends BaseController
 		$data = array();
 		$model = new Pos_model();
 		$dataProduk = $model->getDataProdukSearchv2($searchby)->getResult('array');
-		
+
 		$output = '<ul class="list-group" id="results">';
-		
-		if(sizeof($dataProduk) > 0){
+
+		if (sizeof($dataProduk) > 0) {
 			foreach ($dataProduk as $row) {
-				$harga=1000;
-				$color=$row["tipe"] == 1?"blue":"black";
-				$poper='<div id="popover-content">
+				$harga = 1000;
+				$color = $row["tipe"] == 1 ? "blue" : "black";
+				$poper = '<div id="popover-content">
 				  <div class="form-group">
 
 					<input class="btn btn-success btn-xs" id="smdgn" type="button" value="=" />
 					<input class="btn btn-primary btn-xs" id="item_hakhir" type="button" value="10000" />
 				  </div>
 			  </div>';
-				$harga_tmpsrc=$row["tipe"] == 1?"data-toggle='popover' data-container='body' data-html='true' data-placement='right'":"";
-				$output .= '<li rel-tipe="'.$row["tipe"].'" style="color:'.$color.'" rel="'.$row["kd_produk"].'" '.$harga_tmpsrc.' class="list-group-item link-class">'.$row["nama_produk"].'</li>'.$poper;
+				$harga_tmpsrc = $row["tipe"] == 1 ? "data-toggle='popover' data-container='body' data-html='true' data-placement='right'" : "";
+				$output .= '<li rel-tipe="' . $row["tipe"] . '" style="color:' . $color . '" rel="' . $row["kd_produk"] . '" ' . $harga_tmpsrc . ' class="list-group-item link-class">' . $row["nama_produk"] . '</li>' . $poper;
 			}
-		  } else {
-			$output .= '<li class=" link-class">Tidak ada yang cocok.</li>';  
-		  }  
-		  $output .= '</ul>';
-		  echo $output;
+		} else {
+			$output .= '<li class=" link-class">Tidak ada yang cocok.</li>';
+		}
+		$output .= '</ul>';
+		echo $output;
 	}
 
 	// public function cetak($id_trx)
@@ -324,6 +324,35 @@ class Pembelian extends BaseController
 
 	public function detailpembelian($kode_trx)
 	{
+		$data['username'] = $_SESSION['username'];
+		$modelaut = new Auth_model();
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
+
+			$menu .= '<li class="nav-item has-treeview">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>
+							' . $getmenu->menu . '
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>';
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>' . $getsubmenu->submenu . '</p>
+								</a>
+							</li>';
+			}
+			$menu .= '</ul>';
+
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
+		$data['kode_trx'] = $kode_trx;
 		$mbeli = new Pembelian_model();
 		$r_total = $mbeli->getTotalPembelianCetak($kode_trx);
 		$result = $mbeli->getDetailPembelian($kode_trx);
