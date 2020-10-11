@@ -45,15 +45,15 @@ function myFunction() {
   </tr>
 </table>
   <div>
-  <table border="0" width="80%">
+  <table border="0" width="100%">
    <tr>
   -------------------------------------------------------
   </tr>
   <?php foreach ($list->getResult() as $row) { ?>
   <tr>
-  	<td align="center"><?php echo $row->qty; ?></td>
-  	<td align="center"><?php echo $row->nama_barang; ?></td>
-  	<td align="center"><?php echo number_format($row->harga, 0 ,'' , '.' ); ?></td>
+  	<!-- <td align="center"><?php //echo $row->qty; ?></td> -->
+  	<td align="left" colspan="2"><?php echo $row->nama_barang; ?><br> <?= $row->qty; ?> * <?= number_format($row->harga, 0 ,'' , '.' ); ?></td>
+  	<!-- <td align="center"><?php //echo number_format($row->harga, 0 ,'' , '.' ); ?></td> -->
   	<td align="right"><?php echo number_format($row->total, 0 ,'' , '.' ); ?></td>
   </tr>
   <?php } ?>

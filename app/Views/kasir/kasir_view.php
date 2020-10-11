@@ -249,6 +249,9 @@
             </div>
         </div>
     </div>
+    <!-- dialog qty update -->
+    <input type="hidden" id="dl_qty" name="dl_qty" value="0" />
+    <input type="hidden" id="id_item_trx" name="id_item_trx" value="0" />
 </section>
 
 <!-- tes -->
@@ -279,6 +282,7 @@
         </div>
     </div>
 </div>
+
 <!-- End Bootstrap modal -->
 
 <?= $this->endSection() ?>
@@ -529,11 +533,11 @@
 
     $(document).ready(function() {
         $("[data-toggle=popover]").popover({
-                    html: true,
-                    content: function() {
-                        return $('#popover-content').html();
-                    }
-                });
+            html: true,
+            content: function() {
+                return $('#popover-content').html();
+            }
+        });
 
         $('#trx_kasir').keyup(function() {
             var query = $(this).val();
@@ -564,7 +568,7 @@
                 showBarang($(this).attr('rel'));
             } else {
                 $("#trx_kasir").focus();
-               
+
 
                 $('#element').popover('show');
             }
@@ -651,11 +655,43 @@
         var displayBox = document.getElementById('display')
         if (displayBox.innerHTML > 0) {
 
-            $("#update_qty").val(1);
-            $("#qty").val(displayBox.innerHTML);
-            subTotal(displayBox.innerHTML);
-            //update qty tabel
-            addbarangtemp();
+            var idItem=$("#id_item_trx").val();
+            // $("#qty").val(displayBox.innerHTML);
+            // subTotal(displayBox.innerHTML);
+            var uQty = displayBox.innerHTML;
+            var url = "<?php echo site_url('pos/updateQtyTemp') ?>";
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    id_item_penjualan: idItem,
+                    qty: uQty
+                },
+                success: function(data) {
+                    var json = JSON.parse(data);
+                    if (json.success) {
+                        reloadTable(nota_penjualan);
+                        reloadTotalBelanja(nota_penjualan);
+                    //     //jika total 0 maka btn selesai hilang
+                    //     var total = $('#mtotal_belanja').val().replace(".", "").replace(".", "");
+                    //     if (total.empty || total == 0) {
+                    //         $('#btn_selesai').attr('hidden', false); //
+                    //         $('#bayar').removeAttr('disabled');
+                    //     } else {
+
+                    //         $('#bayar').attr('disabled', true); //
+                    //         $('#btn_selesai').attr('hidden', true); //
+                    //     }
+                        //reload kembalian
+                    } else {
+                        alert("Gagal menghapus barang");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error delete data');
+                    console.log(jqXHR + "-" + errorThrown);
+                }
+            });
             $('#modal_calculators').modal('hide');
             displayBox.innerHTML = 0;
         } else {
@@ -720,6 +756,12 @@
         } else {
             var kembali = str - total;
             $('#kembalian').val(convertToRupiah(kembali));
+            if (kembali < 0 || kembali == 0) {
+
+            } else {
+                //show tombol selesai
+                $("btn_selesai").removeAttr('hidden', true);
+            }
         }
         //   if(temps == '') {
         //       $('#selesai').attr("disabled","disabled");
@@ -910,6 +952,7 @@
         //     // backdrop: 'static',
         //     keyboard: true
         // });
+        $("#id_item_trx").val(values);
         $('#modal_calculators').modal('show');
         var displayBox = document.getElementById('display')
         displayBox.innerHTML = 0;

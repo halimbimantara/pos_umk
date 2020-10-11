@@ -90,6 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<span class="help-block"></span>
 						</div>
 					</div>
+					<ul>
+ <button id="btn_selesai" hidden type="button" onclick="selesaitrx()" class="btn btn-block bg-gradient-success"><i class="fas fa-inbox" > Cetak</i>
+</button>
+</ul>
 				</ul>
 			</div>
 		</nav>

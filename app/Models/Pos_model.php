@@ -74,6 +74,16 @@ class Pos_model extends Model
         return $query;
     }
 
+    function getProdukSearch($id_produk_temp)
+    {
+        $builder = $this->db->table('trx_penjualan_tmp');
+        $builder->select('*');
+        $builder->where('id_penjualan', $id_produk_temp);
+        $builder->limit(1);
+        $query = $builder->get();
+        return $query;
+    }
+
     /**
      * Search produk 
      * return nama,stok,harga eceran ,harga grosir
@@ -287,6 +297,15 @@ class Pos_model extends Model
         $builder->set('nama_produk', $nama);
         $builder->set('harga', $harga);
         $builder->where('id', $id);
+        return $builder->update();
+    }
+
+    function updateTempQtyPenjualan($id, $qty,$subtotal)
+    {
+        $builder = $this->db->table('trx_penjualan_tmp');
+        $builder->set('qty', $qty);
+        $builder->set('sub_total', $subtotal);
+        $builder->where('id_penjualan', $id);
         return $builder->update();
     }
     /**

@@ -12,7 +12,7 @@
                         <img class="profile-user-img img-fluid img-circle" src="<?= ( $users[0]->image !=null ? base_url()."/resources/uploads/".$users[0]->image : base_url()."/resources/dist/img/avatar.png" ) ?>" alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">Andi Riyadi</h3>
+                    <h3 class="profile-username text-center"><?= $username; ?></h3>
 
                     <!-- <p class="text-muted text-center">Jabatan</p> -->
 

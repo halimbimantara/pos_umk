@@ -14,47 +14,52 @@ class Pos extends BaseController
 		$this->session = \Config\Services::session();
 	}
 
+
 	public function index()
 	{
-		$modelPos = new Pos_model();
-		$data = array();
-		$data = array(
-			'nota_penjualan' => $this->getNotaPenjualan(),
-			'item_produk' => $modelPos->getListProduk()->getResult(),
-			'item_kategori' => $modelPos->getKategoriProduk()->getResult(),
-		);
+		if ($this->session->username) :
+			$modelPos = new Pos_model();
+			$data = array();
+			$data = array(
+				'nota_penjualan' => $this->getNotaPenjualan(),
+				'item_produk' => $modelPos->getListProduk()->getResult(),
+				'item_kategori' => $modelPos->getKategoriProduk()->getResult(),
+			);
 
-		//empty data sebelumnya
-		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
-		$data['username'] = $_SESSION['username'];
-		$modelaut = new Auth_model();
+			//empty data sebelumnya
+			$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
+			$data['username'] = $_SESSION['username'];
+			$modelaut = new Auth_model();
 			$menu = '';
-			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+			foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
 
 				$menu .= '<li class="nav-item has-treeview">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							'.$getmenu->menu.'
+							' . $getmenu->menu . '
 							<i class="right fas fa-angle-left"></i>
 						</p>
 					</a>';
 				$menu .=	'<ul class="nav nav-treeview">';
-					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
-						$menu .=	'<li class="nav-item">
-								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+				foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+					$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>'.$getsubmenu->submenu.'</p>
+									<p>' . $getsubmenu->submenu . '</p>
 								</a>
 							</li>';
-					}
+				}
 				$menu .= '</ul>';
 
 				$menu .= '</li>';
 			}
 
 			$data['menu'] = $menu;
-		return view('kasir/kasir_view', $data);
+			return view('kasir/kasir_view', $data);
+		else :
+			return redirect()->to(base_url('login'));
+		endif;
 	}
 
 	public function mobile()
@@ -71,32 +76,32 @@ class Pos extends BaseController
 		$modelPos->delTablePenjualantmp($this->getNotaPenjualan());
 		$data['username'] = $_SESSION['username'];
 		$modelaut = new Auth_model();
-			$menu = '';
-			foreach($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu){
+		$menu = '';
+		foreach ($modelaut->getMenuRole($this->session->roleid)->getResult() as $getmenu) {
 
-				$menu .= '<li class="nav-item has-treeview">
+			$menu .= '<li class="nav-item has-treeview">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							'.$getmenu->menu.'
+							' . $getmenu->menu . '
 							<i class="right fas fa-angle-left"></i>
 						</p>
 					</a>';
-				$menu .=	'<ul class="nav nav-treeview">';
-					foreach($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu){
-						$menu .=	'<li class="nav-item">
-								<a href="'.base_url("$getsubmenu->url").'" class="nav-link">
+			$menu .=	'<ul class="nav nav-treeview">';
+			foreach ($modelaut->getSubmenuRole($getmenu->menu_id)->getResult() as $getsubmenu) {
+				$menu .=	'<li class="nav-item">
+								<a href="' . base_url("$getsubmenu->url") . '" class="nav-link">
 									<i class="far fa-circle nav-icon"></i>
-									<p>'.$getsubmenu->submenu.'</p>
+									<p>' . $getsubmenu->submenu . '</p>
 								</a>
 							</li>';
-					}
-				$menu .= '</ul>';
-
-				$menu .= '</li>';
 			}
+			$menu .= '</ul>';
 
-			$data['menu'] = $menu;
+			$menu .= '</li>';
+		}
+
+		$data['menu'] = $menu;
 		return view('kasir/mobile_kasir_view', $data);
 	}
 
@@ -106,6 +111,26 @@ class Pos extends BaseController
 	{
 		$var_head = "JL";
 		return $var_head . date('ymdHis');
+	}
+
+	public function updateQtyTemp()
+	{
+		$modelPos = new Pos_model();
+		$qty = $this->request->getVar('qty');
+		$id_item_temp = $this->request->getVar('id_item_penjualan');
+		$response = array();
+
+		$cekRow=$modelPos->getProdukSearch($id_item_temp);
+		$u_subtotal=$cekRow->getRow()->harga;
+		$update = $modelPos->updateTempQtyPenjualan($id_item_temp, $qty,intval($u_subtotal)*$qty);
+		// $response['']
+		if ($update != NULL) {
+			$response['success'] = true;
+			$response['harga'] = $cekRow->getRow()->harga;
+		} else {
+			$response['success'] = false;
+		}
+		echo json_encode($response);
 	}
 
 	public function cekKolom($kode_produk, $jumlah_beli, $data = array())
@@ -246,19 +271,19 @@ class Pos extends BaseController
 
 			$margin   = $modelPos->getmargin()->getRow()->margin;
 			$hg_ecer = 0;
-			$nama_brg="";
+			$nama_brg = "";
 			if ($Isicon != NULL) {
 				if ($Isicon == "yes") {
 					$hg_ecer = $hjual;
-					$nama_brg=$this->request->getVar('nama_barang');
+					$nama_brg = $this->request->getVar('nama_barang');
 				} else {
 					$hg_ecer = $this->request->getVar('hrg_eceran');
-					$nama_brg=$this->request->getVar('nama_produk');
+					$nama_brg = $this->request->getVar('nama_produk');
 				}
 			} else {
 				$hg_ecer = $this->request->getVar('hrg_eceran');
 
-				$nama_brg=$this->request->getVar('nama_produk');
+				$nama_brg = $this->request->getVar('nama_produk');
 			}
 
 			$data = array(
@@ -422,20 +447,20 @@ class Pos extends BaseController
 		$result = '';
 		$no = 1;
 		$total_temp = number_format($r_total->getRow('sub_total'), 0, '', '.');
-		
+
 		foreach ($r_temp->getResult() as $rows) {
-			$info_tooltip=$rows->nama_barang."\n"."Sisa 10";
-			$gambar=$rows->gambar == null ?"-":$rows->gambar;
-			$result .= '<tr class="tb-trx" rel-tb="'.$gambar.'" data-toggle="tooltip" data-placement="left" title="'.$info_tooltip.'">' .
+			$info_tooltip = $rows->nama_barang . "\n" . "Sisa 10";
+			$gambar = $rows->gambar == null ? "-" : $rows->gambar;
+			$result .= '<tr class="tb-trx" rel-tb="' . $gambar . '" data-toggle="tooltip" data-placement="left" title="' . $info_tooltip . '">' .
 				// '<td>' . $no . '</td>' .
-				'<td >' . substr($rows->nama_barang, 0, 12) . '<br>' . $rows->qty . ' x '.number_format($rows->harga, 0, '', '.').'</td>' .
+				'<td >' . substr($rows->nama_barang, 0, 12) . '<br>' . $rows->qty . ' x ' . number_format($rows->harga, 0, '', '.') . '</td>' .
 				// '<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
 				// '<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit('.$rows->id_penjualan.')">' . $rows->qty . '</td>' .
 				// '<td>' . $rows->diskon . '</td>' .
 				'<td align="right">' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
 				'<td><div class="hidden-md hidden-lg">
 				<div class="inline pos-rel">
-					<a href="#" data-toggle="tooltip" data-placement="top" title="Hapus Item" class="btn-xs small danger" onclick=hapus_temp('  . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
+					<a href="#" data-toggle="tooltip" data-placement="top" title="Hapus Item" class="btn-xs small danger" onclick=hapus_temp(' . $rows->id_penjualan . ')> <i class="fa fa-trash"></i></a>
 				</div>
 				</div>
 				</td>' .
@@ -458,15 +483,16 @@ class Pos extends BaseController
 		$result = '';
 		$no = 1;
 		$total_temp = number_format($r_total->getRow('sub_total'), 0, '', '.');
-		
+
+		print_r($r_temp->getResult());
 		foreach ($r_temp->getResult() as $rows) {
-			$info_tooltip=$rows->nama_barang."\n"."Sisa 10";
-			$gambar=$rows->gambar == null ?"-":$rows->gambar;
-			$result .= '<tr class="tb-trx" rel-tb="'.$gambar.'" data-toggle="tooltip" data-placement="left" title="'.$info_tooltip.'">' .
+			$info_tooltip = $rows->nama_barang . "\n" . "Sisa 10";
+			$gambar = $rows->gambar == null ? "-" : $rows->gambar;
+			$result .= '<tr class="tb-trx" rel-tb="' . $gambar . '" data-toggle="tooltip" data-placement="left" title="' . $info_tooltip . '">' .
 				// '<td>' . $no . '</td>' .
 				'<td >' . substr($rows->nama_barang, 0, 10) . '</td>' .
 				'<td align="right">' .  number_format($rows->harga, 0, '', '.') . '</td>' .
-				'<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit('.$rows->id_penjualan.')">' . $rows->qty . '</td>' .
+				'<td align="right" style="background-color:#bdbdbd" onClick="show_qtyedit(' . $rows->id_penjualan . ')">' . $rows->qty . '</td>' .
 				// '<td>' . $rows->diskon . '</td>' .
 				'<td align="right">' . number_format($rows->sub_total, 0, '', '.') . '</td>' .
 				'<td><div class="hidden-md hidden-lg">
@@ -617,7 +643,7 @@ class Pos extends BaseController
 		}
 	}
 
-	public function showprodukkategori($kat){
-
+	public function showprodukkategori($kat)
+	{
 	}
 }
