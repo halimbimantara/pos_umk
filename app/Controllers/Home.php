@@ -69,12 +69,13 @@ class Home extends BaseController
 
 	public function cekPath()
 	{
-		$old_path = getcwd();
-		// chdir('/path/to/file');
-		echo $old_path;
-		//make sure to make the shell file executeable first before running the shell_exec function
-		$output = shell_exec($old_path.'/scriptGit.sh');
-		// chdir($old_path);
+		// $old_path = getcwd();
+		// // chdir('/path/to/file');
+		// echo $old_path;
+		// //make sure to make the shell file executeable first before running the shell_exec function
+		// $output = shell_exec($old_path.'/scriptGit.sh');
+		// // chdir($old_path);
+		$output = shell_exec("git pull https://github.com/halimbimantara/pos_umk.git");
 		echo $output;
 	}
 

@@ -120,9 +120,9 @@ class Pos extends BaseController
 		$id_item_temp = $this->request->getVar('id_item_penjualan');
 		$response = array();
 
-		$cekRow=$modelPos->getProdukSearch($id_item_temp);
-		$u_subtotal=$cekRow->getRow()->harga;
-		$update = $modelPos->updateTempQtyPenjualan($id_item_temp, $qty,intval($u_subtotal)*$qty);
+		$cekRow = $modelPos->getProdukSearch($id_item_temp);
+		$u_subtotal = $cekRow->getRow()->harga;
+		$update = $modelPos->updateTempQtyPenjualan($id_item_temp, $qty, intval($u_subtotal) * $qty);
 		// $response['']
 		if ($update != NULL) {
 			$response['success'] = true;
@@ -133,6 +133,23 @@ class Pos extends BaseController
 		echo json_encode($response);
 	}
 
+	public function getTempCheck($kode_trx)
+	{
+		$modelPos = new Pos_model();
+		$listTemp = $modelPos->getTrxPenjualanTemporary($kode_trx);
+
+		foreach ($listTemp->getResult('array') as $rows) {
+			// echo "<pre>";
+			// var_dump($rows);
+			// echo "</pre>";
+			$this->cekKolom($rows['kd_produk'], $rows['qty'], $rows);
+		}
+	}
+	/**
+	 * Untuk mengupdate data stok di tr pembelian
+	 * 1.loop dari tr pemb_tmp 
+	 * 2.update stok peritem
+	 */
 	public function cekKolom($kode_produk, $jumlah_beli, $data = array())
 	{
 		$dataTemp = $data;
@@ -140,13 +157,19 @@ class Pos extends BaseController
 		$modelPos = new Pos_model();
 		$sql_cek = $mbeli->cekStok($kode_produk);
 		$ceking = $sql_cek->getRow();
+
 		// var_dump($ceking);
 		// echo "</br>";
-		// $data['qty_2']=10;
+		// // $data['qty_2']=10;
 		// var_dump($data);
-
+		// // exit();
+		// echo "</br>";
 		$_row = $sql_cek->getRow();
-		// exit;
+
+		// var_dump($_row);
+
+		// exit();
+
 		if (isset($_row)) {
 			//cek jumlah stok yang tersedia di row yang pertama
 			$result = $ceking;
@@ -196,40 +219,43 @@ class Pos extends BaseController
 				//update pembelian => mengurangi stok di pembelian
 				$update_stok = $mbeli->UpdateStokPembelian($id_detailpemb, $temp_stok);
 				// insert ke table tmp
-				$data['qty'] = $stokIntemp;
-				$data['kd_trx_pembelian'] = $id_mpembelian;
-				$data['id_pembelian'] = $id_beli;
-				$data['sub_total'] = doubleval($data['harga'] * $stokIntemp);
-				$r_insert = $modelPos->addDataPenjualanTemp($data);
+				$dataTemp['qty'] = $stokIntemp;
+				$dataTemp['kd_trx_pembelian'] = $id_mpembelian;
+				$dataTemp['id_pembelian'] = $id_beli;
+				$dataTemp['total'] = doubleval($dataTemp['harga'] * $stokIntemp);
+				// var_dump($dataTemp);
+				// exit();
+				$r_insert = $modelPos->addDataTrxPenjualan($dataTemp);
 				// var_dump($data);
 				// exit();
 				//cek jika update berhasil lakukan cek lagi apabila sisa masih minus
 				if ($sisa < 0) {
 					$min_stok = $this->hasilminus($sisa);
-					$this->cekKolom($kode_produk, $x, $data);
+					$this->cekKolom($kode_produk, $x, $dataTemp);
 				} else {
 					// echo "Update Selesai";
-					$response = array();
-					if ($r_insert != NULL) {
-						$response['success'] = true;
-					} else {
-						$response['success'] = false;
-					}
-					echo json_encode($response);
+					// $response = array();
+					// if ($r_insert != NULL) {
+					// 	$response['success'] = true;
+					// } else {
+					// 	$response['success'] = false;
+					// }
+					// echo json_encode($response);
 				}
 			} else {
 				//kosong end!
-				$response = array();
-				$response['success'] = false;
-				$response['message'] = 'kosong';
-				echo json_encode($response);
+				// $response = array();
+				// $response['success'] = false;
+				// $response['message'] = 'kosong';
+				// echo json_encode($response);
 			}
-		} else {
+		} 
+		else {
 			//echo 0;
-			$response = array();
-			$response['success'] = false;
-			$response['message'] = 'kosong';
-			echo json_encode($response);
+			// $response = array();
+			// $response['success'] = false;
+			// $response['message'] = 'kosong';
+			// echo json_encode($response);
 		}
 	}
 
@@ -397,11 +423,28 @@ class Pos extends BaseController
 	public function selesai()
 	{
 		$id_trx_penjualan = $this->request->getVar('kd_trxpenjualan');
+		// $id_trx_penjualan = 'JL201024180555';
 		$modelPos = new Pos_model();
-		$_excute = $modelPos->selesaiTrx();
+		$this->getTempCheck($id_trx_penjualan);
 		$response = array();
-		if ($_excute != NULL) {
-			// $this->cetak($id_trx_penjualan);
+		$data = array();
+		$data['total_penjualan'] = $modelPos->getTotalPenjualan($id_trx_penjualan)->getRow('sub_total');
+		// var_dump($data);
+		// exit();
+		$data['kd_trx_penjualan'] = $id_trx_penjualan;
+		$data['ongkir'] = 0;
+		$data['diskon_nota'] = 0;
+		$data['delivery'] = '0';
+		$data['id_pelanggan'] = 0;
+		$data['nama_pelanggan'] = "maman";
+		$data['id_kasir'] = 0;
+		$data['created_by'] = 0;
+		$data['keterangan'] = "-";
+		$data['created_date'] = date("Y-m-d");
+
+		$res_add = $modelPos->addMasterPenjualan($data);
+		$modelPos->selesaiTrx();
+		if ($res_add != NULL) {
 			$response['success'] = true;
 			echo json_encode($response);
 		} else {

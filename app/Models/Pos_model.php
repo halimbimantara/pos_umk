@@ -187,6 +187,28 @@ class Pos_model extends Model
         return $result;
     }
 
+    function addDataMasterPenjualan($data = array())
+    {
+        $builder = $this->db->table('master_penjualan');
+        $result = $builder->insert($data);
+        return $result;
+    }
+
+    function addDataTrxPenjualan($data = array())
+    {
+        $builder = $this->db->table('trx_penjualan');
+        $result = $builder->insert($data);
+        return $result;
+    }
+
+    function getTrxPenjualanTemporary($kode_trx = null)
+    {
+        $builder = $this->db->table('trx_penjualan_tmp');
+        $builder->select('kd_trx_penjualan,kd_produk,nama_barang,harga,qty,diskon,kd_satuan,created_date');
+        $builder->where('kd_trx_penjualan', $kode_trx);
+        $result = $builder->get();
+        return $result;
+    }
     function getTablePenjualantmp($kode_trx = null)
     {
         $result = $this->db->query("SELECT b.gambar_produk as gambar,a.id_penjualan,a.kd_trx_penjualan,a.kd_produk,a.kd_trx_pembelian,a.nama_barang,SUM(qty) qty,a.harga,SUM(a.sub_total) sub_total,a.diskon,a.kd_satuan,a.created_date
@@ -276,9 +298,10 @@ class Pos_model extends Model
 
     function selesaiTrx()
     {
-        $_query = "INSERT INTO trx_penjualan (kd_trx_penjualan,kd_produk,kd_trx_pembelian,nama_barang,harga,qty,total,diskon,kd_satuan,created_date) SELECT kd_trx_penjualan,kd_produk,kd_trx_pembelian,nama_barang,harga,qty,sub_total as total,diskon,kd_satuan,created_date FROM trx_penjualan_tmp";
-        $result = $this->db->query($_query);
-        $this->delTablePenjualantmp();
+        // $_query = "INSERT INTO trx_penjualan (kd_trx_penjualan,kd_produk,kd_trx_pembelian,nama_barang,harga,qty,total,diskon,kd_satuan,created_date) SELECT kd_trx_penjualan,kd_produk,kd_trx_pembelian,nama_barang,harga,qty,sub_total as total,diskon,kd_satuan,created_date FROM trx_penjualan_tmp";
+        // $result = $this->db->query($_query);
+        //insert ke master penjualan
+        $result = $this->delTablePenjualantmp();
         return $result;
     }
 
@@ -286,6 +309,12 @@ class Pos_model extends Model
     function addTotempSearch($data = array())
     {
         $builder = $this->db->table('trx_search_temp');
+        $result = $builder->insert($data);
+        return $result;
+    }
+    function addMasterPenjualan($data = array())
+    {
+        $builder = $this->db->table('master_penjualan');
         $result = $builder->insert($data);
         return $result;
     }
@@ -300,7 +329,7 @@ class Pos_model extends Model
         return $builder->update();
     }
 
-    function updateTempQtyPenjualan($id, $qty,$subtotal)
+    function updateTempQtyPenjualan($id, $qty, $subtotal)
     {
         $builder = $this->db->table('trx_penjualan_tmp');
         $builder->set('qty', $qty);

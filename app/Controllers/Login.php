@@ -60,6 +60,7 @@ class Login extends BaseController
 			} else {
 				$_SESSION['username'] = $username;
 				$_SESSION['roleid'] = $querycek->getRow()->role;
+				$_SESSION['id'] = $querycek->getRow()->id;
 				return redirect()->to(base_url('home'));
 			}
             // menuju ke halaman home

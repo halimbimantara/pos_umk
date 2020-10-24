@@ -52,9 +52,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<!-- Default box -->
-				<div class="card card-secondary">
-					<div class="card-header">
-						<h3 class="card-title"><i class="fas fa-store-alt"></i> Data All Users </h3>
+				<div class="card card-secondary overflow-auto">
+					<div class="card-header overflow-auto" >
+						<h3 class="card-title overflow-auto"><i class="fas fa-store-alt"></i> Data All Users </h3>
 
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
