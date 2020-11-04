@@ -436,7 +436,7 @@ class Pos extends BaseController
 		$data['diskon_nota'] = 0;
 		$data['delivery'] = '0';
 		$data['id_pelanggan'] = 0;
-		$data['nama_pelanggan'] = "maman";
+		$data['nama_pelanggan'] = "-";
 		$data['id_kasir'] = 0;
 		$data['created_by'] = 0;
 		$data['keterangan'] = "-";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2020 at 08:07 AM
+-- Generation Time: Nov 04, 2020 at 11:55 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.16
 
@@ -298,7 +298,7 @@ INSERT INTO `master_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `total_pembe
 --
 
 CREATE TABLE `master_penjualan` (
-  `id_pembelian` int(12) NOT NULL DEFAULT 0,
+  `id` int(12) NOT NULL,
   `kd_trx_penjualan` varchar(50) NOT NULL,
   `total_penjualan` double NOT NULL,
   `ongkir` double NOT NULL DEFAULT 0 COMMENT 'apabila ada ongkir',
@@ -309,8 +309,16 @@ CREATE TABLE `master_penjualan` (
   `id_kasir` int(5) NOT NULL,
   `keterangan` text NOT NULL,
   `created_by` int(11) NOT NULL COMMENT 'user yang menambah',
-  `created_date` date NOT NULL 
+  `created_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `master_penjualan`
+--
+
+INSERT INTO `master_penjualan` (`id`, `kd_trx_penjualan`, `total_penjualan`, `ongkir`, `diskon_nota`, `delivery`, `id_pelanggan`, `nama_pelanggan`, `id_kasir`, `keterangan`, `created_by`, `created_date`) VALUES
+(5, 'JL201024184057', 29150, 0, 0, 0, 0, 'maman', 0, '-', 0, '2020-10-24'),
+(6, 'JL201024190010', 30000, 0, 0, 0, 0, '-', 0, '-', 0, '2020-10-24');
 
 -- --------------------------------------------------------
 
@@ -685,35 +693,6 @@ CREATE TABLE `trx_history_harga_jual` (
   `modified_by` int(5) DEFAULT NULL COMMENT 'user yang merubah'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `trx_history_harga_jual`
---
-
-INSERT INTO `trx_history_harga_jual` (`id_history_jual`, `kd_produk`, `harga`, `tanggal_modified`, `keterangan`, `modified_by`) VALUES
-(1, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
-(2, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
-(3, 'BRS0001', 58000, '2020-05-01 00:00:00', NULL, 0),
-(4, 'BRS0001', 58000, '2020-05-07 00:00:00', NULL, 0),
-(5, 'BRS0001', 58000, '2020-05-07 00:00:00', NULL, 0),
-(6, 'BRS0001', 58000, '2020-05-14 00:00:00', NULL, 0),
-(7, 'LP00D1', 27000, '2020-05-17 00:00:00', NULL, NULL),
-(8, '8992222055499', 14000, '2020-07-19 00:00:00', NULL, NULL),
-(9, '8992771002975', 16000, '2020-07-19 00:00:00', NULL, NULL),
-(10, '8992771002975', 16000, '2020-08-03 00:00:00', NULL, NULL),
-(11, '4801010120223', 16000, '2020-08-03 00:00:00', NULL, NULL),
-(12, 'LP00D1', 27000, '2020-08-03 00:00:00', NULL, NULL),
-(13, '8992779269103', 27000, '2020-08-03 00:00:00', NULL, NULL),
-(14, '', 0, '2020-08-16 00:00:00', NULL, NULL),
-(15, '', 0, '2020-08-16 00:00:00', NULL, NULL),
-(16, '', 0, '2020-08-16 00:00:00', NULL, NULL),
-(17, '089686060126', 0, '2020-08-20 00:00:00', NULL, NULL),
-(18, '089686060126', 0, '2020-08-20 00:00:00', NULL, NULL),
-(19, '089686060126', 0, '2020-08-20 00:00:00', NULL, NULL),
-(20, '4801010120223', 0, '2020-08-30 00:00:00', NULL, NULL),
-(21, '8992222055499', 0, '2020-09-03 00:00:00', NULL, NULL),
-(22, '8992779269103', 0, '2020-09-03 00:00:00', NULL, NULL),
-(23, '4801010120223', 0, '2020-10-04 00:00:00', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -734,20 +713,6 @@ CREATE TABLE `trx_pembelian` (
   `keterangan` text DEFAULT NULL,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `trx_pembelian`
---
-
-INSERT INTO `trx_pembelian` (`id_pembelian`, `kd_trx_pembelian`, `kd_produk`, `nama_barang`, `harga`, `qty`, `stok`, `total`, `diskon`, `kd_satuan`, `keterangan`, `created_date`) VALUES
-(1, 'BL200809095511', '4801010120223', 'JOHNSON BABY COLOGNE SLIDE', 15000, 20, 98, 300000, 0, NULL, NULL, '2020-08-09'),
-(2, 'BL200809095511', '8992779269103', 'KIT MOTOR MULTIGUNA', 13000, 15, 99, 195000, 0, NULL, NULL, '2020-08-09'),
-(3, 'BL200809095511', '8992222055499', 'GATSBY SIDESWEPT STYLING POMADE', 10000, 25, 97, 250000, 0, NULL, NULL, '2020-08-09'),
-(4, 'BL200809095511', '8997023620679', 'EXTRA FOOD FRUIT VEGETABLE HPAI', 60000, 10, 1000, 600000, 0, NULL, NULL, '2020-08-09'),
-(8, 'BL200809122520', '8992222055499', 'GATSBY SIDESWEPT STYLING POMADE', 10500, 10, 1000, 105000, 0, NULL, NULL, '2020-08-10'),
-(9, 'BL200809122520', '8992779269103', 'KIT MOTOR MULTIGUNA', 12500, 20, 100, 250000, 0, NULL, NULL, '2020-08-10'),
-(11, 'BL200809131955', '4801010120223', 'JOHNSON BABY COLOGNE SLIDE', 14000, 10, 1000, 140000, 0, NULL, NULL, '2020-08-09'),
-(12, 'BL200809131955', '8992222055499', 'GATSBY SIDESWEPT STYLING POMADE', 11000, 100, 0, 110000, 0, NULL, NULL, '2020-08-09');
 
 -- --------------------------------------------------------
 
@@ -787,26 +752,9 @@ CREATE TABLE `trx_penjualan` (
   `total` double NOT NULL DEFAULT 0,
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) NOT NULL,
-  `created_date` date NOT NULL DEFAULT current_timestamp()
+  `created_date` date NOT NULL DEFAULT current_timestamp(),
+  `tipe` int(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `trx_penjualan`
---
-
-INSERT INTO `trx_penjualan` (`id_penjualan`, `kd_trx_penjualan`, `kd_produk`, `kd_trx_pembelian`, `id_pembelian`, `nama_barang`, `harga`, `qty`, `total`, `diskon`, `kd_satuan`, `created_date`) VALUES
-(1, 'JL200817223828', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-17'),
-(2, 'JL200817223828', '8992222055499', 'BL200809095511', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-08-17'),
-(3, 'JL200817223828', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-17'),
-(4, 'JL200817223828', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-17'),
-(5, 'JL200821235042', '4801010120223', 'BL200809095511', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-08-21'),
-(6, 'JL201011055026', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-10-11'),
-(7, 'JL201011112224', '8992779269103', '1000', NULL, 'KIT MOTOR MULTIGUNA', 13750, 1, 13750, 0, 0, '2020-10-11'),
-(8, 'JL201011112224', '8992222055499', '1000', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-10-11'),
-(10, 'JL201011123424', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 3, 46200, 0, 0, '2020-10-11'),
-(11, 'JL201011123424', '8992779269103', '1000', NULL, 'KIT MOTOR MULTIGUNA', 13750, 1, 13750, 0, 0, '2020-10-11'),
-(13, 'JL201011125007', '4801010120223', '1000', NULL, 'JOHNSON BABY COLOGNE SLIDE', 15400, 1, 15400, 0, 0, '2020-10-11'),
-(14, 'JL201011125007', '8992222055499', '1000', NULL, 'GATSBY SIDESWEPT STYLING POMADE', 12100, 1, 12100, 0, 0, '2020-10-11');
 
 -- --------------------------------------------------------
 
@@ -826,7 +774,8 @@ CREATE TABLE `trx_penjualan_tmp` (
   `sub_total` double NOT NULL,
   `diskon` double NOT NULL DEFAULT 0,
   `kd_satuan` int(11) NOT NULL DEFAULT 0,
-  `created_date` date DEFAULT NULL
+  `created_date` date DEFAULT NULL,
+  `tipe` int(2) NOT NULL DEFAULT 0 COMMENT '0 | trx dari m_produk[barcode,icon]\r\n1 | trx dari search'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -851,8 +800,9 @@ INSERT INTO `trx_search_temp` (`id`, `nama_produk`, `harga`, `count`, `expired`)
 (3, 'B', 0, 1, '0000-00-00 00:00:00'),
 (4, 'bayam merah', 1000, 1, '0000-00-00 00:00:00'),
 (5, 'sawi', 400, 1, '0000-00-00 00:00:00'),
-(6, 'wortel', 1000, 1, '0000-00-00 00:00:00'),
-(7, 'Tomat', 4000, 1, '0000-00-00 00:00:00');
+(6, 'wortel', 5000, 1, '0000-00-00 00:00:00'),
+(7, 'Tomat', 4000, 1, '0000-00-00 00:00:00'),
+(8, 'rotigoreng', 500, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -890,10 +840,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `role`, `last_name`, `company`, `phone`, `alamat`, `image`) VALUES
-(1, '127.0.0.1', 'admin', 'f5c828ff122cd8d0509051584236cceb28c78bfa', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 4, 'istrator', 'ADMIN', '0875567', 'Jakarta', 'Screen Shot 2020-09-30 at 19.18.28_1.png'),
+(1, '127.0.0.1', 'admin', 'f5c828ff122cd8d0509051584236cceb28c78bfa', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1268889823, 1, 'Admin', 4, 'istrator', 'ADMIN', '0875567', 'Jakarta', '20200909_10255.jpg'),
 (3, '', 'muhajir', 'd0f00efe1de5f6bf933d7bcdc244ef64983dea9b', 'muhajir@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, 'muhajir', 0, NULL, NULL, '085212614165', 'muhajir', NULL),
 (5, '', 'jojon', 'aac1e0e8e7038304d7a0764a4e1f61ff3151903f', 'muhajir2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'jojon21', 0, NULL, NULL, '085212614165', 'bandung', NULL),
-(6, '', 'kasir', '910230f5f11e05e8b0abb337512c99cd79751c86', 'bimadel6@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'kasirk', 0, NULL, NULL, '0888282', 'jl kewagean', NULL);
+(6, '', 'kasir', '910230f5f11e05e8b0abb337512c99cd79751c86', 'bimadel6@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'kasirk', 0, NULL, NULL, '0888282', 'jl kewagean', NULL),
+(7, '', 'riandhanudibrata', 'bf6b126bbac5fa38e12dc0bbdc9a53b60d641dd9', 'rianbrata@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 'PT Cahaya Berkah', 0, NULL, NULL, '085646609666', 'Jl. Letnan Agung 200', NULL);
 
 -- --------------------------------------------------------
 
@@ -1036,6 +987,12 @@ ALTER TABLE `master_margin`
 --
 ALTER TABLE `master_pembelian`
   ADD PRIMARY KEY (`id_pembelian`);
+
+--
+-- Indexes for table `master_penjualan`
+--
+ALTER TABLE `master_penjualan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `master_produk`
@@ -1221,6 +1178,12 @@ ALTER TABLE `master_pembelian`
   MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `master_penjualan`
+--
+ALTER TABLE `master_penjualan`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
@@ -1272,13 +1235,13 @@ ALTER TABLE `tb_kemasan`
 -- AUTO_INCREMENT for table `trx_history_harga_jual`
 --
 ALTER TABLE `trx_history_harga_jual`
-  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_history_jual` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `trx_pembelian`
 --
 ALTER TABLE `trx_pembelian`
-  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pembelian` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `trx_pembelian_temp`
@@ -1290,7 +1253,7 @@ ALTER TABLE `trx_pembelian_temp`
 -- AUTO_INCREMENT for table `trx_penjualan`
 --
 ALTER TABLE `trx_penjualan`
-  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_penjualan` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `trx_penjualan_tmp`
@@ -1302,13 +1265,13 @@ ALTER TABLE `trx_penjualan_tmp`
 -- AUTO_INCREMENT for table `trx_search_temp`
 --
 ALTER TABLE `trx_search_temp`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users_groups`
